@@ -1,0 +1,9 @@
+README.md
+config.js
+node_modules/
+package-lock.json
+\_site/
+bin/
+.cache/
+package.json
+vite.config.js

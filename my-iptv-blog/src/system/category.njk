@@ -1,0 +1,15 @@
+---
+layout: "base.njk"
+pagination:
+  data: collections.meta.categoryPages
+  size: 1
+  alias: categoryPage
+permalink: "/category/{{ categoryPage.name | slugify }}/{% if categoryPage.page > 1 %}{{ categoryPage.page }}/{% endif %}"
+eleventyComputed:
+  title: "Posts in category: {{ categoryPage.name }}{% if categoryPage.page > 1 %} - Page {{ categoryPage.page }}{% endif %}"
+  description: "Posts in category: {{ categoryPage.name }}{% if categoryPage.page > 1 %} (Page {{ categoryPage.page }}){% endif %}"
+---
+
+{% import "macros/pages.njk" as pages with context %}
+{{ pages.renderCategoryPage(categoryPage) }}
+

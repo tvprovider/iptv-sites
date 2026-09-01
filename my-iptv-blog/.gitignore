@@ -1,0 +1,8 @@
+node_modules/
+_site/
+admin/dist/
+.cache/
+.env
+*.log
+.DS_Store
+.vscode/

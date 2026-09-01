@@ -1,0 +1,22 @@
+{
+  "name": "iptv-machine",
+  "version": "1.0.0",
+  "description": "Automated IPTV lead generation machine",
+  "type": "module",
+  "main": "test-connection.js",
+  "scripts": {
+    "test": "node test-connection.js"
+  },
+  "keywords": [
+    "iptv",
+    "automation",
+    "leads"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ringo380/namecheap-mcp": "^1.0.0",
+    "dotenv": "^16.6.1",
+    "xml2js": "^0.6.2"
+  }
+}
