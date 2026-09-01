@@ -1,5 +1,5 @@
 import {
-  hero, section, sectionHead, ctaBanner, breadcrumbs, breadcrumbSchema, featureGrid,
+  hero, section, sectionHead, ctaBanner, breadcrumbs, breadcrumbSchema, esc,
 } from '../lib/render.mjs';
 
 const trustMedia = `
@@ -111,11 +111,21 @@ ${section({
   bg: 'quiet',
   html: `
   ${sectionHead({ eyebrow: 'Keep learning', title: 'Resources', left: true })}
-  ${featureGrid([
-    { title: 'Setup Guide', text: 'Step-by-step instructions for every supported device.' },
-    { title: 'FAQ', text: 'Answers to the most common questions.' },
-    { title: 'Pricing', text: 'Full plan and trial pricing details.' },
-  ])}`,
+  <div class="grid grid-3">
+    ${[
+      { title: 'Setup Guide', text: 'Step-by-step instructions for every supported device.', href: '/setup-guide/' },
+      { title: 'FAQ', text: 'Answers to the most common questions.', href: '/faq/' },
+      { title: 'Pricing', text: 'Full plan and trial pricing details.', href: '/pricing/' },
+    ]
+      .map(
+        (r) => `
+    <div class="card">
+      <h3><a href="${r.href}">${esc(r.title)}</a></h3>
+      <p>${esc(r.text)}</p>
+    </div>`
+      )
+      .join('')}
+  </div>`,
 })}
 
 ${ctaBanner({ title: 'Ready to see it for yourself?', lead: 'Start a 24-hour trial or compare our subscription plans.' })}

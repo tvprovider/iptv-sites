@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, featureGrid, deviceGrid, pricingGrid, faqAccordion,
-  ctaBanner, stepsList, answerBox, trustGrid, esc, faqSchema,
+  ctaBanner, stepsList, answerBox, esc, faqSchema,
 } from '../lib/render.mjs';
 import { plans, trial, devices, coreFaqs, site } from '../data/business.mjs';
 
@@ -172,25 +172,45 @@ ${section({
   bg: 'quiet',
   html: `
   ${sectionHead({ eyebrow: 'Confidence', title: 'Trust & transparency' })}
-  ${trustGrid([
-    { title: 'Transparent pricing', text: 'Every plan price is listed in full on our Pricing page — nothing hidden until checkout.' },
-    { title: 'Real support', text: 'A contact form that reaches an actual person, not an automated dead end.' },
-    { title: 'Setup documentation', text: 'Public, detailed setup instructions you can read before you subscribe.' },
-    { title: 'Refund Policy', text: 'Clear terms for when and how refunds apply. Read the full policy anytime.' },
-    { title: 'Privacy Policy', text: 'A plain-language explanation of what information we collect and why.' },
-    { title: 'Terms of Use', text: 'The rules of using the service, written to be understood, not just legally defensible.' },
-  ])}`,
+  <div class="grid grid-3">
+    ${[
+      { title: 'Transparent pricing', text: 'Every plan price is listed in full on our Pricing page — nothing hidden until checkout.', href: '/pricing/' },
+      { title: 'Real support', text: 'A contact form that reaches an actual person, not an automated dead end.', href: '/contact/' },
+      { title: 'Setup documentation', text: 'Public, detailed setup instructions you can read before you subscribe.', href: '/setup-guide/' },
+      { title: 'Refund Policy', text: 'Clear terms for when and how refunds apply. Read the full policy anytime.', href: '/refund-policy/' },
+      { title: 'Privacy Policy', text: 'A plain-language explanation of what information we collect and why.', href: '/privacy-policy/' },
+      { title: 'Terms of Use', text: 'The rules of using the service, written to be understood, not just legally defensible.', href: '/terms-of-use/' },
+    ]
+      .map(
+        (t) => `
+    <div class="card">
+      <h3><a href="${t.href}">${esc(t.title)}</a></h3>
+      <p>${esc(t.text)}</p>
+    </div>`
+      )
+      .join('')}
+  </div>`,
 })}
 
 ${section({
   html: `
   ${sectionHead({ eyebrow: 'Learn more', title: 'Helpful resources', left: true })}
-  ${featureGrid([
-    { title: 'Setup Guide', text: 'Device-by-device instructions for getting connected.' },
-    { title: 'Full FAQ', text: 'Answers to the most common questions about the service.' },
-    { title: 'What Is IPTV?', text: 'A plain-language introduction to how IPTV works.' },
-    { title: '4K vs HD Streaming', text: 'Understand the real differences in resolution and quality.' },
-  ], 4)}`,
+  <div class="grid grid-4">
+    ${[
+      { title: 'Setup Guide', text: 'Device-by-device instructions for getting connected.', href: '/setup-guide/' },
+      { title: 'Full FAQ', text: 'Answers to the most common questions about the service.', href: '/faq/' },
+      { title: 'What Is IPTV?', text: 'A plain-language introduction to how IPTV works.', href: '/guides/what-is-iptv/' },
+      { title: '4K vs HD Streaming', text: 'Understand the real differences in resolution and quality.', href: '/guides/4k-vs-hd-streaming/' },
+    ]
+      .map(
+        (r) => `
+    <div class="card">
+      <h3><a href="${r.href}">${esc(r.title)}</a></h3>
+      <p>${esc(r.text)}</p>
+    </div>`
+      )
+      .join('')}
+  </div>`,
 })}
 
 ${ctaBanner({
