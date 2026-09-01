@@ -1,0 +1,10 @@
+{
+  "name": "4kstreaming-net",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site source for 4kstreaming.net — zero-dependency build.",
+  "scripts": {
+    "build": "node src/build.mjs"
+  }
+}
