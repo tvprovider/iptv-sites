@@ -24,7 +24,7 @@ function deviceSection({ id, eyebrow, title, steps, note }) {
 export default {
   slug: 'setup-guide',
   title: 'IPTV Setup Guide — Smart TV, Fire TV, Android, iOS & More | 4K Streaming',
-  description: 'Step-by-step 4K Streaming IPTV setup instructions for Smart TV, Android TV, Fire TV, Android, iPhone, Windows, and macOS, plus troubleshooting and EPG configuration.',
+  description: 'Step-by-step IPTV setup for Smart TV, Android TV, Fire TV, mobile, Windows, and macOS, plus troubleshooting and EPG configuration.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]), faqSchema(setupFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }])}

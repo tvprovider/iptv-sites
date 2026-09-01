@@ -23,13 +23,13 @@ const heroMedia = `
 export default {
   slug: '',
   title: '4K Streaming IPTV — Premium 4K Live TV Subscription | 4K Streaming',
-  description: 'Subscribe to 4K Streaming IPTV for premium live channels and on-demand content in up to 4K quality. Transparent pricing, a $1 24-hour trial, and setup guides for every major device.',
+  description: 'Premium IPTV with live channels in up to 4K, transparent pricing, a $1 24-hour trial, and setup guides for every major device.',
   jsonld: [faqSchema(coreFaqs)],
   body: `
 ${hero({
   eyebrow: '4K Streaming IPTV',
   h1: 'Premium 4K IPTV streaming, built around clarity and control',
-  lead: 'A straightforward IPTV subscription with transparent pricing, real device setup guides, and support for up to 4K resolution where your plan, device, and source content allow it.',
+  lead: '4K Streaming IPTV is a subscription streaming service that delivers live channels and on-demand content over the internet in up to 4K resolution, depending on your plan, device, and source content. It replaces a satellite or cable subscription with transparent pricing, a low-cost trial, and real setup support.',
   media: heroMedia,
 })}
 

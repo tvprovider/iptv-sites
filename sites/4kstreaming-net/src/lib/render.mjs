@@ -31,6 +31,7 @@ export function headMeta({ title, description, path, ogImage, noindex, type = 'w
     <meta name="twitter:description" content="${esc(description)}">
     <meta name="twitter:image" content="${image}">
     <meta name="theme-color" content="${site.themeColor}">
+    <meta name="author" content="${esc(site.brand)}">
   `;
 }
 
