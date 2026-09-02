@@ -7,7 +7,7 @@ export const site = {
   url: 'https://4kstreaming.net',
   tagline: 'Premium 4K IPTV streaming, done right',
   supportEmail: 'support@4kstreaming.net',
-  leadCaptureDestination: 'contacts.storfix@gmail.com', // internal routing only, never shown publicly
+  leadCaptureDestination: 'contacts.easymoney@gmail.com', // internal routing only, never shown publicly
   themeColor: '#533afd',
 };
 

@@ -4,7 +4,7 @@
 // automated provisioning system, so a person fulfills the trial manually
 // after receiving this lead and emails the customer their activation details.
 
-const LEAD_DESTINATION = 'contacts.storfix@gmail.com';
+const LEAD_DESTINATION = 'contacts.easymoney@gmail.com';
 const MAX_LEN = { email: 200, device: 100 };
 const rateLimitStore = new Map();
 

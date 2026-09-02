@@ -347,6 +347,14 @@ export function answerBox(html) {
   return `<div class="answer-box">${html}</div>`;
 }
 
+export function marquee(items) {
+  const row = items.map((i) => `<span class="marquee-item">${esc(i)}</span>`).join('');
+  return `
+  <div class="marquee" role="list" aria-label="${esc(items.join(', '))}">
+    <div class="marquee-track">${row}${row}</div>
+  </div>`;
+}
+
 export function trustGrid(items) {
   return featureGrid(items, 3);
 }

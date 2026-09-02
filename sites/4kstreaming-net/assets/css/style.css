@@ -382,3 +382,43 @@ textarea { resize: vertical; min-height: 120px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .answer-box { background: var(--surface-soft); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: var(--radius-sm); padding: 20px 24px; }
 .answer-box p:last-child { margin-bottom: 0; }
+
+/* Marquee (device / category scroller) — text only, no fake logos or stats */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.marquee::before, .marquee::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.marquee::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+  padding: 6px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+}
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; overflow-x: auto; }
+}

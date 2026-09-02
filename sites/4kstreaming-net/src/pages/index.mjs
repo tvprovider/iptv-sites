@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, featureGrid, deviceGrid, pricingGrid, faqAccordion,
-  ctaBanner, stepsList, answerBox, esc, faqSchema,
+  ctaBanner, stepsList, answerBox, esc, faqSchema, marquee,
 } from '../lib/render.mjs';
 import { plans, trial, devices, coreFaqs, site } from '../data/business.mjs';
 
@@ -32,6 +32,8 @@ ${hero({
   lead: '4K Streaming IPTV is a subscription streaming service that delivers live channels and on-demand content over the internet in up to 4K resolution, depending on your plan, device, and source content. It replaces a satellite or cable subscription with transparent pricing, a low-cost trial, and real setup support.',
   media: heroMedia,
 })}
+
+${marquee(devices.map((d) => d.name))}
 
 ${section({
   html: `
@@ -93,6 +95,8 @@ ${section({
   ])}
   `,
 })}
+
+${marquee(['Live Sports', 'Movies & Series', '24/7 News', 'Kids & Family', 'Entertainment', 'International Channels', 'Documentaries', 'Music Channels'])}
 
 ${section({
   html: `

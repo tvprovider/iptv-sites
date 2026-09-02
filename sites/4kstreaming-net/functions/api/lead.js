@@ -4,7 +4,7 @@
 // Deploy target: any host that runs Cloudflare Pages Functions (or an
 // equivalent edge-function runtime) alongside the static build in dist/.
 
-const LEAD_DESTINATION = 'contacts.storfix@gmail.com';
+const LEAD_DESTINATION = 'contacts.easymoney@gmail.com';
 const MAX_LEN = { name: 200, email: 200, topic: 100, message: 4000 };
 const rateLimitStore = new Map(); // best-effort, per-isolate only — see README
 
