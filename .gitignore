@@ -4,3 +4,4 @@
 node_modules/
 sites/*/dist/
 sites/*/payload/
+sites/*/worker-dist/

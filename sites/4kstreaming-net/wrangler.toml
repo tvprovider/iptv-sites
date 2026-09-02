@@ -1,0 +1,6 @@
+name = "4kstreaming-net"
+compatibility_date = "2026-09-03"
+main = "./worker-dist/index.js"
+
+[assets]
+directory = "./dist/"
