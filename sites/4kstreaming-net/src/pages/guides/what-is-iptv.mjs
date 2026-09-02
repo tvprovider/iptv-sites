@@ -1,6 +1,6 @@
 import {
   section, sectionHead, breadcrumbs, breadcrumbSchema, articleSchema, answerBox,
-  faqAccordion, faqSchema, ctaBanner,
+  faqAccordion, faqSchema, ctaBanner, iconMedia,
 } from '../../lib/render.mjs';
 
 const faqs = [
@@ -24,6 +24,7 @@ ${section({
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
     <h1>What is IPTV?</h1>
+    <div class="guide-illustration">${iconMedia('<circle cx="270" cy="270" r="20" fill="none" stroke="#ffffff" stroke-width="3"/><polygon points="263,258 263,282 285,270" fill="#ffffff"/>', 'What is IPTV illustration')}</div>
     ${answerBox('<p><strong>IPTV (Internet Protocol Television)</strong> is a method of delivering television content — live channels and on-demand video — as data over an internet connection, instead of through traditional satellite, cable, or terrestrial broadcast signals. You watch it through a compatible player app on a Smart TV, streaming box, phone, tablet, or computer.</p>')}
 
     <h2>How IPTV works</h2>

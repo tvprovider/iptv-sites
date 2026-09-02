@@ -4,8 +4,8 @@
 // automated provisioning system, so a person fulfills the trial manually
 // after receiving this lead and emails the customer their activation details.
 
-const LEAD_DESTINATION = 'contacts.easymoney@gmail.com';
-const MAX_LEN = { email: 200, device: 100 };
+const LEAD_DESTINATION = 'premiumtv1service@gmail.com';
+const MAX_LEN = { email: 200, device: 100, country: 100, phone: 40 };
 const rateLimitStore = new Map();
 
 function isValidEmail(email) {
@@ -50,9 +50,11 @@ export async function onRequestPost({ request, env }) {
 
   const email = clean(body.email, MAX_LEN.email);
   const device = clean(body.device, MAX_LEN.device);
+  const country = clean(body.country, MAX_LEN.country);
+  const phone = clean(body.phone, MAX_LEN.phone);
 
-  if (!isValidEmail(email)) {
-    return new Response(JSON.stringify({ error: 'Missing or invalid email' }), { status: 400 });
+  if (!isValidEmail(email) || !country || !phone) {
+    return new Response(JSON.stringify({ error: 'Missing or invalid fields' }), { status: 400 });
   }
 
   if (!env.RESEND_API_KEY) {
@@ -73,6 +75,8 @@ export async function onRequestPost({ request, env }) {
       html: `
         <h2>New 24-hour trial request</h2>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>WhatsApp/Phone:</strong> ${phone}</p>
         <p><strong>Primary device:</strong> ${device || 'Not specified'}</p>
         <p>Fulfill manually and email the customer their activation details.</p>
       `,

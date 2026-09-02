@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema, deviceGrid, stepsList, answerBox, comparisonTable,
+  breadcrumbSchema, faqSchema, deviceGrid, stepsList, answerBox, comparisonTable, iconMedia,
 } from '../lib/render.mjs';
 import { devices } from '../data/business.mjs';
 
@@ -34,7 +34,7 @@ ${hero({
   lead: 'Clear, device-specific steps for getting connected — from Smart TVs to phones and computers.',
   primaryCta: { label: 'Jump to your device', href: '#devices' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
-  media: '',
+  media: iconMedia('<rect x="248" y="252" width="44" height="30" rx="3" fill="none" stroke="#ffffff" stroke-width="4"/><line x1="262" y1="288" x2="278" y2="288" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/><line x1="270" y1="282" x2="270" y2="288" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>', 'Device setup illustration'),
 })}
 
 ${section({

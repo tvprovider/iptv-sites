@@ -1,6 +1,6 @@
 import {
   section, sectionHead, breadcrumbs, breadcrumbSchema, articleSchema, answerBox,
-  faqAccordion, faqSchema, ctaBanner, comparisonTable,
+  faqAccordion, faqSchema, ctaBanner, comparisonTable, iconMedia,
 } from '../../lib/render.mjs';
 
 const faqs = [
@@ -24,6 +24,7 @@ ${section({
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
     <h1>4K vs. HD streaming: what's the real difference?</h1>
+    <div class="guide-illustration">${iconMedia('<path d="M250 250 h12 M250 250 v12 M290 250 h-12 M290 250 v12 M250 290 h12 M250 290 v-12 M290 290 h-12 M290 290 v-12" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>', '4K vs HD resolution illustration')}</div>
     ${answerBox('<p><strong>4K resolution (roughly 3840×2160 pixels) contains about four times the detail of standard 1080p HD (1920×1080 pixels).</strong> The practical difference is most visible on larger screens at a normal viewing distance, and only when the original content was actually produced in native 4K.</p>')}
 
     <h2>Resolution, side by side</h2>

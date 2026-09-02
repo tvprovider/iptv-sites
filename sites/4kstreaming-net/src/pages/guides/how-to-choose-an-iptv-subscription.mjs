@@ -1,6 +1,6 @@
 import {
   section, sectionHead, breadcrumbs, breadcrumbSchema, articleSchema, answerBox,
-  faqAccordion, faqSchema, ctaBanner,
+  faqAccordion, faqSchema, ctaBanner, iconMedia,
 } from '../../lib/render.mjs';
 
 const faqs = [
@@ -24,6 +24,7 @@ ${section({
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
     <h1>How to choose an IPTV subscription</h1>
+    <div class="guide-illustration">${iconMedia('<rect x="250" y="250" width="40" height="40" rx="4" fill="none" stroke="#ffffff" stroke-width="3"/><path d="M257 270 l8 8 l16 -16" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', 'Choosing an IPTV subscription illustration')}</div>
     ${answerBox('<p>Before subscribing to any IPTV service, check five things: <strong>transparent pricing, device compatibility, a real trial option, clear refund terms, and genuine setup documentation.</strong> These indicate whether a provider is being straightforward with you.</p>')}
 
     <h2>1. Transparent pricing</h2>

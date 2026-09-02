@@ -1,12 +1,12 @@
-// Cloudflare Pages Function: POST /api/lead
-// Requires the RESEND_API_KEY environment variable to be set in the hosting
-// dashboard (never committed to the repo, never sent to the client).
-// Deploy target: any host that runs Cloudflare Pages Functions (or an
-// equivalent edge-function runtime) alongside the static build in dist/.
+// Cloudflare Pages Function: POST /api/order
+// Forwards a subscription order request to the team inbox via Resend, and
+// sends the customer a confirmation. There is no automated checkout or
+// payment processing here — a person reviews the order, then manually emails
+// the customer a payment link and, after payment, their activation details.
 
 const LEAD_DESTINATION = 'premiumtv1service@gmail.com';
-const MAX_LEN = { name: 200, email: 200, topic: 100, message: 4000, country: 100, phone: 40 };
-const rateLimitStore = new Map(); // best-effort, per-isolate only — see README
+const MAX_LEN = { name: 200, email: 200, plan: 100, device: 100, phone: 40, country: 100 };
+const rateLimitStore = new Map();
 
 function isValidEmail(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= MAX_LEN.email;
@@ -44,19 +44,18 @@ export async function onRequestPost({ request, env }) {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400 });
   }
 
-  // Honeypot: real users never populate this hidden field.
   if (body.company) {
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   }
 
   const name = clean(body.name, MAX_LEN.name);
   const email = clean(body.email, MAX_LEN.email);
-  const topic = clean(body.topic, MAX_LEN.topic);
-  const message = clean(body.message, MAX_LEN.message);
-  const country = clean(body.country, MAX_LEN.country);
+  const plan = clean(body.plan, MAX_LEN.plan);
+  const device = clean(body.device, MAX_LEN.device);
   const phone = clean(body.phone, MAX_LEN.phone);
+  const country = clean(body.country, MAX_LEN.country);
 
-  if (!name || !isValidEmail(email) || !message || !country || !phone) {
+  if (!name || !isValidEmail(email) || !plan || !country || !phone) {
     return new Response(JSON.stringify({ error: 'Missing or invalid fields' }), { status: 400 });
   }
 
@@ -64,32 +63,55 @@ export async function onRequestPost({ request, env }) {
     return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 });
   }
 
-  const resendRes = await fetch('https://api.resend.com/emails', {
+  const ownerRes = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${env.RESEND_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'leads@4kstreaming.net',
+      from: 'orders@4kstreaming.net',
       to: LEAD_DESTINATION,
       reply_to: email,
-      subject: `New contact form message${topic ? ` — ${topic}` : ''}`,
+      subject: `New order request — ${plan} — ${email}`,
       html: `
-        <h2>New contact form submission</h2>
+        <h2>New order request</h2>
+        <p><strong>Plan:</strong> ${plan}</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Country:</strong> ${country}</p>
         <p><strong>WhatsApp/Phone:</strong> ${phone}</p>
-        ${topic ? `<p><strong>Topic:</strong> ${topic}</p>` : ''}
-        <p><strong>Message:</strong><br>${message.replace(/\n/g, '<br>')}</p>
+        <p><strong>Device:</strong> ${device || 'Not specified'}</p>
+        <p>Reply to this email (goes to the customer) or contact them directly to send the payment link. Send activation details once payment is confirmed.</p>
       `,
     }),
   });
 
-  if (!resendRes.ok) {
+  if (!ownerRes.ok) {
     return new Response(JSON.stringify({ error: 'Failed to send email' }), { status: 502 });
   }
+
+  // Best-effort customer confirmation — an order still counts as received even
+  // if this second email fails, since the owner notification above succeeded.
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'orders@4kstreaming.net',
+      to: email,
+      reply_to: LEAD_DESTINATION,
+      subject: 'We received your 4K Streaming order',
+      html: `
+        <h2>Thanks for your order, ${name}!</h2>
+        <p>We've received your request for the <strong>${plan}</strong> plan.</p>
+        <p>We'll email you a secure payment link shortly to complete your order. Once payment is confirmed, your activation details will follow right away.</p>
+        <p>Questions in the meantime? Just reply to this email.</p>
+      `,
+    }),
+  }).catch(() => {});
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
 }

@@ -1,6 +1,6 @@
 import {
   section, sectionHead, breadcrumbs, breadcrumbSchema, articleSchema, answerBox,
-  faqAccordion, faqSchema, ctaBanner, comparisonTable,
+  faqAccordion, faqSchema, ctaBanner, comparisonTable, iconMedia,
 } from '../../lib/render.mjs';
 
 const faqs = [
@@ -24,6 +24,7 @@ ${section({
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
     <h1>Internet requirements for 4K streaming</h1>
+    <div class="guide-illustration">${iconMedia('<path d="M250 278 a28 28 0 0 1 40 0 M256 268 a18 18 0 0 1 28 0 M262 258 a8 8 0 0 1 16 0" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/><circle cx="270" cy="286" r="3" fill="#ffffff"/>', 'Internet requirements illustration')}</div>
     ${answerBox('<p><strong>For smooth 4K streaming, we recommend at least 25 Mbps of sustained download speed</strong> on the device you\'re streaming to, ideally over a wired connection. Lower speeds can still work but may result in the stream automatically dropping to a lower resolution.</p>')}
 
     <h2>Recommended speeds by resolution</h2>

@@ -1,5 +1,5 @@
 import {
-  hero, section, sectionHead, breadcrumbs, breadcrumbSchema, ctaBanner, esc,
+  hero, section, sectionHead, breadcrumbs, breadcrumbSchema, ctaBanner, esc, iconMedia,
 } from '../../lib/render.mjs';
 
 const guides = [
@@ -22,7 +22,7 @@ ${hero({
   lead: 'Plain-language explanations of IPTV, 4K streaming, and how to evaluate a subscription before you buy.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
-  media: '',
+  media: iconMedia('<path d="M270 252 C 254 246 244 248 240 252 L240 286 C244 282 254 280 270 286 C286 280 296 282 300 286 L300 252 C296 248 286 246 270 252 Z" fill="none" stroke="#ffffff" stroke-width="3"/><line x1="270" y1="252" x2="270" y2="286" stroke="#ffffff" stroke-width="3"/>', 'IPTV guides illustration'),
 })}
 ${section({
   html: `

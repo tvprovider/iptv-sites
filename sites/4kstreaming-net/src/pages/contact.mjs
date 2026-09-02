@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, ctaBanner, breadcrumbs, breadcrumbSchema,
-  contactForm, featureGrid,
+  contactForm, featureGrid, iconMedia,
 } from '../lib/render.mjs';
 import { site } from '../data/business.mjs';
 
@@ -17,7 +17,7 @@ ${hero({
   lead: 'Questions about setup, billing, or the trial? Send us a message and we\'ll follow up by email.',
   primaryCta: { label: 'Jump to the form', href: '#contact-form-section' },
   secondaryCta: { label: 'View Plans', href: '/pricing/' },
-  media: '',
+  media: iconMedia('<path d="M246 256 h48 a6 6 0 0 1 6 6 v20 a6 6 0 0 1 -6 6 h-30 l-12 10 v-10 h-6 a6 6 0 0 1 -6 -6 v-20 a6 6 0 0 1 6 -6 z" fill="none" stroke="#ffffff" stroke-width="3.5"/>', 'Contact support illustration'),
 })}
 
 ${section({

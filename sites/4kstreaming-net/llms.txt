@@ -1,0 +1,22 @@
+# 4K Streaming
+
+> 4K Streaming is a subscription-based IPTV service that delivers live channels and on-demand content over the internet, in up to 4K resolution where the plan, device, and source content support it. Plans include 40,000+ live channels (including premium channels) and 180,000+ VOD titles. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. The service is compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Windows, and macOS, using any player app that supports M3U playlists or Xtream Codes-style logins.
+
+## Key pages
+
+- [Home — 4K Streaming IPTV overview](https://4kstreaming.net/)
+- [Pricing — subscription plans and cost comparison](https://4kstreaming.net/pricing/)
+- [24-Hour Trial — $1.00 test period](https://4kstreaming.net/trial/)
+- [Order — how to subscribe and pay](https://4kstreaming.net/order/)
+- [Setup Guide — device-by-device activation instructions](https://4kstreaming.net/setup-guide/)
+- [FAQ — common questions about the service](https://4kstreaming.net/faq/)
+- [Guide — What is IPTV?](https://4kstreaming.net/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://4kstreaming.net/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for 4K streaming](https://4kstreaming.net/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to choose an IPTV subscription](https://4kstreaming.net/guides/how-to-choose-an-iptv-subscription/)
+- [Refund Policy](https://4kstreaming.net/refund-policy/)
+- [Terms of Use](https://4kstreaming.net/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI

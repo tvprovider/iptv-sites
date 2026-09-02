@@ -47,6 +47,9 @@ async function main() {
   if (fs.existsSync(path.join(ROOT, '_headers'))) {
     fs.copyFileSync(path.join(ROOT, '_headers'), path.join(DIST, '_headers'));
   }
+  if (fs.existsSync(path.join(ROOT, 'llms.txt'))) {
+    fs.copyFileSync(path.join(ROOT, 'llms.txt'), path.join(DIST, 'llms.txt'));
+  }
 
   const pageFiles = walkPageFiles(PAGES_DIR).sort();
   const urls = [];

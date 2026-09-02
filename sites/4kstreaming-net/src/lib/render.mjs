@@ -1,4 +1,4 @@
-import { site, nav as navLinks, footerLinks } from '../data/business.mjs';
+import { site, nav as navLinks, footerLinks, deviceOptions, countryOptions, catalog } from '../data/business.mjs';
 
 export function esc(str = '') {
   return String(str)
@@ -103,9 +103,32 @@ export function faqSchema(items) {
   };
 }
 
+export function productOfferSchema(plans) {
+  return plans.map((p) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `4K Streaming IPTV — ${p.label} Plan`,
+    description: p.blurb,
+    brand: { '@type': 'Brand', name: site.brand },
+    offers: {
+      '@type': 'Offer',
+      url: `${site.url}/order/?plan=${p.id}`,
+      price: p.price.toFixed(2),
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+  }));
+}
+
 // ---------------------------------------------------------------------------
 // Layout: header / footer / page shell
 // ---------------------------------------------------------------------------
+
+function logoMark({ height = 32, onDark = false } = {}) {
+  const width = Math.round(height * (188 / 32));
+  const textFill = onDark ? '#ffffff' : '#14100f';
+  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="4K Streaming — 4K Streaming IPTV logo"><rect width="32" height="32" rx="7" fill="#0d0d0d"/><path d="M9 21 L14 11 L17 17 L20 11 L23 21" fill="none" stroke="#ed3508" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="${textFill}">4K Streaming</text></svg>`;
+}
 
 function header(currentPath) {
   const links = navLinks
@@ -117,13 +140,13 @@ function header(currentPath) {
   return `
   <header class="site-header">
     <div class="container bar">
-      <a href="/" class="brand-mark">${esc(site.brand)}<span class="dot">.</span></a>
+      <a href="/" class="brand-mark">${logoMark({ height: 32 })}</a>
       <nav class="main-nav" id="main-nav" aria-label="Primary">
         ${links}
       </nav>
       <div class="header-cta">
-        <a href="/trial/" class="btn btn-ghost">Start 24-Hour Trial</a>
-        <a href="/pricing/" class="btn btn-primary">View Plans</a>
+        <a href="/trial/" class="btn btn-ghost">Try It for $1</a>
+        <a href="/pricing/" class="btn btn-primary">Subscribe Now</a>
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">☰</button>
       </div>
     </div>
@@ -141,7 +164,7 @@ function footer() {
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h4>${esc(site.brand)}</h4>
+          <div class="footer-brand">${logoMark({ height: 28, onDark: true })}</div>
           <p style="max-width:32ch;">Premium 4K IPTV streaming with transparent pricing and real setup support.</p>
         </div>
         ${col('Product', footerLinks.product)}
@@ -208,9 +231,9 @@ export function sectionHead({ eyebrow, title, lead, left = false }) {
   </div>`;
 }
 
-export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', href: '/pricing/' }, secondaryCta = { label: 'Start 24-Hour Trial', href: '/trial/' }, media }) {
+export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', href: '/pricing/' }, secondaryCta = { label: 'Start 24-Hour Trial', href: '/trial/' }, media, dark = false }) {
   return `
-  <section class="hero">
+  <section class="hero${dark ? ' hero-dark' : ''}">
     <div class="container hero-grid">
       <div class="hero-copy">
         ${eyebrow ? `<span class="eyebrow">${esc(eyebrow)}</span>` : ''}
@@ -218,12 +241,45 @@ export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', hr
         <p class="lead">${lead}</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="${primaryCta.href}">${esc(primaryCta.label)}</a>
-          <a class="btn btn-ghost btn-lg" href="${secondaryCta.href}">${esc(secondaryCta.label)}</a>
+          <a class="btn btn-ghost btn-lg${dark ? ' btn-ghost-on-dark' : ''}" href="${secondaryCta.href}">${esc(secondaryCta.label)}</a>
         </div>
       </div>
       <div class="hero-media">${media || ''}</div>
     </div>
   </section>`;
+}
+
+// Consistent layered-card illustration used as hero art on secondary pages —
+// same visual language as the homepage/about-us hero graphics, just swapping
+// the center icon per page topic. Zero external image dependency.
+export function iconMedia(iconInner, label) {
+  return `
+<svg viewBox="0 0 560 420" role="img" aria-label="${esc(label)}">
+  <rect width="560" height="420" rx="8" fill="#faf8f8"/>
+  <rect x="60" y="60" width="220" height="220" rx="12" fill="none" stroke="#f0e5e1" stroke-width="2"/>
+  <rect x="110" y="110" width="220" height="220" rx="12" fill="#ffffff" stroke="#f6b9a4" stroke-width="2"/>
+  <rect x="160" y="160" width="220" height="220" rx="12" fill="#fdece6" opacity="0.7"/>
+  <circle cx="270" cy="270" r="46" fill="#ed3508"/>
+  ${iconInner}
+</svg>`;
+}
+
+export function statsStrip(items) {
+  return `
+  <div class="stats-strip">
+    <div class="container stats-strip-inner">
+      ${items.map((s) => `<div class="stat-item"><span class="stat-number">${esc(s.number)}</span><span class="stat-label">${esc(s.label)}</span></div>`).join('')}
+    </div>
+  </div>`;
+}
+
+export function trustBar(items, { dark = false } = {}) {
+  return `
+  <div class="trust-bar${dark ? ' trust-bar-dark' : ''}">
+    <div class="container trust-bar-inner">
+      ${items.map((t) => `<span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>${esc(t)}</span>`).join('')}
+    </div>
+  </div>`;
 }
 
 export function featureGrid(items, cols = 3) {
@@ -258,25 +314,29 @@ export function deviceGrid(devices) {
 }
 
 export function pricingGrid(plans) {
+  const basePrice = plans[0].price;
   return `
   <div class="pricing-grid">
     ${plans
-      .map(
-        (p) => `
+      .map((p) => {
+        const savePct = p.perMonth ? Math.round((1 - p.perMonth / basePrice) * 100) : 0;
+        return `
       <div class="plan-card${p.highlight ? ' highlight' : ''}">
         ${p.highlight ? '<span class="badge badge-brand tag">Most Popular</span>' : ''}
         <h3>${esc(p.label)}</h3>
         <div class="plan-price">$${p.price.toFixed(2)}</div>
-        <div class="plan-permonth">${p.perMonth ? `~$${p.perMonth.toFixed(2)} / month` : 'billed monthly'}</div>
+        <div class="plan-permonth">${p.perMonth ? `~$${p.perMonth.toFixed(2)} / month` : 'billed monthly'}${savePct > 0 ? ` <span class="badge badge-success">Save ${savePct}%</span>` : ''}</div>
         <p class="small">${esc(p.blurb)}</p>
         <ul>
-          <li>Access to the full live channel lineup</li>
+          <li>${catalog.liveChannels} live channels, including premium</li>
+          <li>${catalog.vods} VOD titles — films &amp; series</li>
           <li>Up to 4K resolution where available</li>
           <li>Compatible with all supported devices</li>
         </ul>
-        <a class="btn btn-primary btn-block" href="/trial/">Get Started</a>
-      </div>`
-      )
+        <a class="btn btn-primary btn-block" href="/order/?plan=${p.id}">Subscribe Now</a>
+        <a class="plan-secondary-link" href="/trial/">or try 24 hours for $1 first →</a>
+      </div>`;
+      })
       .join('')}
   </div>`;
 }
@@ -301,11 +361,13 @@ export function ctaBanner({ title, lead, primaryCta = { label: 'View Plans', hre
   <section>
     <div class="container">
       <div class="cta-banner">
+        <div class="cta-banner-glow" aria-hidden="true"></div>
+        <span class="eyebrow">Ready when you are</span>
         <h2>${title}</h2>
-        <p style="max-width:48ch;margin:0 auto;">${lead}</p>
-        <div class="hero-actions">
+        <p>${lead}</p>
+        <div class="cta-banner-actions">
           <a class="btn btn-primary btn-lg" href="${primaryCta.href}">${esc(primaryCta.label)}</a>
-          <a class="btn btn-ghost btn-lg" style="border-color:rgba(255,255,255,0.3);color:#fff;" href="${secondaryCta.href}">${esc(secondaryCta.label)}</a>
+          <a class="cta-banner-link" href="${secondaryCta.href}">${esc(secondaryCta.label)} →</a>
         </div>
       </div>
     </div>
@@ -363,6 +425,26 @@ export function section({ id, bg, tight, html }) {
   return `<section${id ? ` id="${id}"` : ''} class="${bg ? `bg-${bg}` : ''}${tight ? ' tight' : ''}"><div class="container">${html}</div></section>`;
 }
 
+function countryField(id) {
+  const options = countryOptions.map((c) => `<option>${esc(c)}</option>`).join('');
+  return `
+    <div class="form-field">
+      <label for="${id}">Country</label>
+      <select id="${id}" name="country" required>
+        <option value="" disabled selected>Select your country</option>
+        ${options}
+      </select>
+    </div>`;
+}
+
+function whatsappField(id) {
+  return `
+    <div class="form-field">
+      <label for="${id}">WhatsApp Number <span class="muted">(or regular phone number if you don't have WhatsApp)</span></label>
+      <input type="tel" id="${id}" name="phone" required autocomplete="tel" placeholder="+1 555 123 4567">
+    </div>`;
+}
+
 export function contactForm({ topics = [] } = {}) {
   const options = topics.map((t) => `<option value="${esc(t)}">${esc(t)}</option>`).join('');
   return `
@@ -377,6 +459,8 @@ export function contactForm({ topics = [] } = {}) {
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required autocomplete="email">
     </div>
+    ${countryField('country')}
+    ${whatsappField('phone')}
     ${
       topics.length
         ? `<div class="form-field">
@@ -396,6 +480,7 @@ export function contactForm({ topics = [] } = {}) {
 }
 
 export function trialForm() {
+  const options = deviceOptions.map((d) => `<option>${esc(d)}</option>`).join('');
   return `
   <form id="trial-form" class="card" novalidate>
     <div class="form-alert success" id="trial-success" role="status">Thank you! Check your email for your 24-hour trial activation details.</div>
@@ -404,20 +489,48 @@ export function trialForm() {
       <label for="trial-email">Email</label>
       <input type="email" id="trial-email" name="email" required autocomplete="email">
     </div>
+    ${countryField('trial-country')}
+    ${whatsappField('trial-phone')}
     <div class="form-field">
       <label for="trial-device">Primary device</label>
-      <select id="trial-device" name="device">
-        <option>Smart TV</option>
-        <option>Android TV</option>
-        <option>Fire TV / Firestick</option>
-        <option>Android Phone or Tablet</option>
-        <option>iPhone or iPad</option>
-        <option>Windows</option>
-        <option>macOS</option>
-      </select>
+      <select id="trial-device" name="device">${options}</select>
     </div>
     <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button type="submit" class="btn btn-primary btn-block">Start 24-Hour Trial — $1.00</button>
     <p class="form-hint">By starting a trial you agree to our <a href="/terms-of-use/">Terms of Use</a> and <a href="/refund-policy/">Refund Policy</a>.</p>
+  </form>`;
+}
+
+export function orderForm(plans) {
+  const planOptions = plans
+    .map((p) => `<option value="${esc(p.id)}" data-label="${esc(p.label)} — $${p.price.toFixed(2)}"${p.highlight ? ' selected' : ''}>${esc(p.label)} — $${p.price.toFixed(2)}${p.highlight ? ' (Most Popular)' : ''}</option>`)
+    .join('');
+  const deviceOpts = deviceOptions.map((d) => `<option>${esc(d)}</option>`).join('');
+  return `
+  <form id="order-form" class="card" novalidate>
+    <div class="form-alert success" id="order-success" role="status">Thank you! Your order request is in. We'll email you a secure payment link shortly — once paid, your activation details go out right away.</div>
+    <div class="form-alert error" id="order-error" role="alert">Something went wrong submitting your order. Please try again or contact support.</div>
+    <div class="form-field">
+      <label for="order-plan">Plan</label>
+      <select id="order-plan" name="plan">${planOptions}</select>
+    </div>
+    <div class="form-field">
+      <label for="order-name">Name</label>
+      <input type="text" id="order-name" name="name" required autocomplete="name">
+    </div>
+    <div class="form-field">
+      <label for="order-email">Email</label>
+      <input type="email" id="order-email" name="email" required autocomplete="email">
+      <p class="form-hint">Your payment link and activation details will be sent here.</p>
+    </div>
+    ${countryField('order-country')}
+    ${whatsappField('order-phone')}
+    <div class="form-field">
+      <label for="order-device">Primary device</label>
+      <select id="order-device" name="device">${deviceOpts}</select>
+    </div>
+    <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Order Request</button>
+    <p class="form-hint">By submitting, you agree to our <a href="/terms-of-use/">Terms of Use</a> and <a href="/refund-policy/">Refund Policy</a>. No payment is collected on this page — you'll receive a secure payment link by email.</p>
   </form>`;
 }

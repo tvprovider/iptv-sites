@@ -7,7 +7,7 @@ export const site = {
   url: 'https://4kstreaming.net',
   tagline: 'Premium 4K IPTV streaming, done right',
   supportEmail: 'support@4kstreaming.net',
-  leadCaptureDestination: 'contacts.easymoney@gmail.com', // internal routing only, never shown publicly
+  leadCaptureDestination: 'premiumtv1service@gmail.com', // internal routing only, never shown publicly
   themeColor: '#ed3508',
 };
 
@@ -23,6 +23,7 @@ export const nav = [
 export const footerLinks = {
   product: [
     { label: 'Pricing', href: '/pricing/' },
+    { label: 'Order Now', href: '/order/' },
     { label: '24-Hour Trial', href: '/trial/' },
     { label: 'Setup Guide', href: '/setup-guide/' },
     { label: 'Supported Devices', href: '/setup-guide/#devices' },
@@ -53,11 +54,44 @@ export const plans = [
   { id: 'm12', label: '12 Months', price: 79.99, period: '12 months', highlight: false, blurb: 'The lowest per-month cost for committed viewers.', perMonth: 6.67 },
 ];
 
+export const catalog = {
+  liveChannels: '40,000+',
+  vods: '180,000+',
+};
+
 export const trial = {
   price: 1.00,
   duration: '24 hours',
   label: '24-Hour Trial',
 };
+
+export const countryOptions = [
+  'United States', 'United Kingdom', 'Canada', 'Australia', 'Ireland', 'New Zealand',
+  'Germany', 'France', 'Italy', 'Spain', 'Portugal', 'Netherlands', 'Belgium',
+  'Switzerland', 'Austria', 'Sweden', 'Norway', 'Denmark', 'Finland', 'Iceland',
+  'Poland', 'Czech Republic', 'Greece', 'Romania', 'Hungary', 'Bulgaria', 'Croatia',
+  'Slovakia', 'Slovenia', 'Serbia', 'Ukraine', 'Turkey', 'Israel',
+  'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Bahrain', 'Oman',
+  'Jordan', 'Lebanon', 'Egypt', 'Morocco', 'Algeria', 'Tunisia',
+  'South Africa', 'Nigeria', 'Kenya', 'Ghana',
+  'India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Nepal',
+  'China', 'Japan', 'South Korea', 'Philippines', 'Indonesia', 'Malaysia', 'Singapore',
+  'Thailand', 'Vietnam',
+  'Mexico', 'Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru', 'Venezuela',
+  'Ecuador', 'Uruguay', 'Paraguay', 'Bolivia', 'Costa Rica', 'Panama',
+  'Dominican Republic', 'Puerto Rico', 'Jamaica', 'Trinidad and Tobago',
+  'Other',
+];
+
+export const deviceOptions = [
+  'Smart TV',
+  'Android TV',
+  'Fire TV / Firestick',
+  'Android Phone or Tablet',
+  'iPhone or iPad',
+  'Windows',
+  'macOS',
+];
 
 export const devices = [
   {

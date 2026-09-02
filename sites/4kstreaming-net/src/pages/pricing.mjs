@@ -1,10 +1,11 @@
 import {
   hero, section, sectionHead, pricingGrid, comparisonTable, faqAccordion,
-  ctaBanner, breadcrumbs, breadcrumbSchema, faqSchema, deviceGrid,
+  ctaBanner, breadcrumbs, breadcrumbSchema, faqSchema, deviceGrid, productOfferSchema, trustBar, iconMedia,
 } from '../lib/render.mjs';
-import { plans, trial, devices } from '../data/business.mjs';
+import { plans, trial, devices, catalog } from '../data/business.mjs';
 
 const pricingFaqs = [
+  { q: 'How many channels and VOD titles are included?', a: `Every plan includes the same catalog: ${catalog.liveChannels} live channels, including premium channels, and ${catalog.vods} VOD titles covering the latest films and series.` },
   { q: 'Can I switch plans later?', a: 'Yes. You can move to a longer or shorter plan when your current term ends. Contact support if you would like help timing the switch.' },
   { q: 'Do prices ever change without notice?', a: 'The prices listed on this page are our current rates. If pricing changes, it will apply to new orders and renewals going forward, not retroactively to an active paid term.' },
   { q: 'Is the trial applied toward a subscription?', a: 'The 24-hour trial is a standalone, low-cost way to test the service and is billed separately from any subscription plan you choose afterward.' },
@@ -15,20 +16,42 @@ export default {
   slug: 'pricing',
   title: 'Pricing — 4K Streaming IPTV Plans & 24-Hour Trial | 4K Streaming',
   description: 'Compare 4K Streaming IPTV subscription plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99, plus a $1.00 24-hour trial.',
-  jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs)],
+  jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs), ...productOfferSchema(plans)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing' }])}
 ${hero({
-  eyebrow: 'Pricing',
-  h1: 'Simple, transparent IPTV pricing',
-  lead: 'Four plan lengths, one clear price each. No hidden renewal fees, no surprise upsells at checkout.',
-  media: '',
+  eyebrow: 'IPTV subscription plans',
+  h1: 'The best IPTV subscription pricing — simple, transparent, no surprises',
+  lead: 'Four plan lengths, one clear price each. No hidden renewal fees, no surprise upsells at checkout — just a straightforward 4K Streaming IPTV subscription built to replace cable or satellite.',
+  primaryCta: { label: 'Subscribe Now', href: '#plans' },
+  secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
+  media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
+  dark: true,
 })}
 
+${trustBar(['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Clear refund policy'], { dark: true })}
+
 ${section({
+  id: 'plans',
   html: `
   ${sectionHead({ eyebrow: 'Subscription plans', title: 'Choose your plan' })}
   ${pricingGrid(plans)}`,
+})}
+
+${section({
+  bg: 'quiet',
+  html: `
+  ${sectionHead({ eyebrow: 'Cord-cutting', title: 'Why an IPTV subscription beats traditional cable', left: true })}
+  ${comparisonTable(
+    ['', 'Traditional cable/satellite', '4K Streaming IPTV'],
+    [
+      ['Contract', 'Often 12–24 month lock-in', 'No long-term contract required'],
+      ['Setup', 'Technician install, hardware rental', 'Self-setup in minutes on your own device'],
+      ['Devices', 'Tied to a fixed set-top box', 'Works across Smart TV, mobile, and computer'],
+      ['Trial period', 'Rarely offered', `${trial.label} for $${trial.price.toFixed(2)}`],
+      ['Pricing clarity', 'Bundled fees, equipment charges', 'One flat price per plan, listed above'],
+    ]
+  )}`,
 })}
 
 ${section({
@@ -45,7 +68,7 @@ ${section({
   html: `
   ${sectionHead({ eyebrow: 'Included with every plan', title: "What's included", left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>Full channel access</h3><p>Every plan includes the same live channel lineup — longer plans only change the price and commitment length, not the content available.</p></div>
+    <div class="card"><h3>Full channel &amp; VOD access</h3><p>Every plan includes the same ${catalog.liveChannels} live channels and ${catalog.vods} VOD titles — longer plans only change the price and commitment length, not the content available.</p></div>
     <div class="card"><h3>Up to 4K resolution</h3><p>Stream in up to 4K where your device and the source content support it.</p></div>
     <div class="card"><h3>Multi-device compatibility</h3><p>Use your subscription across any of our supported device types.</p></div>
   </div>`,
@@ -113,6 +136,6 @@ ${section({
   ${faqAccordion(pricingFaqs)}`,
 })}
 
-${ctaBanner({ title: 'Ready to get started?', lead: 'Pick the plan that fits, or test the service first with the 24-hour trial.' })}
+${ctaBanner({ title: 'Ready to get started?', lead: 'Pick the plan that fits, or test the service first with the 24-hour trial.', primaryCta: { label: 'Subscribe Now', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
 `,
 };

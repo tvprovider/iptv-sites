@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema,
+  breadcrumbSchema, faqSchema, iconMedia,
 } from '../lib/render.mjs';
 import { coreFaqs } from '../data/business.mjs';
 
@@ -37,6 +37,16 @@ const topics = [
     eyebrow: 'Devices',
     title: 'Device compatibility',
     items: [coreFaqs[2]],
+  },
+  {
+    id: 'formats',
+    eyebrow: 'Compatibility',
+    title: 'Playlist formats & multi-device use',
+    items: [
+      { q: 'What playlist formats do you support?', a: 'We support both M3U playlist URLs and Xtream Codes-style logins (username, password, and server URL), so you can use nearly any compatible IPTV player app on any supported device.' },
+      { q: 'Do you support an EPG (program guide)?', a: 'Most compatible player apps load an electronic program guide automatically from your playlist or login details. If yours doesn\'t, check the app\'s settings for a manual EPG URL field — see our Setup Guide for details.' },
+      { q: 'Can I use my subscription on more than one device at once?', a: 'Each plan is intended for use on one device at a time. If you need simultaneous multi-device access, contact us before subscribing to discuss options.' },
+    ],
   },
   {
     id: 'setup',
@@ -95,7 +105,7 @@ ${hero({
   eyebrow: 'FAQ',
   h1: 'Frequently asked questions',
   lead: 'Straight answers about how the service works, what devices are supported, and what to expect.',
-  media: '',
+  media: iconMedia('<text x="270" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="600">?</text>', 'FAQ illustration'),
 })}
 ${topics
   .map((t, i) =>
