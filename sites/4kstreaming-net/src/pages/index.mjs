@@ -6,18 +6,18 @@ import { plans, trial, devices, coreFaqs, site } from '../data/business.mjs';
 
 const heroMedia = `
 <svg viewBox="0 0 560 420" role="img" aria-label="4K Streaming IPTV interface preview">
-  <rect width="560" height="420" rx="8" fill="#0d1b2e"/>
-  <rect x="24" y="24" width="512" height="40" rx="4" fill="#16233a"/>
-  <circle cx="46" cy="44" r="5" fill="#ea2261"/><circle cx="64" cy="44" r="5" fill="#9b6829"/><circle cx="82" cy="44" r="5" fill="#15be53"/>
-  <rect x="24" y="84" width="164" height="312" rx="4" fill="#16233a"/>
-  ${[0,1,2,3,4,5,6].map((i) => `<rect x="40" y="${104 + i*42}" width="132" height="30" rx="4" fill="${i===1 ? '#533afd' : '#1f2f4a'}"/>`).join('')}
-  <rect x="204" y="84" width="332" height="200" rx="6" fill="#111f35"/>
-  <polygon points="345,150 345,220 400,185" fill="#533afd"/>
-  <rect x="204" y="300" width="332" height="96" rx="6" fill="#16233a"/>
-  <rect x="220" y="316" width="120" height="14" rx="3" fill="#2a3c58"/>
-  <rect x="220" y="340" width="280" height="10" rx="3" fill="#1f2f4a"/>
-  <rect x="220" y="358" width="200" height="10" rx="3" fill="#1f2f4a"/>
-  <text x="368" y="365" fill="#7c8aa5" font-family="sans-serif" font-size="11">4K</text>
+  <rect width="560" height="420" rx="8" fill="#0d0d0d"/>
+  <rect x="24" y="24" width="512" height="40" rx="4" fill="#1a1a1a"/>
+  <circle cx="46" cy="44" r="5" fill="#ed3508"/><circle cx="64" cy="44" r="5" fill="#8a6d3a"/><circle cx="82" cy="44" r="5" fill="#15be53"/>
+  <rect x="24" y="84" width="164" height="312" rx="4" fill="#1a1a1a"/>
+  ${[0,1,2,3,4,5,6].map((i) => `<rect x="40" y="${104 + i*42}" width="132" height="30" rx="4" fill="${i===1 ? '#ed3508' : '#262626'}"/>`).join('')}
+  <rect x="204" y="84" width="332" height="200" rx="6" fill="#161616"/>
+  <polygon points="345,150 345,220 400,185" fill="#ed3508"/>
+  <rect x="204" y="300" width="332" height="96" rx="6" fill="#1a1a1a"/>
+  <rect x="220" y="316" width="120" height="14" rx="3" fill="#2e2e2e"/>
+  <rect x="220" y="340" width="280" height="10" rx="3" fill="#262626"/>
+  <rect x="220" y="358" width="200" height="10" rx="3" fill="#262626"/>
+  <text x="368" y="365" fill="#8a8a8a" font-family="sans-serif" font-size="11">4K</text>
 </svg>`;
 
 export default {

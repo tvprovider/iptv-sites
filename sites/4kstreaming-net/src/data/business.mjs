@@ -8,7 +8,7 @@ export const site = {
   tagline: 'Premium 4K IPTV streaming, done right',
   supportEmail: 'support@4kstreaming.net',
   leadCaptureDestination: 'contacts.easymoney@gmail.com', // internal routing only, never shown publicly
-  themeColor: '#533afd',
+  themeColor: '#ed3508',
 };
 
 export const nav = [

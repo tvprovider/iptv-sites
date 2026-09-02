@@ -1,42 +1,42 @@
 /* 4K Streaming — design system
-   Editorial premium-SaaS palette: white canvas, deep-navy text, one purple
-   accent reserved for action surfaces. Conservative radius, blue-tinted
+   Bold red/black premium palette: white canvas, near-black text, one red
+   accent reserved for action surfaces. Conservative radius, warm-tinted
    shadows, restrained motion. */
 
 :root {
   --bg: #ffffff;
-  --bg-quiet: #f8fafd;
+  --bg-quiet: #faf8f8;
   --surface: #ffffff;
-  --surface-soft: #f6f9fc;
-  --bg-dark: #1c1e54;
+  --surface-soft: #fbf5f3;
+  --bg-dark: #0d0d0d;
 
-  --text: #061b31;
-  --text-soft: #50617a;
-  --text-subdued: #64748d;
-  --text-label: #273951;
+  --text: #14100f;
+  --text-soft: #5c5250;
+  --text-subdued: #7a7270;
+  --text-label: #3a3230;
   --text-on-dark: #ffffff;
   --text-on-dark-muted: rgba(255, 255, 255, 0.72);
 
-  --brand: #533afd;
-  --brand-hover: #4434d4;
-  --brand-tint: #e8e9ff;
-  --brand-soft: #b9b9f9;
+  --brand: #ed3508;
+  --brand-hover: #cc2c00;
+  --brand-tint: #fdece6;
+  --brand-soft: #f6b9a4;
 
-  --border: #e5edf5;
-  --border-strong: #061b31;
+  --border: #f0e5e1;
+  --border-strong: #14100f;
 
   --success: #108c3d;
   --success-bg: rgba(21, 190, 83, 0.14);
   --success-border: rgba(21, 190, 83, 0.4);
-  --danger: #ea2261;
-  --danger-bg: rgba(234, 34, 97, 0.1);
+  --danger: #d1174a;
+  --danger-bg: rgba(209, 23, 74, 0.1);
 
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
 
-  --shadow-standard: rgba(0, 55, 112, 0.1) 0 6px 22px, rgba(0, 59, 137, 0.02) 0 4px 8px;
-  --shadow-elevated: rgba(50, 50, 93, 0.2) 0 30px 45px -30px, rgba(0, 0, 0, 0.08) 0 18px 36px -18px;
+  --shadow-standard: rgba(60, 20, 10, 0.08) 0 6px 22px, rgba(60, 20, 10, 0.02) 0 4px 8px;
+  --shadow-elevated: rgba(237, 53, 8, 0.16) 0 30px 45px -30px, rgba(0, 0, 0, 0.1) 0 18px 36px -18px;
 
   --page-width: 1120px;
   --prose-width: 760px;
@@ -161,7 +161,7 @@ p { margin: 0 0 1em; color: var(--text-soft); }
 .btn-primary { background: var(--brand); color: #fff; }
 .btn-primary:hover { background: var(--brand-hover); text-decoration: none; transform: translateY(-1px); }
 .btn-ghost { background: transparent; color: var(--brand); border-color: var(--brand-soft); }
-.btn-ghost:hover { background: var(--brand-bg-hover, rgba(83,58,253,0.05)); text-decoration: none; }
+.btn-ghost:hover { background: var(--brand-bg-hover, rgba(237,53,8,0.06)); text-decoration: none; }
 .btn-lg { padding: 14px 26px; font-size: 1rem; }
 .btn-block { width: 100%; }
 
@@ -340,7 +340,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(83, 58, 253, 0.18);
+  box-shadow: 0 0 0 3px rgba(237, 53, 8, 0.18);
 }
 textarea { resize: vertical; min-height: 120px; }
 .form-hint { font-size: 0.8rem; color: var(--text-subdued); margin-top: 6px; }

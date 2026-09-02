@@ -4,11 +4,11 @@ import {
 
 const trustMedia = `
 <svg viewBox="0 0 560 420" role="img" aria-label="Abstract illustration representing transparency and trust">
-  <rect width="560" height="420" rx="8" fill="#f8fafd"/>
-  <rect x="60" y="60" width="220" height="220" rx="12" fill="none" stroke="#e5edf5" stroke-width="2"/>
-  <rect x="110" y="110" width="220" height="220" rx="12" fill="#ffffff" stroke="#b9b9f9" stroke-width="2"/>
-  <rect x="160" y="160" width="220" height="220" rx="12" fill="#e8e9ff" opacity="0.7"/>
-  <circle cx="270" cy="270" r="46" fill="#533afd"/>
+  <rect width="560" height="420" rx="8" fill="#faf8f8"/>
+  <rect x="60" y="60" width="220" height="220" rx="12" fill="none" stroke="#f0e5e1" stroke-width="2"/>
+  <rect x="110" y="110" width="220" height="220" rx="12" fill="#ffffff" stroke="#f6b9a4" stroke-width="2"/>
+  <rect x="160" y="160" width="220" height="220" rx="12" fill="#fdece6" opacity="0.7"/>
+  <circle cx="270" cy="270" r="46" fill="#ed3508"/>
   <path d="M250 270 L264 285 L294 253" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
