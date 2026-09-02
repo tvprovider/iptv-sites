@@ -6,5 +6,8 @@
   "description": "Static site source for 4kstreaming.net — zero-dependency build.",
   "scripts": {
     "build": "node src/build.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.86.0"
   }
 }
