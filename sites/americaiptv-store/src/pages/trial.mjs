@@ -5,10 +5,10 @@ import {
 import { trial, devices } from '../data/business.mjs';
 
 const trialFaqs = [
-  { q: 'Is the trial really only $1.00?', a: `Yes. The ${trial.label} costs $${trial.price.toFixed(2)} and gives you ${trial.duration} of access — it exists to let you test the service, not as a marketing gimmick.` },
-  { q: 'Can I get a second trial?', a: 'Trials are intended as a one-time evaluation per customer so we can keep the price low and genuine.' },
-  { q: 'Does the trial include every channel?', a: 'The trial gives you access to the same live channel lineup as a paid subscription, so what you see is representative of the full service.' },
-  { q: 'What if the trial doesn’t work on my device?', a: 'Check our Setup Guide for your device first. If you still have trouble, contact support — we’d rather help you get it working than have you guess.' },
+  { q: 'Why does the trial cost anything at all?', a: `A small charge keeps the ${trial.label} genuine — free trials attract volume that has nothing to do with actually evaluating the service. $${trial.price.toFixed(2)} filters that out.` },
+  { q: 'Can I run it a second time?', a: 'It is designed as a one-time check per customer, which is part of what keeps the price this low in the first place.' },
+  { q: 'Is the trial a scaled-down preview?', a: 'No. It runs on the identical infrastructure and channel lineup as a paid subscription — what you see is exactly what you would be paying for.' },
+  { q: 'What if my device will not connect?', a: 'Start with the Setup Guide for that specific device. If it is still not working, reach out to support directly rather than troubleshooting blind.' },
 ];
 
 export default {
@@ -31,8 +31,8 @@ ${hero({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Why $1, not free', title: `What the ${trial.duration} trial is`, left: true })}
-  ${answerBox(`<p>The ${trial.label} gives you ${trial.duration} of full access to the live channel lineup for a nominal $${trial.price.toFixed(2)} charge. The small fee exists to keep trials genuine and limit abuse, while still making it easy to test the service before paying full subscription price.</p>`)}`,
+  ${sectionHead({ eyebrow: 'Why $1, not free', title: 'Why the trial is not just given away', left: true })}
+  ${answerBox(`<p>A completely free trial gets flooded with people who have no intention of subscribing, which slows the whole thing down. $${trial.price.toFixed(2)} for ${trial.duration} keeps it fast and available for people actually deciding whether to subscribe.</p>`)}`,
 })}
 
 ${section({
@@ -40,19 +40,19 @@ ${section({
   html: `
   <div class="grid grid-2">
     <div>
-      ${sectionHead({ eyebrow: 'Included', title: "What's included", left: true })}
+      ${sectionHead({ eyebrow: 'Included', title: "What a dollar gets you", left: true })}
       <ul style="padding-left:20px;color:var(--text-soft);">
-        <li>Full access to the live channel lineup for ${trial.duration}</li>
-        <li>Up to 4K resolution where your device and content support it</li>
-        <li>Access on one device of your choice</li>
+        <li>The full live channel lineup for all of ${trial.duration}</li>
+        <li>Up to 4K wherever your content and device support it</li>
+        <li>One device, fully active</li>
       </ul>
     </div>
     <div>
-      ${sectionHead({ eyebrow: 'Not included', title: "What's not included", left: true })}
+      ${sectionHead({ eyebrow: 'Not included', title: "The boundaries", left: true })}
       <ul style="padding-left:20px;color:var(--text-soft);">
-        <li>Access beyond the ${trial.duration} window</li>
-        <li>Simultaneous use on multiple devices</li>
-        <li>A refund of the trial fee once the trial period has been used (see our Refund Policy)</li>
+        <li>Anything past the ${trial.duration} mark — access ends on its own</li>
+        <li>Two devices running at once</li>
+        <li>A refund once the trial has actually been used (see the Refund Policy)</li>
       </ul>
     </div>
   </div>`,
@@ -60,18 +60,18 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Getting access', title: 'Activation process', left: true })}
-  <p>After you submit the form below, we send your trial activation details by email. Enter them into a compatible player app on your device and you can start watching within minutes.</p>`,
+  ${sectionHead({ eyebrow: 'Getting access', title: 'From submitting the form to watching', left: true })}
+  <p>The form below triggers an email with your activation details shortly after. Load them into a compatible player app and you are watching in minutes, not waiting on a callback.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Before you start', title: 'Requirements', left: true })}
+  ${sectionHead({ eyebrow: 'Before you start', title: 'What to have ready', left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>Internet connection</h3><p>A stable connection with at least 25 Mbps sustained download speed is recommended for consistent 4K playback.</p></div>
-    <div class="card"><h3>A compatible device</h3><p>Any of our supported device types with the ability to install a compatible IPTV player app.</p></div>
-    <div class="card"><h3>A valid email address</h3><p>Used to send your activation details — the same address you'll use if you subscribe afterward.</p></div>
+    <div class="card"><h3>25 Mbps, held steady</h3><p>Sustained speed matters more than a headline peak number for consistent 4K.</p></div>
+    <div class="card"><h3>Whatever you already own</h3><p>Any of the supported device types, as long as it can run a compatible player app.</p></div>
+    <div class="card"><h3>An email you check regularly</h3><p>That is where activation details go — use the one you would keep using afterward.</p></div>
   </div>`,
 })}
 
@@ -84,27 +84,27 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Getting connected', title: 'Setup process', left: true })}
-  <p>Setup during the trial is identical to setup for a paid subscription: install a compatible player app, enter your credentials or playlist URL, and start watching. See our <a href="/setup-guide/">Setup Guide</a> for device-specific steps.</p>`,
+  ${sectionHead({ eyebrow: 'Getting connected', title: 'No separate trial setup to learn', left: true })}
+  <p>The steps are exactly the same as for a paid plan: install a compatible player app, drop in your credentials or playlist URL, and start watching. The <a href="/setup-guide/">Setup Guide</a> has device-specific instructions.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Be realistic', title: 'Streaming expectations during the trial', left: true })}
-  <p>Your trial experience reflects the real service — the same infrastructure, the same channel lineup. Streaming quality still depends on your internet connection, device, and the source content, so use the trial specifically to check these factors for your own setup.</p>`,
+  ${sectionHead({ eyebrow: 'Be realistic', title: 'What one day can and cannot prove', left: true })}
+  <p>You are on the real service — same servers, same channels — so this is not a stripped-down demo. What you cannot control through the trial is your own network and hardware, which is the exact thing worth checking before paying for a longer plan.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Next steps', title: 'What happens after the trial', left: true })}
-  <p>Your trial access ends automatically after ${trial.duration}. Nothing renews or charges automatically — if you'd like to continue, choose a subscription plan on our <a href="/pricing/">Pricing page</a>.</p>`,
+  ${sectionHead({ eyebrow: 'Next steps', title: 'What happens when the day ends', left: true })}
+  <p>Access shuts off automatically after ${trial.duration} — nothing charges on its own after that. If it went well, plans are on the <a href="/pricing/">Pricing page</a> whenever you are ready.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Fairness', title: 'Refund information', left: true })}
-  <p>Because the trial fee is nominal and the access window is short, trial charges are generally non-refundable once activation details have been sent — full terms are in our <a href="/refund-policy/">Refund Policy</a>.</p>`,
+  ${sectionHead({ eyebrow: 'Fairness', title: 'Where the refund line sits', left: true })}
+  <p>Given the small fee and short window, trial charges generally are not refundable once your activation details have gone out — full terms are on the <a href="/refund-policy/">Refund Policy</a> page.</p>`,
 })}
 
 ${section({
@@ -120,7 +120,7 @@ ${section({
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
       ${sectionHead({ eyebrow: 'Get started', title: 'Start your 24-hour trial', left: true })}
-      <p>Enter your email below and we'll send your activation details. Need help first? Visit our <a href="/contact/">Contact page</a>.</p>
+      <p>Drop your email in below and activation details follow shortly after. Questions first? The <a href="/contact/">Contact page</a> reaches an actual person.</p>
     </div>
     ${trialForm()}
   </div>`,
