@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, pricingGrid, comparisonTable, faqAccordion,
-  ctaBanner, breadcrumbs, breadcrumbSchema, faqSchema, deviceGrid, productOfferSchema, trustBar, iconMedia,
+  ctaBanner, breadcrumbs, breadcrumbSchema, faqSchema, deviceGrid, productOfferSchema, iconMedia,
 } from '../lib/render.mjs';
 import { plans, trial, devices, catalog } from '../data/business.mjs';
 
@@ -27,9 +27,8 @@ ${hero({
   secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
   media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
   dark: true,
+  trustItems: ['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Clear refund policy'],
 })}
-
-${trustBar(['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Clear refund policy'], { dark: true })}
 
 ${section({
   id: 'plans',

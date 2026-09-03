@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, featureGrid, deviceGrid, pricingGrid, faqAccordion,
-  ctaBanner, stepsList, answerBox, esc, faqSchema, marquee, comparisonTable, trustBar, iconMedia,
+  ctaBanner, stepsList, answerBox, esc, faqSchema, marquee, comparisonTable, iconMedia,
 } from '../lib/render.mjs';
 import { plans, trial, devices, coreFaqs, site, catalog } from '../data/business.mjs';
 
@@ -17,9 +17,8 @@ ${hero({
   primaryCta: { label: 'Subscribe Now', href: '/pricing/' },
   secondaryCta: { label: 'Try It for $1', href: '/trial/' },
   dark: true,
+  trustItems: ['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Real 24-hour trial for $1'],
 })}
-
-${trustBar(['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Real 24-hour trial for $1'], { dark: true })}
 
 ${marquee(devices.map((d) => d.name))}
 

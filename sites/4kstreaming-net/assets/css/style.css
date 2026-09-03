@@ -184,7 +184,6 @@ p { margin: 0 0 1em; color: var(--text-soft); }
   .cta-banner { padding: 44px 22px; }
   .cta-banner h2 { font-size: clamp(1.5rem, 7vw, 1.9rem); }
   .steps { gap: 18px; }
-  .trust-bar-inner, .trust-bar-dark { gap: 10px 18px; }
   .trust-item { font-size: 0.8rem; }
   .hero-actions, .cta-banner-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn, .cta-banner-actions .btn { width: 100%; text-align: center; }
@@ -315,19 +314,27 @@ section.tight { padding: 56px 0; }
 .stat-number { font-size: clamp(2rem, 3vw + 1rem, 2.8rem); font-weight: 300; color: #fff; letter-spacing: -0.02em; }
 .stat-label { font-size: 0.85rem; color: var(--text-on-dark-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* Trust bar */
-.trust-bar { background: var(--bg-quiet); border-bottom: 1px solid var(--border); padding: 16px 0; }
-.trust-bar-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; }
+/* Trust items: shared label/checkmark styling, used inside the hero's own
+   trust row below (folded into the hero section itself so it shares the
+   exact same background with no seam). */
 .trust-item { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text-label); white-space: nowrap; }
 .trust-check { color: var(--success); font-weight: 700; }
-.trust-bar-dark {
-  background: radial-gradient(ellipse 900px 500px at 15% 20%, rgba(237,53,8,0.16), transparent 60%), var(--bg-dark);
-  border-bottom: none;
-  padding: 36px 0 44px;
-  margin-top: -1px; /* fuse with the hero above so no seam line can render between the two sections */
+
+.hero-trust-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 32px;
+  margin-top: 44px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.trust-bar-dark .trust-item { color: var(--text-on-dark-muted); }
-.trust-bar-dark .trust-check { color: var(--brand-soft); }
+.hero-trust-inner .trust-item { color: var(--text-on-dark-muted); }
+.hero-trust-inner .trust-check { color: var(--brand-soft); }
+@media (max-width: 640px) { .hero-trust-inner { gap: 10px 18px; margin-top: 32px; padding-top: 24px; padding-bottom: 32px; } }
 
 /* Cards / grids */
 .grid { display: grid; gap: 24px; }

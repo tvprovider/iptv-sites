@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema, deviceGrid, trialForm, answerBox, trustBar, iconMedia,
+  breadcrumbSchema, faqSchema, deviceGrid, trialForm, answerBox, iconMedia,
 } from '../lib/render.mjs';
 import { trial, devices } from '../data/business.mjs';
 
@@ -26,9 +26,8 @@ ${hero({
   secondaryCta: { label: 'Compare subscription plans', href: '/pricing/' },
   media: iconMedia('<circle cx="270" cy="270" r="22" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M270 256 L270 270 L282 278" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', '24-hour trial illustration'),
   dark: true,
+  trustItems: ['No long-term contract', '$1 for 24 hours of access', 'Same channel lineup as paid plans', 'Cancel anytime, no auto-renewal'],
 })}
-
-${trustBar(['No long-term contract', '$1 for 24 hours of access', 'Same channel lineup as paid plans', 'Cancel anytime, no auto-renewal'], { dark: true })}
 
 ${section({
   html: `

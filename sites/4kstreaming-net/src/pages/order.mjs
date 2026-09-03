@@ -1,6 +1,6 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema, orderForm, answerBox, stepsList, esc, trustBar, iconMedia,
+  breadcrumbSchema, faqSchema, orderForm, answerBox, stepsList, esc, iconMedia,
 } from '../lib/render.mjs';
 import { plans, trial } from '../data/business.mjs';
 
@@ -26,9 +26,8 @@ ${hero({
   secondaryCta: { label: 'Compare plans first', href: '/pricing/' },
   media: iconMedia('<rect x="246" y="256" width="48" height="32" rx="4" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M246 260 L270 278 L294 260" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', 'Order confirmation illustration'),
   dark: true,
+  trustItems: ['No payment collected on this page', 'Reply-back support', 'Clear refund policy', 'Real 24-hour trial available'],
 })}
-
-${trustBar(['No payment collected on this page', 'Reply-back support', 'Clear refund policy', 'Real 24-hour trial available'], { dark: true })}
 
 ${section({
   html: `

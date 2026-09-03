@@ -236,7 +236,7 @@ export function sectionHead({ eyebrow, title, lead, left = false }) {
   </div>`;
 }
 
-export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', href: '/pricing/' }, secondaryCta = { label: 'Start 24-Hour Trial', href: '/trial/' }, media, dark = false }) {
+export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', href: '/pricing/' }, secondaryCta = { label: 'Start 24-Hour Trial', href: '/trial/' }, media, dark = false, trustItems }) {
   const solo = !media;
   return `
   <section class="hero${dark ? ' hero-dark' : ''}${solo ? ' hero-solo' : ''}">
@@ -253,6 +253,13 @@ export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', hr
       </div>
       ${solo ? '' : `<div class="hero-media">${media}</div>`}
     </div>
+    ${
+      trustItems
+        ? `<div class="container hero-trust-inner">
+      ${trustItems.map((t) => `<span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>${esc(t)}</span>`).join('')}
+    </div>`
+        : ''
+    }
   </section>`;
 }
 
@@ -276,15 +283,6 @@ export function statsStrip(items) {
   <div class="stats-strip">
     <div class="container stats-strip-inner">
       ${items.map((s) => `<div class="stat-item"><span class="stat-number">${esc(s.number)}</span><span class="stat-label">${esc(s.label)}</span></div>`).join('')}
-    </div>
-  </div>`;
-}
-
-export function trustBar(items, { dark = false } = {}) {
-  return `
-  <div class="trust-bar${dark ? ' trust-bar-dark' : ''}">
-    <div class="container trust-bar-inner">
-      ${items.map((t) => `<span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span>${esc(t)}</span>`).join('')}
     </div>
   </div>`;
 }
