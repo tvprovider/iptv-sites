@@ -22,7 +22,7 @@ const heroMedia = `
 
 export default {
   slug: '',
-  title: '4K Streaming IPTV — Premium 4K Live TV Subscription | 4K Streaming',
+  title: '4K Streaming IPTV — Premium Live TV Subscription',
   description: 'Premium IPTV with live channels in up to 4K, transparent pricing, a $1 24-hour trial, and setup guides for every major device.',
   jsonld: [faqSchema(coreFaqs)],
   body: `
@@ -46,7 +46,7 @@ ${section({
   <div class="grid grid-2" style="align-items:center;">
     <div class="basics-media">${iconMedia('<path d="M250 254 a10 10 0 0 1 20 -4 a8 8 0 0 1 14 6 h4 a7 7 0 0 1 0 14 h-38 a7 7 0 0 1 0 -14 h0 z" fill="none" stroke="#ffffff" stroke-width="3"/><line x1="270" y1="270" x2="270" y2="286" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/><polyline points="262,280 270,288 278,280" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>', 'How IPTV delivers content over the internet illustration')}</div>
     <div>
-      ${answerBox(`<p><strong>4K Streaming IPTV</strong> delivers live channels and on-demand content over your internet connection instead of satellite or cable — subscribe, get your activation details, and watch on any compatible device in up to 4K.</p>`)}
+      ${answerBox(`<p><strong>4K Streaming IPTV</strong> delivers live channels and on-demand content over your internet connection, built to replace a traditional satellite or cable subscription — subscribe, get your activation details, and watch on any compatible device in up to 4K.</p>`)}
       <ul class="check-list">
         <li>No dish, no cable box — just your existing internet connection</li>
         <li>Works on Smart TVs, phones, tablets, and computers</li>
@@ -78,7 +78,7 @@ ${section({
     { title: '4K vs. HD', text: '4K (Ultra HD) delivers roughly four times the pixel detail of standard 1080p HD, most noticeable on larger screens with high-quality source content. Not every channel is available in 4K — availability depends on the original broadcast source.' },
     { title: 'What affects streaming quality', text: "Picture quality depends on several factors together: your internet speed and stability, your device's decoding capability, the quality of the original content source, and general network conditions." },
     { title: 'Realistic expectations', text: "We don't promise zero buffering or 100% uptime — no internet-delivered streaming service honestly can. What we do provide is a stable service built on transparent pricing and real support." },
-    { title: 'Recommended setup', text: 'For the best experience, use a wired or strong Wi-Fi connection with at least 25 Mbps of sustained download speed, and a device released within the last few years for smoother 4K decoding.' },
+    { title: 'Recommended setup', text: 'For the best experience, use a wired or strong Wi-Fi connection with at least 25 Mbps of sustained download speed — you can check yours with a <a href="https://www.speedtest.net" target="_blank" rel="noopener noreferrer nofollow">free speed test</a> — and a device released within the last few years for smoother 4K decoding.' },
   ], 2)}`,
 })}
 
@@ -214,9 +214,9 @@ ${section({
   ${sectionHead({ eyebrow: 'Confidence', title: 'Trust & transparency' })}
   <div class="grid grid-3">
     ${[
-      { title: 'Transparent pricing', text: 'Every plan price is listed in full on our Pricing page — nothing hidden until checkout.', href: '/pricing/' },
+      { title: 'Full pricing details', text: 'Every plan price is listed in full on our Pricing page — nothing hidden until checkout.', href: '/pricing/' },
       { title: 'Real support', text: 'A contact form that reaches an actual person, not an automated dead end.', href: '/contact/' },
-      { title: 'Setup documentation', text: 'Public, detailed setup instructions you can read before you subscribe.', href: '/setup-guide/' },
+      { title: 'Public setup instructions', text: 'Detailed, device-by-device setup instructions you can read before you subscribe.', href: '/setup-guide/' },
       { title: 'Refund Policy', text: 'Clear terms for when and how refunds apply. Read the full policy anytime.', href: '/refund-policy/' },
       { title: 'Privacy Policy', text: 'A plain-language explanation of what information we collect and why.', href: '/privacy-policy/' },
       { title: 'Terms of Use', text: 'The rules of using the service, written to be understood, not just legally defensible.', href: '/terms-of-use/' },

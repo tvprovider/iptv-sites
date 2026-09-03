@@ -4,3 +4,5 @@ main = "./worker-dist/index.js"
 
 [assets]
 directory = "./dist/"
+binding = "ASSETS"
+run_worker_first = true

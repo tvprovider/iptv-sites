@@ -160,7 +160,7 @@ function header(currentPath) {
 function footer() {
   const col = (title, items) => `
     <div>
-      <h4>${esc(title)}</h4>
+      <p class="footer-col-title">${esc(title)}</p>
       <ul>${items.map((i) => `<li><a href="${i.href}">${esc(i.label)}</a></li>`).join('')}</ul>
     </div>`;
   return `
@@ -197,6 +197,7 @@ ${headMeta({ title, description, path, ogImage, noindex, type })}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 ${jsonLdScript([organizationSchema(), websiteSchema(), ...jsonld])}
 </head>
 <body>
@@ -309,7 +310,7 @@ export function deviceGrid(devices) {
       .map(
         (d) => `
       <div class="card">
-        <h3>${esc(d.name)}</h3>
+        <p class="card-title">${esc(d.name)}</p>
         <p>${esc(d.summary)}</p>
       </div>`
       )
@@ -337,7 +338,7 @@ export function pricingGrid(plans) {
           <li>Up to 4K resolution where available</li>
           <li>Compatible with all supported devices</li>
         </ul>
-        <a class="btn btn-primary btn-block" href="/order/?plan=${p.id}">Subscribe Now</a>
+        <a class="btn btn-primary btn-block" href="/order/?plan=${p.id}" rel="nofollow">Subscribe Now</a>
         <a class="plan-secondary-link" href="/trial/">or try 24 hours for $1 first →</a>
       </div>`;
       })

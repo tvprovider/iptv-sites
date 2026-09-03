@@ -44,9 +44,6 @@ async function main() {
   // from the repo root into the worker script, and dist/ is served as
   // public static assets, so functions/ source would otherwise leak here.
   copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-  if (fs.existsSync(path.join(ROOT, '_headers'))) {
-    fs.copyFileSync(path.join(ROOT, '_headers'), path.join(DIST, '_headers'));
-  }
   if (fs.existsSync(path.join(ROOT, 'llms.txt'))) {
     fs.copyFileSync(path.join(ROOT, 'llms.txt'), path.join(DIST, 'llms.txt'));
   }
@@ -113,6 +110,18 @@ Allow: /
 Sitemap: ${site.url}/sitemap.xml
 `;
   fs.writeFileSync(path.join(DIST, 'robots.txt'), robots);
+
+  // _headers — base security headers (source-controlled) plus a generated
+  // Content-Type block per HTML route, since Cloudflare's static-asset
+  // serving doesn't attach a charset to text/html by default.
+  const baseHeaders = fs.existsSync(path.join(ROOT, '_headers.base'))
+    ? fs.readFileSync(path.join(ROOT, '_headers.base'), 'utf8').trimEnd()
+    : '';
+  const htmlRoutes = [...urls.map((u) => u.path), '/404.html'];
+  const charsetBlocks = htmlRoutes
+    .map((p) => `${p}\n  Content-Type: text/html; charset=utf-8`)
+    .join('\n\n');
+  fs.writeFileSync(path.join(DIST, '_headers'), `${baseHeaders}\n\n${charsetBlocks}\n`);
 
   console.log(`\nBuilt ${urls.length} indexable pages + 404 to ${path.relative(ROOT, DIST)}/`);
 }
