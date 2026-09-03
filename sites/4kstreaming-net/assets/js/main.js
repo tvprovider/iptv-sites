@@ -73,4 +73,21 @@
       if (match) orderPlanSelect.value = planParam;
     }
   }
+
+  // Scroll-reveal: progressive enhancement, degrades to fully-visible if unsupported.
+  if ('IntersectionObserver' in window) {
+    var revealEls = document.querySelectorAll('.card, .plan-card, .stat-block, .section-head');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
 })();
