@@ -127,7 +127,7 @@ export function productOfferSchema(plans) {
 function logoMark({ height = 32, onDark = false } = {}) {
   const width = Math.round(height * (188 / 32));
   const textFill = onDark ? '#ffffff' : '#14100f';
-  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="4K Streaming — 4K Streaming IPTV logo"><rect width="32" height="32" rx="7" fill="#0d0d0d"/><rect x="6" y="7" width="20" height="15" rx="3" fill="#ed3508"/><rect x="8.2" y="9.2" width="15.6" height="10" rx="1.8" fill="#0d0d0d"/><path d="M13.5 11 L13.5 17.4 L19 14.2 Z" fill="#ffffff"/><rect x="14" y="22" width="4" height="3" fill="#ed3508"/><rect x="10" y="25" width="12" height="2" rx="1" fill="#ed3508"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="${textFill}">4K Streaming</text></svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="America IPTV — American IPTV subscription logo"><rect width="32" height="32" rx="7" fill="#0b0e14"/><rect x="6" y="7" width="20" height="15" rx="3" fill="#155eef"/><rect x="8.2" y="9.2" width="15.6" height="10" rx="1.8" fill="#0b0e14"/><path d="M13.5 11 L13.5 17.4 L19 14.2 Z" fill="#ffffff"/><rect x="14" y="22" width="4" height="3" fill="#155eef"/><rect x="10" y="25" width="12" height="2" rx="1" fill="#155eef"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="${textFill}">America IPTV</text></svg>`;
 }
 
 function header(currentPath) {
@@ -269,11 +269,11 @@ export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', hr
 export function iconMedia(iconInner, label) {
   return `
 <svg viewBox="0 0 560 420" role="img" aria-label="${esc(label)}">
-  <rect width="560" height="420" rx="8" fill="#faf8f8"/>
-  <rect x="60" y="60" width="220" height="220" rx="12" fill="none" stroke="#f0e5e1" stroke-width="2"/>
-  <rect x="110" y="110" width="220" height="220" rx="12" fill="#ffffff" stroke="#f6b9a4" stroke-width="2"/>
-  <rect x="160" y="160" width="220" height="220" rx="12" fill="#fdece6" opacity="0.7"/>
-  <circle cx="270" cy="270" r="46" fill="#ed3508"/>
+  <rect width="560" height="420" rx="8" fill="#f5f8ff"/>
+  <rect x="60" y="60" width="220" height="220" rx="12" fill="none" stroke="#e2e9f7" stroke-width="2"/>
+  <rect x="110" y="110" width="220" height="220" rx="12" fill="#ffffff" stroke="#a9c6ff" stroke-width="2"/>
+  <rect x="160" y="160" width="220" height="220" rx="12" fill="#eaf1ff" opacity="0.7"/>
+  <circle cx="270" cy="270" r="46" fill="#155eef"/>
   ${iconInner}
 </svg>`;
 }

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0e14"/>
+  <rect width="1200" height="630" fill="#141a24" opacity="0.35"/>
+  <circle cx="1040" cy="120" r="220" fill="#155eef" opacity="0.18"/>
+  <g transform="translate(100,235)">
+    <rect x="0" y="0" width="46" height="46" rx="8" fill="#155eef"/>
+    <rect x="7" y="12.5" width="32" height="21" rx="3.5" fill="#0b0e14"/>
+    <path d="M19 16.5 L19 29.5 L31 23 Z" fill="#ffffff"/>
+    <text x="64" y="34" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#ffffff">America IPTV</text>
+  </g>
+  <text x="100" y="360" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="300" fill="#ffffff">Every American channel,</text>
+  <text x="100" y="420" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="300" fill="#ffffff">streamed in 4K.</text>
+  <text x="100" y="480" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400" fill="rgba(255,255,255,0.65)">Transparent pricing · Real setup support · Up to 4K resolution</text>
+</svg>
