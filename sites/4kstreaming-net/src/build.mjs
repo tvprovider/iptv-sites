@@ -39,11 +39,11 @@ async function main() {
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
 
-  // Copy static assets and serverless functions through untouched.
+  // Copy static assets through untouched. The functions/ directory is
+  // intentionally NOT copied into dist/ — Wrangler compiles it directly
+  // from the repo root into the worker script, and dist/ is served as
+  // public static assets, so functions/ source would otherwise leak here.
   copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-  if (fs.existsSync(path.join(ROOT, 'functions'))) {
-    copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
-  }
   if (fs.existsSync(path.join(ROOT, '_headers'))) {
     fs.copyFileSync(path.join(ROOT, '_headers'), path.join(DIST, '_headers'));
   }
