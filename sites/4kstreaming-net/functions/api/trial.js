@@ -4,6 +4,8 @@
 // automated provisioning system, so a person fulfills the trial manually
 // after receiving this lead and emails the customer their activation details.
 
+import { emailLayout, htmlToText, dataRows } from '../_email.js';
+
 const LEAD_DESTINATION = 'premiumtv1service@gmail.com';
 const MAX_LEN = { email: 200, device: 100, country: 100, phone: 40 };
 const rateLimitStore = new Map();
@@ -61,6 +63,19 @@ export async function onRequestPost({ request, env }) {
     return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 });
   }
 
+  const ownerHtml = emailLayout({
+    preheader: `New 24-hour trial request from ${email}`,
+    heading: 'New 24-hour trial request',
+    bodyHtml: dataRows([
+      ['Email', email],
+      ['Country', country],
+      ['WhatsApp / Phone', phone],
+      ['Primary device', device || 'Not specified'],
+    ]) + '<p style="margin:18px 0 0; font-size:13px; color:#6b615d;">Fulfill manually and email the customer their activation details.</p>',
+    ctaLabel: 'Reply to customer',
+    ctaHref: `mailto:${email}`,
+  });
+
   const resendRes = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -68,24 +83,47 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'trials@4kstreaming.net',
+      from: '4K Streaming <trials@4kstreaming.net>',
       to: LEAD_DESTINATION,
       reply_to: email,
       subject: '24-hour trial request',
-      html: `
-        <h2>New 24-hour trial request</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Country:</strong> ${country}</p>
-        <p><strong>WhatsApp/Phone:</strong> ${phone}</p>
-        <p><strong>Primary device:</strong> ${device || 'Not specified'}</p>
-        <p>Fulfill manually and email the customer their activation details.</p>
-      `,
+      html: ownerHtml,
+      text: htmlToText(ownerHtml),
     }),
   });
 
   if (!resendRes.ok) {
     return new Response(JSON.stringify({ error: 'Failed to send email' }), { status: 502 });
   }
+
+  // Best-effort customer confirmation — the request still counts as received
+  // even if this second email fails, since the owner notification above succeeded.
+  const customerHtml = emailLayout({
+    preheader: 'Your 24-hour trial request has been received.',
+    heading: "You're almost in — trial request received!",
+    bodyHtml: `
+      <p style="margin:0 0 14px;">Thanks for requesting the 24-hour trial. A member of our team will activate it and send your login/activation details to this email address shortly.</p>
+      <p style="margin:0;">Once you receive your details, check out the Setup Guide for step-by-step instructions for your device.</p>
+    `,
+    ctaLabel: 'View Setup Guide',
+    ctaHref: 'https://4kstreaming.net/setup-guide/',
+  });
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: '4K Streaming <trials@4kstreaming.net>',
+      to: email,
+      reply_to: LEAD_DESTINATION,
+      subject: 'Your 24-hour trial request — 4K Streaming',
+      html: customerHtml,
+      text: htmlToText(customerHtml),
+    }),
+  }).catch(() => {});
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
 }

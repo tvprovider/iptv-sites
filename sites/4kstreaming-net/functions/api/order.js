@@ -4,6 +4,8 @@
 // payment processing here — a person reviews the order, then manually emails
 // the customer a payment link and, after payment, their activation details.
 
+import { emailLayout, htmlToText, dataRows } from '../_email.js';
+
 const LEAD_DESTINATION = 'premiumtv1service@gmail.com';
 const MAX_LEN = { name: 200, email: 200, plan: 100, device: 100, phone: 40, country: 100 };
 const rateLimitStore = new Map();
@@ -63,6 +65,21 @@ export async function onRequestPost({ request, env }) {
     return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 });
   }
 
+  const ownerHtml = emailLayout({
+    preheader: `New order — ${plan} — ${email}`,
+    heading: 'New order request',
+    bodyHtml: dataRows([
+      ['Plan', plan],
+      ['Name', name],
+      ['Email', email],
+      ['Country', country],
+      ['WhatsApp / Phone', phone],
+      ['Device', device || 'Not specified'],
+    ]) + '<p style="margin:18px 0 0; font-size:13px; color:#6b615d;">Reply to this email (goes to the customer) or contact them directly to send the payment link. Send activation details once payment is confirmed.</p>',
+    ctaLabel: 'Reply to customer',
+    ctaHref: `mailto:${email}`,
+  });
+
   const ownerRes = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -70,20 +87,12 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'orders@4kstreaming.net',
+      from: '4K Streaming <orders@4kstreaming.net>',
       to: LEAD_DESTINATION,
       reply_to: email,
       subject: `New order request — ${plan} — ${email}`,
-      html: `
-        <h2>New order request</h2>
-        <p><strong>Plan:</strong> ${plan}</p>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Country:</strong> ${country}</p>
-        <p><strong>WhatsApp/Phone:</strong> ${phone}</p>
-        <p><strong>Device:</strong> ${device || 'Not specified'}</p>
-        <p>Reply to this email (goes to the customer) or contact them directly to send the payment link. Send activation details once payment is confirmed.</p>
-      `,
+      html: ownerHtml,
+      text: htmlToText(ownerHtml),
     }),
   });
 
@@ -93,6 +102,18 @@ export async function onRequestPost({ request, env }) {
 
   // Best-effort customer confirmation — an order still counts as received even
   // if this second email fails, since the owner notification above succeeded.
+  const customerHtml = emailLayout({
+    preheader: `We've received your order for the ${plan} plan.`,
+    heading: `Thanks for your order, ${name}!`,
+    bodyHtml: `
+      <p style="margin:0 0 14px;">We've received your request for the <strong>${plan}</strong> plan.</p>
+      <p style="margin:0 0 14px;">We'll email you a secure payment link shortly to complete your order. Once payment is confirmed, your activation details will follow right away.</p>
+      <p style="margin:0;">Questions in the meantime? Just reply to this email.</p>
+    `,
+    ctaLabel: 'View plan details',
+    ctaHref: 'https://4kstreaming.net/pricing/',
+  });
+
   await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -100,16 +121,12 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'orders@4kstreaming.net',
+      from: '4K Streaming <orders@4kstreaming.net>',
       to: email,
       reply_to: LEAD_DESTINATION,
       subject: 'We received your 4K Streaming order',
-      html: `
-        <h2>Thanks for your order, ${name}!</h2>
-        <p>We've received your request for the <strong>${plan}</strong> plan.</p>
-        <p>We'll email you a secure payment link shortly to complete your order. Once payment is confirmed, your activation details will follow right away.</p>
-        <p>Questions in the meantime? Just reply to this email.</p>
-      `,
+      html: customerHtml,
+      text: htmlToText(customerHtml),
     }),
   }).catch(() => {});
 
