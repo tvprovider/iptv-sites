@@ -320,7 +320,12 @@ section.tight { padding: 56px 0; }
 .trust-bar-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; }
 .trust-item { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text-label); white-space: nowrap; }
 .trust-check { color: var(--success); font-weight: 700; }
-.trust-bar-dark { background: var(--bg-dark); border-bottom: none; padding: 36px 0 44px; }
+.trust-bar-dark {
+  background: radial-gradient(ellipse 900px 500px at 15% 20%, rgba(237,53,8,0.16), transparent 60%), var(--bg-dark);
+  border-bottom: none;
+  padding: 36px 0 44px;
+  margin-top: -1px; /* fuse with the hero above so no seam line can render between the two sections */
+}
 .trust-bar-dark .trust-item { color: var(--text-on-dark-muted); }
 .trust-bar-dark .trust-check { color: var(--brand-soft); }
 
