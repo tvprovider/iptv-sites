@@ -90,4 +90,37 @@
       io.observe(el);
     });
   }
+
+  // Count-up stats: the real final value is already the element's text
+  // content (SEO/AEO always sees the true number). This only animates the
+  // DISPLAY on scroll-into-view, then sets the text back to the exact
+  // original string so it can never drift from the real value.
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var countEls = document.querySelectorAll('.js-count');
+    var countIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        countIo.unobserve(entry.target);
+        var el = entry.target;
+        var finalText = el.textContent;
+        var target = parseInt((el.getAttribute('data-count') || finalText).replace(/[^0-9]/g, ''), 10);
+        if (!target) return;
+        var start = performance.now();
+        var duration = 1200;
+        function tick(now) {
+          var p = Math.min(1, (now - start) / duration);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased).toLocaleString('en-US');
+          if (p < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = finalText;
+          }
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    countEls.forEach(function (el) { countIo.observe(el); });
+  }
 })();

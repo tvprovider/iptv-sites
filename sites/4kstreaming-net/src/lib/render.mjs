@@ -237,8 +237,10 @@ export function sectionHead({ eyebrow, title, lead, left = false }) {
 }
 
 export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', href: '/pricing/' }, secondaryCta = { label: 'Start 24-Hour Trial', href: '/trial/' }, media, dark = false }) {
+  const solo = !media;
   return `
-  <section class="hero${dark ? ' hero-dark' : ''}">
+  <section class="hero${dark ? ' hero-dark' : ''}${solo ? ' hero-solo' : ''}">
+    ${dark ? '<div class="hero-aurora" aria-hidden="true"></div>' : ''}
     <div class="container hero-grid">
       <div class="hero-copy">
         ${eyebrow ? `<span class="eyebrow">${esc(eyebrow)}</span>` : ''}
@@ -249,7 +251,7 @@ export function hero({ eyebrow, h1, lead, primaryCta = { label: 'View Plans', hr
           <a class="btn btn-ghost btn-lg${dark ? ' btn-ghost-on-dark' : ''}" href="${secondaryCta.href}">${esc(secondaryCta.label)}</a>
         </div>
       </div>
-      <div class="hero-media">${media || ''}</div>
+      ${solo ? '' : `<div class="hero-media">${media}</div>`}
     </div>
   </section>`;
 }

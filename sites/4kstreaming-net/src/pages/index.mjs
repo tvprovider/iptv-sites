@@ -4,65 +4,6 @@ import {
 } from '../lib/render.mjs';
 import { plans, trial, devices, coreFaqs, site, catalog } from '../data/business.mjs';
 
-// The hero's signature piece: the brand's own zigzag mark, reimagined as a
-// glowing signal trail. No stock UI mockup, no external image dependency —
-// pure SVG + CSS, drawn on load then breathing gently at rest.
-const heroMedia = `
-<svg viewBox="0 0 560 420" role="img" aria-label="4K Streaming signal mark" class="signal-art">
-  <defs>
-    <filter id="signalGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="14" result="blur"/>
-    </filter>
-    <filter id="softGlow" x="-200%" y="-200%" width="500%" height="500%">
-      <feGaussianBlur stdDeviation="30"/>
-    </filter>
-    <linearGradient id="signalStroke" x1="182" y1="280" x2="378" y2="140" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ed3508"/>
-      <stop offset="55%" stop-color="#ff6b3d"/>
-      <stop offset="100%" stop-color="#ffb199"/>
-    </linearGradient>
-  </defs>
-
-  <circle class="signal-particle p1" cx="120" cy="110" r="46" fill="#ed3508" opacity="0.16" filter="url(#softGlow)"/>
-  <circle class="signal-particle p2" cx="460" cy="300" r="60" fill="#ed3508" opacity="0.14" filter="url(#softGlow)"/>
-  <circle class="signal-particle p3" cx="430" cy="90" r="24" fill="#ff6b3d" opacity="0.2" filter="url(#softGlow)"/>
-
-  <path d="M182 280 L252 140 L294 224 L336 140 L378 280" class="signal-path-glow"
-        fill="none" stroke="#ed3508" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"
-        filter="url(#signalGlow)" opacity="0.55"/>
-  <path d="M182 280 L252 140 L294 224 L336 140 L378 280" class="signal-path"
-        fill="none" stroke="url(#signalStroke)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-
-  <circle class="signal-dot" cx="182" cy="280" r="5" fill="#fff"/>
-  <circle class="signal-dot" cx="378" cy="280" r="5" fill="#fff"/>
-
-  <style>
-    .signal-path, .signal-path-glow {
-      stroke-dasharray: 620;
-      stroke-dashoffset: 620;
-      animation: draw 1.8s cubic-bezier(.4,0,.2,1) 0.2s forwards, pulse 4.5s ease-in-out 2s infinite;
-    }
-    .signal-path-glow { animation-name: draw, pulseGlow; }
-    .signal-dot { opacity: 0; animation: dotIn 0.6s ease-out 1.9s forwards; }
-    .signal-particle { animation: drift 22s ease-in-out infinite; }
-    .p2 { animation-duration: 28s; animation-delay: -6s; }
-    .p3 { animation-duration: 16s; animation-delay: -3s; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
-    @keyframes pulseGlow { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.85; } }
-    @keyframes dotIn { to { opacity: 1; } }
-    @keyframes drift {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-14px, 12px); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .signal-path, .signal-path-glow { stroke-dashoffset: 0; animation: none; }
-      .signal-dot { opacity: 1; animation: none; }
-      .signal-particle { animation: none; }
-    }
-  </style>
-</svg>`;
-
 export default {
   slug: '',
   title: '4K Streaming IPTV — Premium Live TV Subscription',
@@ -75,7 +16,6 @@ ${hero({
   lead: '4K Streaming IPTV is a subscription streaming service that delivers live channels and on-demand content over your internet connection in up to 4K resolution — no satellite dish, no cable box, no long-term contract. Subscribe in minutes, or test it first for $1.',
   primaryCta: { label: 'Subscribe Now', href: '/pricing/' },
   secondaryCta: { label: 'Try It for $1', href: '/trial/' },
-  media: heroMedia,
   dark: true,
 })}
 
@@ -148,12 +88,12 @@ ${section({
     <div>
       <div class="stat-block">
         <h3>Live Channels</h3>
-        <div class="stat-block-number">${esc(catalog.liveChannels)}</div>
+        <div class="stat-block-number js-count" data-count="${catalog.liveChannels}">${esc(catalog.liveChannels)}</div>
         <p>Includes premium channels, spanning sports, news, entertainment, and international feeds — the same lineup on every plan.</p>
       </div>
       <div class="stat-block">
         <h3>On-Demand Library</h3>
-        <div class="stat-block-number">${esc(catalog.vods)}</div>
+        <div class="stat-block-number js-count" data-count="${catalog.vods}">${esc(catalog.vods)}</div>
         <p>The latest films and series, plus a deep catalog of classics — updated continuously and included with every plan.</p>
       </div>
     </div>
