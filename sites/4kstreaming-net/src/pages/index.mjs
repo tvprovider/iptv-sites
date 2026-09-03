@@ -4,20 +4,63 @@ import {
 } from '../lib/render.mjs';
 import { plans, trial, devices, coreFaqs, site, catalog } from '../data/business.mjs';
 
+// The hero's signature piece: the brand's own zigzag mark, reimagined as a
+// glowing signal trail. No stock UI mockup, no external image dependency —
+// pure SVG + CSS, drawn on load then breathing gently at rest.
 const heroMedia = `
-<svg viewBox="0 0 560 420" role="img" aria-label="4K Streaming IPTV interface preview">
-  <rect width="560" height="420" rx="8" fill="#0d0d0d"/>
-  <rect x="24" y="24" width="512" height="40" rx="4" fill="#1a1a1a"/>
-  <circle cx="46" cy="44" r="5" fill="#ed3508"/><circle cx="64" cy="44" r="5" fill="#8a6d3a"/><circle cx="82" cy="44" r="5" fill="#15be53"/>
-  <rect x="24" y="84" width="164" height="312" rx="4" fill="#1a1a1a"/>
-  ${[0,1,2,3,4,5,6].map((i) => `<rect x="40" y="${104 + i*42}" width="132" height="30" rx="4" fill="${i===1 ? '#ed3508' : '#262626'}"/>`).join('')}
-  <rect x="204" y="84" width="332" height="200" rx="6" fill="#161616"/>
-  <polygon points="345,150 345,220 400,185" fill="#ed3508"/>
-  <rect x="204" y="300" width="332" height="96" rx="6" fill="#1a1a1a"/>
-  <rect x="220" y="316" width="120" height="14" rx="3" fill="#2e2e2e"/>
-  <rect x="220" y="340" width="280" height="10" rx="3" fill="#262626"/>
-  <rect x="220" y="358" width="200" height="10" rx="3" fill="#262626"/>
-  <text x="368" y="365" fill="#8a8a8a" font-family="sans-serif" font-size="11">4K</text>
+<svg viewBox="0 0 560 420" role="img" aria-label="4K Streaming signal mark" class="signal-art">
+  <defs>
+    <filter id="signalGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+    </filter>
+    <filter id="softGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <linearGradient id="signalStroke" x1="182" y1="280" x2="378" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ed3508"/>
+      <stop offset="55%" stop-color="#ff6b3d"/>
+      <stop offset="100%" stop-color="#ffb199"/>
+    </linearGradient>
+  </defs>
+
+  <circle class="signal-particle p1" cx="120" cy="110" r="46" fill="#ed3508" opacity="0.16" filter="url(#softGlow)"/>
+  <circle class="signal-particle p2" cx="460" cy="300" r="60" fill="#ed3508" opacity="0.14" filter="url(#softGlow)"/>
+  <circle class="signal-particle p3" cx="430" cy="90" r="24" fill="#ff6b3d" opacity="0.2" filter="url(#softGlow)"/>
+
+  <path d="M182 280 L252 140 L294 224 L336 140 L378 280" class="signal-path-glow"
+        fill="none" stroke="#ed3508" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"
+        filter="url(#signalGlow)" opacity="0.55"/>
+  <path d="M182 280 L252 140 L294 224 L336 140 L378 280" class="signal-path"
+        fill="none" stroke="url(#signalStroke)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <circle class="signal-dot" cx="182" cy="280" r="5" fill="#fff"/>
+  <circle class="signal-dot" cx="378" cy="280" r="5" fill="#fff"/>
+
+  <style>
+    .signal-path, .signal-path-glow {
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+      animation: draw 1.8s cubic-bezier(.4,0,.2,1) 0.2s forwards, pulse 4.5s ease-in-out 2s infinite;
+    }
+    .signal-path-glow { animation-name: draw, pulseGlow; }
+    .signal-dot { opacity: 0; animation: dotIn 0.6s ease-out 1.9s forwards; }
+    .signal-particle { animation: drift 22s ease-in-out infinite; }
+    .p2 { animation-duration: 28s; animation-delay: -6s; }
+    .p3 { animation-duration: 16s; animation-delay: -3s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.85; } }
+    @keyframes dotIn { to { opacity: 1; } }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-14px, 12px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .signal-path, .signal-path-glow { stroke-dashoffset: 0; animation: none; }
+      .signal-dot { opacity: 1; animation: none; }
+      .signal-particle { animation: none; }
+    }
+  </style>
 </svg>`;
 
 export default {
