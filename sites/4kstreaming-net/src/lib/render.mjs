@@ -143,6 +143,10 @@ function header(currentPath) {
       <a href="/" class="brand-mark">${logoMark({ height: 32 })}</a>
       <nav class="main-nav" id="main-nav" aria-label="Primary">
         ${links}
+        <div class="main-nav-cta">
+          <a href="/pricing/" class="btn btn-primary btn-block">Subscribe Now</a>
+          <a href="/trial/" class="btn btn-ghost btn-block">Try It for $1</a>
+        </div>
       </nav>
       <div class="header-cta">
         <a href="/trial/" class="btn btn-ghost">Try It for $1</a>

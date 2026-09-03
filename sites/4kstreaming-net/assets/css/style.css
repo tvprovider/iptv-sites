@@ -117,7 +117,10 @@ p { margin: 0 0 1em; color: var(--text-soft); }
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  min-width: 0;
 }
+.brand-mark svg { display: block; height: 30px; width: auto; flex-shrink: 0; }
 .brand-mark .dot { color: var(--brand); }
 .main-nav { display: flex; align-items: center; gap: 28px; }
 .main-nav a {
@@ -126,7 +129,7 @@ p { margin: 0 0 1em; color: var(--text-soft); }
   font-weight: 400;
 }
 .main-nav a:hover { color: var(--brand); text-decoration: none; }
-.header-cta { display: flex; align-items: center; gap: 12px; }
+.header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .nav-toggle {
   display: none;
   background: none;
@@ -134,13 +137,42 @@ p { margin: 0 0 1em; color: var(--text-soft); }
   border-radius: var(--radius-sm);
   padding: 8px 10px;
   cursor: pointer;
+  flex-shrink: 0;
 }
+.main-nav-cta { display: none; }
 
 @media (max-width: 860px) {
-  .main-nav { position: fixed; inset: 72px 0 0 0; background: #fff; flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; transform: translateY(-8px); opacity: 0; pointer-events: none; transition: opacity 220ms var(--ease-standard), transform 220ms var(--ease-standard); }
+  .main-nav { position: fixed; inset: 72px 0 0 0; background: #fff; flex-direction: column; align-items: stretch; padding: 24px; gap: 18px; transform: translateY(-8px); opacity: 0; pointer-events: none; transition: opacity 220ms var(--ease-standard), transform 220ms var(--ease-standard); overflow-y: auto; }
   .main-nav.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .header-cta .btn-ghost { display: none; }
+  .main-nav a { font-size: 1.05rem; padding: 4px 0; }
+  .main-nav-cta { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--border); }
+  .header-cta .btn-ghost, .header-cta .btn-primary { display: none; }
   .nav-toggle { display: inline-flex; }
+}
+
+@media (max-width: 400px) {
+  .brand-mark svg { height: 26px; }
+  .site-header .bar { height: 64px; }
+  .container { padding: 0 16px; }
+}
+
+/* Tighter, app-like rhythm on phones instead of desktop spacing squeezed down */
+@media (max-width: 640px) {
+  section { padding: 52px 0; }
+  .hero { padding: 40px 0 36px; }
+  h1 { font-size: clamp(1.9rem, 8vw, 2.3rem); }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.7rem); }
+  .lead, .hero-copy p.lead { font-size: 1.02rem; }
+  .card, .plan-card { padding: 20px; }
+  .section-head { margin-bottom: 28px; }
+  .section-head.left { margin-bottom: 24px; }
+  .grid { gap: 16px; }
+  .pricing-grid { gap: 16px; }
+  .cta-banner { padding: 44px 22px; }
+  .cta-banner h2 { font-size: clamp(1.5rem, 7vw, 1.9rem); }
+  .steps { gap: 18px; }
+  .trust-bar-inner, .trust-bar-dark { gap: 10px 18px; }
+  .trust-item { font-size: 0.8rem; }
 }
 
 /* Buttons */
