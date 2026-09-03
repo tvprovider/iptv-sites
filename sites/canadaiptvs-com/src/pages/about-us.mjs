@@ -30,92 +30,92 @@ ${hero({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Who we are', title: 'What Canada IPTV is', left: true })}
-  <p>Canada IPTV is a streaming subscription service. We provide access to live channels and on-demand content delivered over the internet, centered on Canadian live TV, news, and sports, with support for up to 4K resolution where your plan, device, and source content allow it. Our focus is on making the parts of the experience we control — pricing, documentation, and support — as clear as possible.</p>`,
+  ${sectionHead({ eyebrow: 'Who we are', title: 'What Canada IPTV actually is', left: true })}
+  <p>A streaming subscription, not a cable replacement gimmick — live channels and on-demand content arrive over your internet connection, with a lineup weighted toward Canadian news, sports, and entertainment, in up to 4K where your plan, device, and the source content allow it. The parts of this we can actually control — pricing, documentation, support — are the parts we try hardest to get right.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Our approach', title: 'Mission', left: true })}
-  <p>Too many IPTV services bury pricing in confusing tiers, oversell streaming quality they can't guarantee, and make setup unnecessarily difficult. Our approach is the opposite: list prices plainly, describe streaming quality honestly, and write setup instructions that actually match the product.</p>`,
+  ${sectionHead({ eyebrow: 'Our approach', title: 'The problem with most IPTV marketing', left: true })}
+  <p>A lot of providers in this space bury pricing behind vague tiers, promise streaming quality nobody can actually guarantee, and ship setup guides that do not match the devices they sell. We built this the other way: prices are on the page, streaming quality gets described honestly instead of oversold, and setup instructions are written against the devices people actually use.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'What you can expect', title: 'The customer experience', left: true })}
+  ${sectionHead({ eyebrow: 'What you can expect', title: 'Where the experience actually holds up', left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>Before you subscribe</h3><p>Clear pricing and a real trial period so you know what you're getting before paying full price.</p></div>
-    <div class="card"><h3>Getting set up</h3><p>Device-specific setup instructions instead of a generic guide that doesn't match your device.</p></div>
-    <div class="card"><h3>If something goes wrong</h3><p>A support channel that reaches an actual person, plus clear refund terms.</p></div>
+    <div class="card"><h3>Before you pay anything</h3><p>A real trial and prices you can read in full, so the decision is made with information, not a sales pitch.</p></div>
+    <div class="card"><h3>Once you're set up</h3><p>Instructions written for your specific device, not a generic PDF that half-applies.</p></div>
+    <div class="card"><h3>If it goes wrong</h3><p>An inbox with a person on the other end, and refund terms you can read before you need them.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'How it works', title: 'Technology approach', left: true })}
-  <p>The service is delivered using standard IPTV protocols — content is streamed as data over your existing internet connection, accessed through compatible third-party player apps rather than a single proprietary app. This approach keeps the service compatible with a wide range of devices instead of locking you into one ecosystem.</p>`,
+  ${sectionHead({ eyebrow: 'How it works', title: 'No proprietary app to get locked into', left: true })}
+  <p>This runs on standard IPTV delivery — content streamed as data over your existing connection, watched through third-party player apps rather than one app we control. That keeps it compatible across a wide range of devices instead of tying you to a single ecosystem we could change the terms of later.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Being upfront', title: 'Our streaming quality philosophy', left: true })}
-  <p>We don't promise zero buffering or 100% uptime, because no internet-delivered streaming service can honestly guarantee that — too much depends on your own connection and device. What we do commit to is transparency about what affects quality and support if something isn't working as expected.</p>`,
-})}
-
-${section({
-  bg: 'quiet',
-  html: `
-  ${sectionHead({ eyebrow: 'Access for everyone', title: 'Device accessibility', left: true })}
-  <p>We support Smart TVs, Android TV, Fire TV, Android and iOS mobile devices, Windows, and macOS — because a subscription should work with the device you already own, not force you to buy new hardware.</p>`,
-})}
-
-${section({
-  html: `
-  ${sectionHead({ eyebrow: 'No unnecessary friction', title: 'Setup simplicity', left: true })}
-  <p>Our <a href="/setup-guide/">Setup Guide</a> walks through each supported device step by step, because setup instructions that don't match your actual device waste your time and ours.</p>`,
+  ${sectionHead({ eyebrow: 'Being upfront', title: 'What we will not promise', left: true })}
+  <p>Zero buffering and 100 percent uptime are not honest claims for anything delivered over the open internet — too much rides on your own connection and device for any provider to guarantee that. What we will commit to is being clear about what actually affects quality, and being reachable when something is not working as expected.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'When you need help', title: 'Support', left: true })}
-  <p>Our <a href="/contact/">Contact page</a> routes directly to a real support inbox for setup, billing, and trial questions.</p>`,
+  ${sectionHead({ eyebrow: 'Access for everyone', title: 'Built for the device you already have', left: true })}
+  <p>Smart TVs, Android TV, Fire TV, Android and iOS, Windows, and macOS are all supported, on the logic that a subscription should adapt to your existing hardware rather than requiring a purchase to use it.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'What we won\'t do', title: 'Transparency', left: true })}
+  ${sectionHead({ eyebrow: 'No unnecessary friction', title: 'Why setup gets its own guide', left: true })}
+  <p>The <a href="/setup-guide/">Setup Guide</a> covers each supported device individually, because instructions that only loosely apply to your actual hardware waste time on both ends.</p>`,
+})}
+
+${section({
+  bg: 'quiet',
+  html: `
+  ${sectionHead({ eyebrow: 'When you need help', title: 'One inbox, not a ticket queue', left: true })}
+  <p>The <a href="/contact/">Contact page</a> goes to a real support inbox handling setup, billing, and trial questions — not an automated router.</p>`,
+})}
+
+${section({
+  html: `
+  ${sectionHead({ eyebrow: 'What we will not do', title: 'A short list of limits', left: true })}
   <ul style="padding-left:20px;color:var(--text-soft);">
-    <li>We won't advertise features we don't actually provide.</li>
-    <li>We won't hide pricing behind a "contact for quote" wall.</li>
-    <li>We won't claim guarantees about uptime or buffering that no streaming provider can honestly make.</li>
+    <li>Advertise a feature that is not actually part of the service.</li>
+    <li>Hide pricing behind a "contact us for a quote" form.</li>
+    <li>Promise uptime or buffering guarantees no honest streaming provider can back up.</li>
   </ul>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Your data', title: 'Privacy & security', left: true })}
-  <p>We collect only the information needed to run the service and respond to inquiries. See our <a href="/privacy-policy/">Privacy Policy</a> for full details on what we collect and why.</p>`,
+  ${sectionHead({ eyebrow: 'Your data', title: 'Kept to what is actually needed', left: true })}
+  <p>Only the information required to run the service and answer questions gets collected — the <a href="/privacy-policy/">Privacy Policy</a> spells out exactly what and why.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Using the service responsibly', title: 'Responsible use', left: true })}
-  <p>You are responsible for using the service in compliance with the laws that apply to you. See our <a href="/disclaimer/">Disclaimer</a> for details.</p>`,
+  ${sectionHead({ eyebrow: 'Using this responsibly', title: 'Where the responsibility sits', left: true })}
+  <p>Using the service within the laws that apply to you is on you as the subscriber — the <a href="/disclaimer/">Disclaimer</a> covers the specifics.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Keep learning', title: 'Resources', left: true })}
+  ${sectionHead({ eyebrow: 'Keep reading', title: 'Where to go next', left: true })}
   <div class="grid grid-3">
     ${[
-      { title: 'Setup Guide', text: 'Step-by-step instructions for every supported device.', href: '/setup-guide/' },
-      { title: 'FAQ', text: 'Answers to the most common questions.', href: '/faq/' },
-      { title: 'Pricing', text: 'Full plan and trial pricing details.', href: '/pricing/' },
+      { title: 'Setup Guide', text: 'Instructions broken out by device.', href: '/setup-guide/' },
+      { title: 'FAQ', text: 'The questions that come up most.', href: '/faq/' },
+      { title: 'Pricing', text: 'Every plan and the trial, laid out in full.', href: '/pricing/' },
     ]
       .map(
         (r) => `

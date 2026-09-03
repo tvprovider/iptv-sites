@@ -65,28 +65,28 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Included with every plan', title: "What's included", left: true })}
+  ${sectionHead({ eyebrow: 'Included with every plan', title: "Nothing held back for a higher tier", left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>Full channel &amp; VOD access</h3><p>Every plan includes the same ${catalog.liveChannels} live channels and ${catalog.vods} VOD titles — longer plans only change the price and commitment length, not the content available.</p></div>
-    <div class="card"><h3>Up to 4K resolution</h3><p>Stream in up to 4K where your device and the source content support it.</p></div>
-    <div class="card"><h3>Multi-device compatibility</h3><p>Use your subscription across any of our supported device types.</p></div>
+    <div class="card"><h3>The whole catalog, every plan</h3><p>${catalog.liveChannels} live channels and ${catalog.vods} VOD titles come with the 1-month plan just as much as the 12-month one — length only changes price and commitment, never content.</p></div>
+    <div class="card"><h3>4K where it is available</h3><p>Resolution follows the source and your own setup, not which plan length you picked.</p></div>
+    <div class="card"><h3>Every device, one login</h3><p>Move between a Smart TV, a phone, and a laptop without juggling separate subscriptions.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Decision guide', title: 'Choosing the right plan', left: true })}
+  ${sectionHead({ eyebrow: 'Decision guide', title: 'If you are not sure which length to pick', left: true })}
   <div class="grid grid-2">
-    <p>If you are new to the service, start with the 24-hour trial to confirm compatibility with your device and internet connection. From there, the 1-month plan is a low-commitment way to try a full billing cycle.</p>
-    <p>If you already know you want to stick around, the 6- or 12-month plans lower your effective monthly cost meaningfully — the 12-month plan works out to roughly $6.67 per month compared to $14.99 on the monthly plan.</p>
+    <p>New here? Run the 24-hour trial first — it settles whether your device and connection actually handle the service well before you spend more than a dollar finding out.</p>
+    <p>Already sold on it? The 6- and 12-month plans are where the real savings live: 12 months works out to roughly $6.67 a month against $14.99 on the monthly plan, more than a 55 percent drop.</p>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Value over time', title: 'Monthly vs. longer-term value', left: true })}
-  <p>Paying monthly gives you maximum flexibility to stop at any time, but it costs more per month than committing to a longer term. The 3-month plan brings the effective cost down to about $11.66/month, the 6-month plan to about $9.17/month, and the 12-month plan to about $6.67/month — a meaningful saving if you already know you'll use the service consistently.</p>`,
+  ${sectionHead({ eyebrow: 'Value over time', title: 'What commitment actually buys you', left: true })}
+  <p>Paying month to month keeps you free to stop whenever, at the highest per-month cost. Locking in longer changes that math meaningfully: roughly $11.66/month on the 3-month plan, $9.17/month at 6 months, and $6.67/month at 12 months. The savings scale with how confident you already are that you'll stick with it.</p>`,
 })}
 
 ${section({
@@ -95,17 +95,17 @@ ${section({
   <div class="grid grid-2" style="align-items:center;">
     <div>
       ${sectionHead({ eyebrow: 'Test first', title: trial.label, left: true })}
-      <p>Not ready to commit? Test streaming quality and device compatibility for ${trial.duration} for $${trial.price.toFixed(2)}.</p>
+      <p>$${trial.price.toFixed(2)} buys ${trial.duration} of the real thing, not a stripped-down preview.</p>
       <a class="btn btn-primary" href="/trial/">Start the trial</a>
     </div>
-    <div class="card"><h3>Why start with a trial</h3><p>It confirms your internet connection and device work well with the service before you commit to a full billing cycle.</p></div>
+    <div class="card"><h3>What one day actually proves</h3><p>Whether your internet and your device play nicely with the service — the two variables no amount of reading reviews can answer for you.</p></div>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'After you order', title: 'Activation process', left: true })}
-  <p>After completing your order, you'll receive activation details by email. Enter these into a compatible player app on your device, and you're ready to start watching. Full device-specific steps are in our Setup Guide.</p>
+  ${sectionHead({ eyebrow: 'After you order', title: 'What happens right after you pay', left: true })}
+  <p>Activation details land by email, generally within a few hours. Drop them into a compatible player app and you're watching — no separate install fee, no callback scheduled, no waiting on a technician. Device-specific steps live in the Setup Guide.</p>
   <p><a class="btn btn-ghost" href="/setup-guide/">View the Setup Guide →</a></p>`,
 })}
 
@@ -118,15 +118,15 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Payments', title: 'Billing & payment information', left: true })}
-  <p>Prices on this page are shown in US dollars and reflect the full amount charged for each plan — there are no separate setup fees. Renewal is not automatic unless you explicitly choose a recurring option at checkout; you control if and when you pay again.</p>`,
+  ${sectionHead({ eyebrow: 'Payments', title: 'How billing actually works', left: true })}
+  <p>Every price on this page is in US dollars and is the complete amount charged — no setup fee tacked on afterward. Nothing renews automatically unless you specifically choose a recurring option at checkout, so a plan ending is always your decision, not an auto-charge you have to catch.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'If something goes wrong', title: 'Refund information', left: true })}
-  <p>We want you to feel confident subscribing. Read our full <a href="/refund-policy/">Refund Policy</a> for the specific terms and conditions that apply to trials and subscription plans.</p>`,
+  ${sectionHead({ eyebrow: 'If something goes wrong', title: 'Refunds, spelled out before you need them', left: true })}
+  <p>The full conditions live on the <a href="/refund-policy/">Refund Policy</a> page — worth a read before you subscribe, not after something has already gone sideways.</p>`,
 })}
 
 ${section({

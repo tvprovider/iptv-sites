@@ -67,9 +67,9 @@ ${section({
     <div>
       ${answerBox(`<p><strong>Canada IPTV</strong> delivers live channels and on-demand content over your internet connection instead of a satellite dish or cable box, with a channel lineup built around what Canadian households actually watch — subscribe, get your activation details, and watch on any compatible device in up to 4K.</p>`)}
       <ul class="check-list">
-        <li>No dish, no cable box — just your existing internet connection</li>
-        <li>Works on Smart TVs, phones, tablets, and computers</li>
-        <li>Clear pricing and a real trial, not a sales call</li>
+        <li>No technician visit — activation happens over email, not a scheduled appointment</li>
+        <li>Same subscription follows you between a condo, a cottage, or a new city</li>
+        <li>Priced the same regardless of postal code or provider territory</li>
       </ul>
     </div>
   </div>`,
@@ -78,26 +78,26 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Why us', title: 'Why choose Canada IPTV' })}
+  ${sectionHead({ eyebrow: 'Why us', title: 'What makes this worth switching to' })}
   ${featureGrid([
-    { title: 'Built for Canadian viewers', text: 'A channel lineup centered on Canadian news, sports, and entertainment, not a generic international bundle with a few local channels bolted on.' },
-    { title: 'Transparent pricing', text: 'Four plan lengths with the exact price shown up front, in US dollars — no bundled fees, no surprise renewal price.' },
-    { title: 'A real trial', text: `Test the service for ${trial.duration} for $${trial.price.toFixed(2)} before committing to a longer subscription.` },
-    { title: 'Setup documentation', text: 'Step-by-step instructions for every supported device, not a generic one-size-fits-all PDF.' },
-    { title: 'Multi-device support', text: 'One subscription, usable across Smart TVs, streaming boxes, phones, tablets, and computers.' },
-    { title: 'Direct support', text: 'A contact form routed to a real support inbox for setup, billing, and trial questions.' },
+    { title: 'A Canadian-first lineup', text: 'News, sports, and entertainment channels chosen for what Canadian households actually watch, not an international bundle with a token local tier.' },
+    { title: 'One price, no add-on tiers', text: 'Every plan carries the full channel and VOD catalog — there is no separate sports package or premium-channel upsell waiting at checkout.' },
+    { title: 'Test it for the price of a coffee', text: `The ${trial.label} costs $${trial.price.toFixed(2)} and runs for ${trial.duration}, long enough to judge real streaming quality on your own connection.` },
+    { title: 'Instructions that match the product', text: 'Setup steps written per device, not a single generic PDF that assumes you already know what you are doing.' },
+    { title: 'No hardware to return', text: 'Nothing is shipped, rented, or needs to be mailed back if you cancel — the subscription lives entirely in a player app you already have.' },
+    { title: 'A support inbox with a person behind it', text: 'Questions about setup, billing, or the trial go to a real inbox, not a chatbot loop.' },
   ])}
   `,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Streaming quality', title: 'What "4K" actually means here', left: true })}
+  ${sectionHead({ eyebrow: 'Streaming quality', title: 'Being straight about what "4K" means', left: true })}
   ${featureGrid([
-    { title: '4K vs. HD', text: '4K (Ultra HD) delivers roughly four times the pixel detail of standard 1080p HD, most noticeable on larger screens with high-quality source content. Not every channel is available in 4K — availability depends on the original broadcast source.' },
-    { title: 'What affects streaming quality', text: "Picture quality depends on several factors together: your internet speed and stability, your device's decoding capability, the quality of the original content source, and general network conditions." },
-    { title: 'Realistic expectations', text: "We don't promise zero buffering or 100% uptime — no internet-delivered streaming service honestly can. What we do provide is a stable service built on transparent pricing and real support." },
-    { title: 'Recommended setup', text: 'For the best experience, use a wired or strong Wi-Fi connection with at least 25 Mbps of sustained download speed — you can check yours with a <a href="https://www.speedtest.net" target="_blank" rel="noopener noreferrer nofollow">free speed test</a> — and a device released within the last few years for smoother 4K decoding.' },
+    { title: 'Not everything is native 4K', text: 'Plenty of channels broadcast in HD at the source — no streaming service, including this one, can add detail that was never captured. 4K plays where the original feed actually supports it.' },
+    { title: 'Your connection sets the ceiling', text: 'Picture quality is a function of several things at once: sustained internet speed, your device\'s decoder, and general network load in your area at the time you are watching.' },
+    { title: 'No inflated promises', text: 'We will not tell you buffering never happens or that uptime is guaranteed at 100 percent — nobody delivering video over the open internet can honestly say that.' },
+    { title: 'A practical baseline', text: 'A wired connection or strong Wi-Fi at 25 Mbps or better, on a device from the last few years, is enough for smooth playback most of the time. Check yours with a <a href="https://www.speedtest.net" target="_blank" rel="noopener noreferrer nofollow">free speed test</a> first.' },
   ], 2)}`,
 })}
 
@@ -111,12 +111,12 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Getting started', title: 'How it works' })}
+  ${sectionHead({ eyebrow: 'Getting started', title: 'From signup to your first channel' })}
   ${stepsList([
-    { title: 'Choose a plan', text: 'Pick a subscription length on the Pricing page, or start with the 24-hour trial if you want to test first.' },
-    { title: 'Submit your information', text: 'Provide your email so we can send your activation details once your order is processed.' },
-    { title: 'Receive activation details', text: 'You will receive the credentials or playlist information needed to start streaming.' },
-    { title: 'Configure your device', text: 'Follow our Setup Guide to install a compatible player app and enter your details.' },
+    { title: 'Pick a plan length', text: 'Or start with the 24-hour trial if you would rather test first and decide after.' },
+    { title: 'Tell us where to send details', text: 'Just an email address — nothing else is required to get your order moving.' },
+    { title: 'Get your login or playlist URL', text: 'Sent as soon as your order or trial is processed, usually within a few hours.' },
+    { title: 'Add it to a player app', text: 'The Setup Guide shows exactly where those details go for your specific device.' },
   ])}`,
 })}
 
@@ -134,12 +134,12 @@ ${section({
     <div class="basics-media">${iconMedia('<circle cx="270" cy="270" r="22" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M270 256 L270 270 L282 278" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', '24-hour trial illustration')}</div>
     <div>
       ${sectionHead({ eyebrow: 'Try before you subscribe', title: trial.label, left: true })}
-      <p>Test streaming quality, channel availability, and device compatibility for ${trial.duration} before committing to a longer plan — for a nominal $${trial.price.toFixed(2)}.</p>
+      <p>A full day of real access — same channels, same servers, same quality as a paid plan — for a nominal $${trial.price.toFixed(2)}, so you decide with actual information instead of marketing copy.</p>
       <a class="btn btn-primary btn-lg" href="/trial/">Start 24-Hour Trial</a>
       <ul class="check-list">
-        <li>Full access to the live channel lineup for ${trial.duration}</li>
-        <li>Up to 4K resolution where available</li>
-        <li>Access on one device of your choice</li>
+        <li>The complete live channel lineup, not a limited preview</li>
+        <li>Up to 4K where the content and your connection support it</li>
+        <li>One device of your choice for the full ${trial.duration}</li>
       </ul>
     </div>
   </div>`,
@@ -148,12 +148,12 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Who it fits', title: 'Who is Canada IPTV for?' })}
+  ${sectionHead({ eyebrow: 'Who it fits', title: 'Who actually switches to this' })}
   ${featureGrid([
-    { title: 'Cord-cutters', text: 'Households ready to drop cable or satellite without losing the channels they actually watch.' },
-    { title: 'Sports viewers', text: 'Anyone tired of juggling separate sports packages and regional blackout rules just to follow a season.' },
-    { title: 'Multi-device households', text: 'People who want one subscription usable across several devices and rooms.' },
-    { title: 'Renters and movers', text: 'Anyone who wants a TV solution that isn’t tied to a fixed cable installation at one address.' },
+    { title: 'People done negotiating with their provider', text: 'No retention call, no "loyalty discount" that expires in six months — the price you see is the price you pay.' },
+    { title: 'Households following a full season', text: 'One subscription instead of stacking multiple sports add-ons just to keep up with a schedule.' },
+    { title: 'More than one screen, one bill', text: 'A single plan that covers the living room TV, a bedroom streaming box, and a laptop without separate accounts.' },
+    { title: 'Anyone who moves', text: 'Students, renters, and anyone between addresses — the subscription is not tied to a wall jack.' },
   ], 4)}`,
 })}
 
@@ -167,15 +167,15 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Confidence', title: 'Trust & transparency' })}
+  ${sectionHead({ eyebrow: 'Confidence', title: 'Nothing here needs a login to check' })}
   <div class="grid grid-3">
     ${[
-      { title: 'Full pricing details', text: 'Every plan price is listed in full on our Pricing page — nothing hidden until checkout.', href: '/pricing/' },
-      { title: 'Real support', text: 'A contact form that reaches an actual person, not an automated dead end.', href: '/contact/' },
-      { title: 'Public setup instructions', text: 'Detailed, device-by-device setup instructions you can read before you subscribe.', href: '/setup-guide/' },
-      { title: 'Refund Policy', text: 'Clear terms for when and how refunds apply. Read the full policy anytime.', href: '/refund-policy/' },
-      { title: 'Privacy Policy', text: 'A plain-language explanation of what information we collect and why.', href: '/privacy-policy/' },
-      { title: 'Terms of Use', text: 'The rules of using the service, written to be understood, not just legally defensible.', href: '/terms-of-use/' },
+      { title: 'Prices, in full, right now', text: 'Every plan and its exact cost is on the Pricing page before you enter a single detail.', href: '/pricing/' },
+      { title: 'A real reply, not a ticket number', text: 'Messages go to an inbox someone actually reads.', href: '/contact/' },
+      { title: 'Setup steps you can read first', text: 'Device instructions are public — check them before you subscribe, not after.', href: '/setup-guide/' },
+      { title: 'Refunds explained plainly', text: 'The conditions are written out in full, not buried in a support ticket macro.', href: '/refund-policy/' },
+      { title: 'What we collect, and why', text: 'The Privacy Policy says exactly what data is kept and what it is used for.', href: '/privacy-policy/' },
+      { title: 'Terms without the fine-print maze', text: 'Written to actually be read, not just to survive a legal review.', href: '/terms-of-use/' },
     ]
       .map(
         (t) => `
@@ -191,13 +191,13 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Learn more', title: 'Helpful resources', left: true })}
+  ${sectionHead({ eyebrow: 'Learn more', title: 'If you want to read before you commit', left: true })}
   <div class="grid grid-4">
     ${[
-      { title: 'Setup Guide', text: 'Device-by-device instructions for getting connected.', href: '/setup-guide/' },
-      { title: 'Full FAQ', text: 'Answers to the most common questions about the service.', href: '/faq/' },
-      { title: 'What Is IPTV?', text: 'A plain-language introduction to how IPTV works.', href: '/guides/what-is-iptv/' },
-      { title: '4K vs HD Streaming', text: 'Understand the real differences in resolution and quality.', href: '/guides/4k-vs-hd-streaming/' },
+      { title: 'Setup Guide', text: 'Every supported device, one at a time.', href: '/setup-guide/' },
+      { title: 'Full FAQ', text: 'The complete list of questions we get asked.', href: '/faq/' },
+      { title: 'What Is IPTV?', text: 'The technology, explained without jargon.', href: '/guides/what-is-iptv/' },
+      { title: '4K vs HD Streaming', text: 'What the resolution difference actually looks like.', href: '/guides/4k-vs-hd-streaming/' },
     ]
       .map(
         (r) => `
