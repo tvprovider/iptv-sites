@@ -3,48 +3,61 @@ import fs from 'node:fs';
 
 const SIZE = 180;
 const SCALE = SIZE / 32; // matches the 32x32 viewBox of favicon.svg / logoMark()
-const BG = [13, 13, 13]; // #0d0d0d, same as the real brand mark background
-const FG = [237, 53, 8]; // #ed3508, same brand red as the zigzag stroke
+const BG = [13, 13, 13]; // #0d0d0d
+const RED = [237, 53, 8]; // #ed3508
+const WHITE = [255, 255, 255];
 
-// Same zigzag path as favicon.svg / logoMark(): "M9 21 L14 11 L17 17 L20 11 L23 21"
-const pts = [
-  [9, 21], [14, 11], [17, 17], [20, 11], [23, 21],
-].map(([x, y]) => [x * SCALE, y * SCALE]);
-const STROKE = 2.4 * SCALE;
+const s = (v) => v * SCALE;
 
-function distToSegment(px, py, ax, ay, bx, by) {
-  const dx = bx - ax, dy = by - ay;
-  const lenSq = dx * dx + dy * dy;
-  let t = lenSq === 0 ? 0 : ((px - ax) * dx + (py - ay) * dy) / lenSq;
-  t = Math.max(0, Math.min(1, t));
-  const cx = ax + t * dx, cy = ay + t * dy;
-  return Math.hypot(px - cx, py - cy);
+// Point-in-rounded-rect test (standard rounded-box SDF, simplified to containment).
+function inRoundedRect(px, py, x, y, w, h, r) {
+  if (px < x || px > x + w || py < y || py > y + h) return false;
+  const qx = Math.min(Math.max(px, x + r), x + w - r);
+  const qy = Math.min(Math.max(py, y + r), y + h - r);
+  const dx = px - qx, dy = py - qy;
+  return dx * dx + dy * dy <= r * r;
 }
 
-function onStroke(x, y) {
-  for (let i = 0; i < pts.length - 1; i++) {
-    const [ax, ay] = pts[i], [bx, by] = pts[i + 1];
-    if (distToSegment(x, y, ax, ay, bx, by) <= STROKE / 2) return true;
-  }
-  return false;
+function inRect(px, py, x, y, w, h) {
+  return px >= x && px <= x + w && py >= y && py <= y + h;
+}
+
+function inTriangle(px, py, ax, ay, bx, by, cx, cy) {
+  const sign = (x1, y1, x2, y2, x3, y3) => (x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3);
+  const d1 = sign(px, py, ax, ay, bx, by);
+  const d2 = sign(px, py, bx, by, cx, cy);
+  const d3 = sign(px, py, cx, cy, ax, ay);
+  const hasNeg = d1 < 0 || d2 < 0 || d3 < 0;
+  const hasPos = d1 > 0 || d2 > 0 || d3 > 0;
+  return !(hasNeg && hasPos);
+}
+
+// Shapes, in paint order, each with its own color — matches favicon.svg exactly.
+const shapes = [
+  { test: (x, y) => inRoundedRect(x, y, s(6), s(7), s(20), s(15), s(3)), color: RED },
+  { test: (x, y) => inRoundedRect(x, y, s(8.2), s(9.2), s(15.6), s(10), s(1.8)), color: BG },
+  { test: (x, y) => inTriangle(x, y, s(13.5), s(11), s(13.5), s(17.4), s(19), s(14.2)), color: WHITE },
+  { test: (x, y) => inRect(x, y, s(14), s(22), s(4), s(3)), color: RED },
+  { test: (x, y) => inRoundedRect(x, y, s(10), s(25), s(12), s(2), s(1)), color: RED },
+];
+
+function colorAt(x, y) {
+  let color = BG;
+  for (const shape of shapes) if (shape.test(x, y)) color = shape.color;
+  return color;
 }
 
 const rows = [];
 for (let y = 0; y < SIZE; y++) {
-  const row = [0];
+  const row = [0]; // filter byte: None
   for (let x = 0; x < SIZE; x++) {
-    // supersample 2x2 for basic anti-aliasing on the diagonal stroke
-    let hits = 0;
+    // 2x2 supersample for anti-aliased edges
+    let r = 0, g = 0, b = 0;
     for (const [ox, oy] of [[0.25, 0.25], [0.75, 0.25], [0.25, 0.75], [0.75, 0.75]]) {
-      if (onStroke(x + ox, y + oy)) hits++;
+      const c = colorAt(x + ox, y + oy);
+      r += c[0]; g += c[1]; b += c[2];
     }
-    const t = hits / 4;
-    const px = [
-      Math.round(BG[0] + (FG[0] - BG[0]) * t),
-      Math.round(BG[1] + (FG[1] - BG[1]) * t),
-      Math.round(BG[2] + (FG[2] - BG[2]) * t),
-    ];
-    row.push(px[0], px[1], px[2]);
+    row.push(Math.round(r / 4), Math.round(g / 4), Math.round(b / 4));
   }
   rows.push(Buffer.from(row));
 }

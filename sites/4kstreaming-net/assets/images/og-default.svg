@@ -4,7 +4,8 @@
   <circle cx="1040" cy="120" r="220" fill="#ed3508" opacity="0.18"/>
   <g transform="translate(100,235)">
     <rect x="0" y="0" width="46" height="46" rx="8" fill="#ed3508"/>
-    <path d="M12 32 L20 14 L25 24 L30 14 L38 32" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="7" y="12.5" width="32" height="21" rx="3.5" fill="#0d0d0d"/>
+    <path d="M19 16.5 L19 29.5 L31 23 Z" fill="#ffffff"/>
     <text x="64" y="34" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#ffffff">4K Streaming</text>
   </g>
   <text x="100" y="360" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="300" fill="#ffffff">Premium 4K IPTV streaming,</text>

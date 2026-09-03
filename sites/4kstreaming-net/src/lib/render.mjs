@@ -127,7 +127,7 @@ export function productOfferSchema(plans) {
 function logoMark({ height = 32, onDark = false } = {}) {
   const width = Math.round(height * (188 / 32));
   const textFill = onDark ? '#ffffff' : '#14100f';
-  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="4K Streaming — 4K Streaming IPTV logo"><rect width="32" height="32" rx="7" fill="#0d0d0d"/><path d="M9 21 L14 11 L17 17 L20 11 L23 21" fill="none" stroke="#ed3508" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="${textFill}">4K Streaming</text></svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="4K Streaming — 4K Streaming IPTV logo"><rect width="32" height="32" rx="7" fill="#0d0d0d"/><rect x="6" y="7" width="20" height="15" rx="3" fill="#ed3508"/><rect x="8.2" y="9.2" width="15.6" height="10" rx="1.8" fill="#0d0d0d"/><path d="M13.5 11 L13.5 17.4 L19 14.2 Z" fill="#ffffff"/><rect x="14" y="22" width="4" height="3" fill="#ed3508"/><rect x="10" y="25" width="12" height="2" rx="1" fill="#ed3508"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="600" fill="${textFill}">4K Streaming</text></svg>`;
 }
 
 function header(currentPath) {
