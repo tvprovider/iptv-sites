@@ -1,0 +1,26 @@
+# IPTV Latino
+
+> IPTV Latino is a subscription-based IPTV service built around Spanish-language and Latin American content — live fútbol from major Latin American and Spanish leagues, novelas, Spanish-language news and entertainment — sitting alongside the same full English-language and international catalog every plan includes. Nothing is removed to make room for the other; both are fully included. Plans include 40,000+ live channels and 180,000+ VOD titles, identical across every plan length — a longer term lowers the price, it never unlocks extra content. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS, using any player app that supports M3U playlists or Xtream Codes-style logins.
+
+## Key pages
+
+- [Home — IPTV Latino overview](https://iptvlatino.org/)
+- [Pricing — subscription plans and cost comparison](https://iptvlatino.org/pricing/)
+- [24-Hour Trial — $1.00 test period](https://iptvlatino.org/trial/)
+- [Order — how to subscribe and pay](https://iptvlatino.org/order/)
+- [Setup Guide — device-by-device activation instructions](https://iptvlatino.org/setup-guide/)
+- [FAQ — common questions about fútbol, novelas, plans, and setup](https://iptvlatino.org/faq/)
+- [About Us — why Spanish and English content are both fully included](https://iptvlatino.org/about-us/)
+- [Contact — support for setup, billing, and trial questions](https://iptvlatino.org/contact/)
+- [Guides — background reading index](https://iptvlatino.org/guides/)
+- [Guide — What is IPTV Latino, and what a channel count means for Spanish-language coverage](https://iptvlatino.org/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://iptvlatino.org/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvlatino.org/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to choose an IPTV subscription for Latino households](https://iptvlatino.org/guides/how-to-choose-an-iptv-subscription/)
+- [Privacy Policy](https://iptvlatino.org/privacy-policy/)
+- [Refund Policy](https://iptvlatino.org/refund-policy/)
+- [Terms of Use](https://iptvlatino.org/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
