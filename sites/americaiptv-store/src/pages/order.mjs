@@ -5,46 +5,28 @@ import {
 import { plans, trial } from '../data/business.mjs';
 
 const orderFaqs = [
-  { q: 'Does this form charge my card?', a: 'No — this only collects your plan and contact details. A secure payment link follows by email, and that separate link is where payment actually happens.' },
-  { q: 'How long until I can actually watch?', a: 'Most accounts go live within a few hours of payment confirming. Any delay beyond that gets communicated by email rather than leaving you guessing.' },
-  { q: 'Can I change my mind on plan length after submitting?', a: 'As long as it is before payment, yes — reply to any email from us or use the Contact page and the order gets adjusted.' },
-  { q: 'What if I am not ready to commit to a full plan?', a: `The ${trial.label} for $${trial.price.toFixed(2)} exists for exactly that — see the Trial page instead of ordering here.` },
+  { q: 'Is my card charged the moment I submit this?', a: 'Nothing is charged here. This form only captures which plan you want and how to reach you — the actual payment happens on a separate secure link sent afterward.' },
+  { q: 'What is the gap between ordering and watching?', a: 'Typically a few hours from payment clearing to your login landing in your inbox. Anything slower than usual gets flagged to you directly by email.' },
+  { q: 'I picked the wrong plan length — can that change?', a: 'Yes, right up until payment goes through. Reply to any email you got from us, or message through Contact, and the order gets updated.' },
+  { q: 'Not ready to pick a full plan yet?', a: `That is exactly what the ${trial.label} is for — $${trial.price.toFixed(2)} on the Trial page instead of committing here.` },
 ];
 
 export default {
   slug: 'order',
   title: 'Order America IPTV — Subscribe Now',
-  description: 'Order your America IPTV subscription. Choose a plan, submit your details, and we\'ll email you a secure payment link to complete your order.',
+  description: 'Order America IPTV in a few steps: pick a plan, leave your details, and get a secure payment link by email to finish subscribing.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }]), faqSchema(orderFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }])}
 ${hero({
   eyebrow: 'Subscribe',
-  h1: 'Lock in your plan and get streaming',
-  lead: 'Choose your plan below and submit your details. We\'ll email you a secure payment link within a few hours — once payment is confirmed, your activation details go out right away.',
+  h1: 'Pick a length, we handle the rest by email',
+  lead: 'Fill in the form below — no card details go here. A secure payment link shows up in your inbox shortly after, and activation follows the moment it clears.',
   primaryCta: { label: 'Jump to the order form', href: '#order-form-section' },
   secondaryCta: { label: 'Compare plans first', href: '/pricing/' },
   media: iconMedia('<rect x="246" y="256" width="48" height="32" rx="4" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M246 260 L270 278 L294 260" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', 'Order confirmation illustration'),
   dark: true,
-  trustItems: ['No payment collected on this page', 'Reply-back support', 'Clear refund policy', 'Real 24-hour trial available'],
-})}
-
-${section({
-  html: `
-  ${sectionHead({ eyebrow: 'How ordering works', title: 'What happens between clicking and watching' })}
-  ${stepsList([
-    { title: 'Pick your plan length', text: 'Right on the form below — no payment yet at this step.' },
-    { title: 'Leave your details', text: 'Email and the device you plan to use, so activation lines up correctly.' },
-    { title: 'A payment link lands in your inbox', text: 'Generally within a few hours of submitting.' },
-    { title: 'Credentials follow payment', text: 'The moment it clears, your login or playlist URL goes out.' },
-  ])}`,
-})}
-
-${section({
-  bg: 'quiet',
-  html: `
-  ${sectionHead({ eyebrow: 'Why order directly', title: 'No downgraded version behind this form', left: true })}
-  ${answerBox(`<p>Every plan carries the identical <strong>full channel lineup</strong>, <strong>up to 4K</strong> where the device and source support it, and works across every <a href="/setup-guide/">supported device</a>. Still deciding on length? The full <a href="/pricing/">Pricing page</a> breaks it down.</p>`)}`,
+  trustItems: ['Card details never go on this form', 'Support that actually replies', 'Refund policy posted, not hidden', 'Test it first for $1'],
 })}
 
 ${section({
@@ -52,10 +34,10 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
-      ${sectionHead({ eyebrow: 'Get started', title: 'Get this order moving', left: true })}
-      <p>A secure payment link follows by email once this is submitted. Would rather test first? The <a href="/trial/">24-hour trial</a> is the lower-commitment option.</p>
+      ${sectionHead({ eyebrow: 'Get started', title: 'Fill this in to lock a plan', left: true })}
+      <p>A payment link arrives by email once this is submitted — nothing is charged on this page itself. Want to test first instead? The <a href="/trial/">24-hour trial</a> is the lighter-commitment route.</p>
       <div class="card" style="margin-top:20px;">
-        <h3>What each length costs</h3>
+        <h3>What each length runs</h3>
         <ul style="padding-left:20px;color:var(--text-soft);">
           ${plans.map((p) => `<li>${esc(p.label)} — $${p.price.toFixed(2)}${p.perMonth ? ` (~$${p.perMonth.toFixed(2)}/mo)` : ''}</li>`).join('')}
         </ul>
@@ -68,13 +50,31 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
+  ${sectionHead({ eyebrow: 'From click to channel', title: 'Four steps, start to finish' })}
+  ${stepsList([
+    { title: 'Choose a plan length above', text: 'Nothing gets charged by making this choice.' },
+    { title: 'Add your email and preferred device', text: 'So the activation details that follow line up with what you actually use.' },
+    { title: 'Open the payment link when it arrives', text: 'Sent to that same email, usually inside a few hours.' },
+    { title: 'Your login shows up right after', text: 'Load it into a compatible player app and start watching.' },
+  ])}`,
+})}
+
+${section({
+  html: `
+  ${sectionHead({ eyebrow: 'One catalog for everyone', title: 'Nothing here is a lesser version', left: true })}
+  ${answerBox(`<p>Whichever length you pick, you get the same <strong>full channel lineup</strong>, the same <strong>up to 4K</strong> ceiling where your device and the source allow it, and the same list of <a href="/setup-guide/">supported devices</a>. If length is still the open question, the <a href="/pricing/">Pricing page</a> lays it all out.</p>`)}`,
+})}
+
+${section({
+  bg: 'quiet',
+  html: `
   ${sectionHead({ eyebrow: 'Questions', title: 'Order FAQ', left: true })}
   ${faqAccordion(orderFaqs)}`,
 })}
 
 ${ctaBanner({
-  title: 'Need a moment before ordering?',
-  lead: 'The Pricing page has every detail, or test things out first with the 24-hour trial.',
+  title: 'Still weighing your options?',
+  lead: 'Compare every plan on the Pricing page, or try the service first for $1.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}

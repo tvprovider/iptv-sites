@@ -27,7 +27,7 @@ ${hero({
   secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
   media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
   dark: true,
-  trustItems: ['No annual contract', 'M3U & Xtream Codes supported', 'Runs on Apple TV HD & 4K', 'Clear refund policy'],
+  trustItems: ['No contract beyond the term you pick', 'M3U or Xtream Codes-style login', 'Apple TV HD and 4K both covered', 'Refund terms in plain writing'],
 })}
 
 ${section({

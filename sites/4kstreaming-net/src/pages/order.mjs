@@ -5,46 +5,46 @@ import {
 import { plans, trial } from '../data/business.mjs';
 
 const orderFaqs = [
-  { q: 'How do I actually pay?', a: 'After you submit this form, we review your order and email you a secure payment link. You complete payment through that link — we never ask you to send card details by email or through this form.' },
-  { q: 'How fast will I get access after paying?', a: 'Most orders are activated within a few hours of payment being confirmed. If there is ever a delay, we will update you by email.' },
-  { q: 'Can I switch plans after ordering?', a: 'Yes — reply to any of our emails or use the Contact page before you pay, and we will update your order to a different plan length.' },
-  { q: 'What if I want to test it first?', a: `You can start the ${trial.label} for $${trial.price.toFixed(2)} instead of ordering a full plan — see our Trial page.` },
+  { q: 'Where does the actual payment happen?', a: 'Not on this form. Submitting it triggers a review, then a secure payment link by email — that link is the only place payment is collected. Card details never go through this form or by email directly.' },
+  { q: 'How long between paying and being able to watch?', a: 'Typically a few hours after payment clears. Anything slower than that gets an email update from us rather than leaving you wondering.' },
+  { q: 'I picked the wrong plan length — can it be changed?', a: 'As long as payment hasn\'t gone through yet, yes — reply to any email from us or use the Contact page and we\'ll adjust the order.' },
+  { q: 'Is there a lower-commitment option before I order a full plan?', a: `Yes — the ${trial.label} runs $${trial.price.toFixed(2)} and is exactly built for that. Check the Trial page for details.` },
 ];
 
 export default {
   slug: 'order',
-  title: 'Order 4K Streaming IPTV — Subscribe Now | 4K Streaming',
-  description: 'Order your 4K Streaming IPTV subscription. Choose a plan, submit your details, and we\'ll email you a secure payment link to complete your order.',
+  title: '4K Streaming IPTV — Order Your Subscription',
+  description: 'Order 4K Streaming IPTV: pick a plan, submit your details, and get a secure payment link by email to finish your subscription.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }]), faqSchema(orderFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }])}
 ${hero({
   eyebrow: 'Subscribe',
-  h1: 'Complete your 4K Streaming order',
-  lead: 'Choose your plan below and submit your details. We\'ll email you a secure payment link within a few hours — once payment is confirmed, your activation details go out right away.',
+  h1: 'Submit an order, get a payment link, start watching',
+  lead: `Pick a plan below and leave your details. A secure payment link follows by email — once that clears, your activation details go out right away.`,
   primaryCta: { label: 'Jump to the order form', href: '#order-form-section' },
   secondaryCta: { label: 'Compare plans first', href: '/pricing/' },
   media: iconMedia('<rect x="246" y="256" width="48" height="32" rx="4" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M246 260 L270 278 L294 260" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', 'Order confirmation illustration'),
   dark: true,
-  trustItems: ['No payment collected on this page', 'Reply-back support', 'Clear refund policy', 'Real 24-hour trial available'],
+  trustItems: ['This form doesn\'t touch your card', 'Real replies from a real inbox', 'Refund terms posted in full', '$1 trial if you want proof first'],
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'How ordering works', title: 'A simple, four-step process' })}
+  ${sectionHead({ eyebrow: 'How ordering works', title: 'Four steps between here and watching' })}
   ${stepsList([
-    { title: 'Choose your plan', text: 'Pick the subscription length that fits you on the form below.' },
-    { title: 'Submit your details', text: 'Tell us your email and primary device so we can set you up correctly.' },
-    { title: 'Receive your payment link', text: 'We email you a secure link to complete payment — usually within a few hours.' },
-    { title: 'Get your activation details', text: 'As soon as payment is confirmed, we send the credentials or playlist URL to start streaming.' },
+    { title: 'Pick your plan length', text: 'Whatever term fits, selected right on this form.' },
+    { title: 'Leave your contact info', text: 'Just enough for us to set things up correctly on our end.' },
+    { title: 'A payment link lands in your inbox', text: 'Usually within a few hours, always through a secure link.' },
+    { title: 'Activation details follow payment', text: 'Credentials or a playlist URL, sent the moment payment is confirmed.' },
   ])}`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Why order directly', title: 'What you get', left: true })}
-  ${answerBox(`<p>Every plan includes the <strong>full live channel lineup</strong>, <strong>up to 4K resolution</strong> where your device and source content support it, and compatibility with all our <a href="/setup-guide/">supported devices</a>. Not sure which length to pick? See the full <a href="/pricing/">Pricing &amp; comparison page</a>.</p>`)}`,
+  ${sectionHead({ eyebrow: 'Why order directly', title: 'Nothing held back at this price point', left: true })}
+  ${answerBox(`<p>Every plan carries the identical <strong>full channel lineup</strong>, <strong>up to 4K</strong> where your device and the source allow it, and works across all <a href="/setup-guide/">supported devices</a>. Still weighing plan lengths? The <a href="/pricing/">Pricing page</a> breaks the math down.</p>`)}`,
 })}
 
 ${section({
@@ -52,10 +52,10 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
-      ${sectionHead({ eyebrow: 'Get started', title: 'Submit your order', left: true })}
-      <p>Fill out the form and we'll follow up by email with your secure payment link. Prefer to test first? Start our <a href="/trial/">24-hour trial</a> instead.</p>
+      ${sectionHead({ eyebrow: 'Get started', title: 'Lock in your order', left: true })}
+      <p>Send the form and a payment link follows by email shortly after. Rather test the waters first? The <a href="/trial/">24-hour trial</a> is the lower-stakes option.</p>
       <div class="card" style="margin-top:20px;">
-        <h3>Plans at a glance</h3>
+        <h3>What each plan runs</h3>
         <ul style="padding-left:20px;color:var(--text-soft);">
           ${plans.map((p) => `<li>${esc(p.label)} — $${p.price.toFixed(2)}${p.perMonth ? ` (~$${p.perMonth.toFixed(2)}/mo)` : ''}</li>`).join('')}
         </ul>
@@ -73,8 +73,8 @@ ${section({
 })}
 
 ${ctaBanner({
-  title: 'Still deciding?',
-  lead: 'Compare full plan details on the Pricing page, or test the service first with the 24-hour trial.',
+  title: 'Want the numbers laid out first?',
+  lead: 'Full plan comparison lives on the Pricing page, or test everything via the 24-hour trial.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}

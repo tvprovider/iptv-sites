@@ -1,0 +1,22 @@
+# America IPTV
+
+> America IPTV is a subscription-based IPTV service centered on American live TV and on-demand content, delivered over the internet in up to 4K resolution where the plan, device, and source content support it. Plans include 40,000+ live channels (including major US networks, 24/7 news, and sports) and 180,000+ VOD titles. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. The service is compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Windows, and macOS, using any player app that supports M3U playlists or Xtream Codes-style logins.
+
+## Key pages
+
+- [Home — America IPTV overview](https://americaiptv.store/)
+- [Pricing — subscription plans and cost comparison](https://americaiptv.store/pricing/)
+- [24-Hour Trial — $1.00 test period](https://americaiptv.store/trial/)
+- [Order — how to subscribe and pay](https://americaiptv.store/order/)
+- [Setup Guide — device-by-device activation instructions](https://americaiptv.store/setup-guide/)
+- [FAQ — common questions about the service](https://americaiptv.store/faq/)
+- [Guide — What is IPTV?](https://americaiptv.store/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://americaiptv.store/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for 4K streaming](https://americaiptv.store/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to choose an IPTV subscription](https://americaiptv.store/guides/how-to-choose-an-iptv-subscription/)
+- [Refund Policy](https://americaiptv.store/refund-policy/)
+- [Terms of Use](https://americaiptv.store/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI

@@ -5,10 +5,10 @@ import {
 import { plans, trial } from '../data/business.mjs';
 
 const orderFaqs = [
-  { q: 'Where do I actually enter payment details?', a: 'Not here. This form only collects your plan choice and contact info — a secure payment link follows by email, and that link is where payment actually happens.' },
-  { q: 'How soon can I start watching after paying?', a: 'Most accounts are activated within a few hours of payment clearing. If something is running slower than that, you will hear about it by email rather than being left wondering.' },
-  { q: 'Can I still change plan length after submitting this?', a: 'Yes, as long as it is before payment — reply to any email from us or use the Contact page and the order gets updated to whatever length actually fits.' },
-  { q: 'Can I try it before committing to a plan?', a: `Yes — the ${trial.label} costs $${trial.price.toFixed(2)} and is a lower-risk way to check the service before ordering a full plan.` },
+  { q: 'Is my card number going into this form?', a: 'No — this form is just plan choice and an email address. The actual charge happens on a separate secure link that arrives afterward.' },
+  { q: 'How long between paying and streaming?', a: 'Typically a few hours after payment clears. If it is taking noticeably longer, an email update goes out rather than leaving you guessing.' },
+  { q: 'What if I want a different term than what I picked here?', a: 'As long as payment has not gone through yet, reply to the confirmation email or use Contact and the order gets adjusted.' },
+  { q: 'Is there a cheaper way to test this first?', a: `Yes — the ${trial.label} runs $${trial.price.toFixed(2)}, a much smaller commitment than ordering a full plan outright.` },
 ];
 
 export default {
@@ -20,31 +20,31 @@ export default {
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }])}
 ${hero({
   eyebrow: 'Subscribe',
-  h1: 'Order here, activate on your Apple TV after',
-  lead: 'Choose your plan below and submit your details. A secure payment link follows by email within a few hours — once it clears, your Apple TV activation details go out right away.',
+  h1: 'Submit this, pay next, watch after that',
+  lead: 'This form only locks in a plan length and a way to reach you — the actual charge happens on a separate secure link sent afterward.',
   primaryCta: { label: 'Jump to the order form', href: '#order-form-section' },
   secondaryCta: { label: 'Compare plans first', href: '/pricing/' },
   media: iconMedia('<rect x="246" y="256" width="48" height="32" rx="4" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M246 260 L270 278 L294 260" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', 'Order confirmation illustration'),
   dark: true,
-  trustItems: ['No payment collected on this page', 'Reply-back support', 'Clear refund policy', 'Real 24-hour trial available'],
+  trustItems: ['Nothing billed through this form', 'A person reads every message', 'Refund terms are public, not hidden', 'A dollar buys you proof first'],
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'How ordering works', title: 'Between this form and your Apple TV home screen' })}
+  ${sectionHead({ eyebrow: 'The three-step version', title: 'What actually happens after you hit submit' })}
   ${stepsList([
-    { title: 'Pick a plan length', text: 'Nothing is charged at this step.' },
-    { title: 'Leave your contact details', text: 'Just an email address is required to move things forward.' },
-    { title: 'Get a secure payment link', text: 'Arrives by email, typically within a few hours.' },
-    { title: 'Receive your credentials', text: 'The moment payment clears, install the player app on Apple TV and enter them.' },
+    { title: 'Choose a term', text: 'This step alone charges nothing.' },
+    { title: 'Give us an email that reaches you', text: 'That\'s the only contact info the form actually needs.' },
+    { title: 'A payment link shows up', text: 'Usually within a few hours, never longer than that without a reason.' },
+    { title: 'Login details follow the payment', text: 'Drop them into a player app on Apple TV and you\'re watching.' },
   ])}`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Why order directly', title: 'No reduced tier behind this form', left: true })}
-  ${answerBox(`<p>Every plan carries the identical <strong>full channel lineup</strong>, <strong>up to 4K</strong> on Apple TV 4K where the source supports it, and works across every <a href="/setup-guide/">supported device</a>. Still deciding on length? The <a href="/pricing/">Pricing page</a> breaks it down fully.</p>`)}`,
+  ${sectionHead({ eyebrow: 'One tier, not several', title: 'Nothing gets held back on this form', left: true })}
+  ${answerBox(`<p>Whatever length you choose here comes with the same <strong>complete channel lineup</strong>, the same <strong>up to 4K</strong> ceiling on Apple TV 4K hardware, and works on every <a href="/setup-guide/">device we support</a> — not just Apple TV. Not sure which term yet? The <a href="/pricing/">Pricing page</a> lays out the math.</p>`)}`,
 })}
 
 ${section({
@@ -52,10 +52,10 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
-      ${sectionHead({ eyebrow: 'Get started', title: 'Lock in a plan, activate after', left: true })}
-      <p>A payment link follows by email once this is in. Rather test first? The <a href="/trial/">24-hour trial</a> is the lower-commitment option.</p>
+      ${sectionHead({ eyebrow: 'Get started', title: 'Reserve a term, sort out payment next', left: true })}
+      <p>Submitting this gets a payment link into your inbox. Want to test the waters first instead? The <a href="/trial/">24-hour trial</a> costs a fraction as much.</p>
       <div class="card" style="margin-top:20px;">
-        <h3>What each length costs</h3>
+        <h3>The four options and what they run</h3>
         <ul style="padding-left:20px;color:var(--text-soft);">
           ${plans.map((p) => `<li>${esc(p.label)} — $${p.price.toFixed(2)}${p.perMonth ? ` (~$${p.perMonth.toFixed(2)}/mo)` : ''}</li>`).join('')}
         </ul>
@@ -68,13 +68,13 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Questions', title: 'Order FAQ', left: true })}
+  ${sectionHead({ eyebrow: 'Before you submit', title: 'Order form FAQ', left: true })}
   ${faqAccordion(orderFaqs)}`,
 })}
 
 ${ctaBanner({
-  title: 'Want the full pricing picture first?',
-  lead: 'Compare every plan on the Pricing page, or test it on your Apple TV with the 24-hour trial.',
+  title: 'Not ready to commit to a term?',
+  lead: 'The Pricing page breaks down all four lengths, or spend a dollar on the trial first.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}

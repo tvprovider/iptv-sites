@@ -4,17 +4,17 @@ import {
 } from '../../lib/render.mjs';
 
 const faqs = [
-  { q: 'Is IPTV legal?', a: 'IPTV as a technology is simply a method of delivering video over the internet — legality depends on whether the specific content being streamed is properly licensed. Users are responsible for understanding the rules that apply in their own location.' },
-  { q: 'Do I need special hardware for IPTV?', a: 'No special hardware is required beyond a device that can run a compatible player app — a Smart TV, streaming box, phone, tablet, or computer with an internet connection is enough.' },
+  { q: 'Is streaming IPTV legal to use?', a: 'IPTV itself is just a delivery method — nothing about the technology is illegal. Whether a specific stream is legal comes down to licensing of that content, which varies by provider and region, so it\'s worth understanding the rules where you live.' },
+  { q: 'Do I need to buy any special hardware?', a: 'No. Any device already capable of running an app — a Smart TV, a streaming box, a phone, or a laptop — is enough, as long as it has an internet connection.' },
 ];
 
 export default {
   slug: 'guides/what-is-iptv',
-  title: 'What Is IPTV? A Plain-Language Explanation | 4K Streaming',
-  description: 'A clear, direct explanation of what IPTV is, how it works, and how it differs from traditional cable or satellite TV.',
+  title: 'What Is IPTV? A Plain-Language Guide',
+  description: 'IPTV explained simply: what it is, how the technology actually works, and how it differs from cable or satellite TV.',
   jsonld: [
     breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides/' }, { label: 'What Is IPTV?' }]),
-    articleSchema({ headline: 'What Is IPTV?', description: 'A plain-language explanation of IPTV.', path: '/guides/what-is-iptv/', datePublished: '2026-09-02' }),
+    articleSchema({ headline: 'What Is IPTV?', description: 'A plain-language guide to IPTV.', path: '/guides/what-is-iptv/', datePublished: '2026-09-02' }),
     faqSchema(faqs),
   ],
   body: `
@@ -23,35 +23,35 @@ ${section({
   html: `
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
-    <h1>What is IPTV?</h1>
+    <h1>IPTV, explained without the jargon</h1>
     <div class="guide-illustration">${iconMedia('<circle cx="270" cy="270" r="20" fill="none" stroke="#ffffff" stroke-width="3"/><polygon points="263,258 263,282 285,270" fill="#ffffff"/>', 'What is IPTV illustration')}</div>
-    ${answerBox('<p><strong>IPTV (Internet Protocol Television)</strong> is a method of delivering television content — live channels and on-demand video — as data over an internet connection, instead of through traditional satellite, cable, or terrestrial broadcast signals. You watch it through a compatible player app on a Smart TV, streaming box, phone, tablet, or computer.</p>')}
+    ${answerBox('<p><strong>IPTV</strong> stands for Internet Protocol Television — it just means TV content arriving as ordinary internet data instead of through a satellite dish, a cable line, or an antenna. A player app on your device turns that data back into a picture, the same basic idea as any streaming app you already use.</p>')}
 
-    <h2>How IPTV works</h2>
-    <p>Traditional TV broadcasts a signal over the air, satellite, or a dedicated cable line. IPTV instead breaks video into data packets and sends them over the same internet infrastructure used for browsing, streaming video services, or downloading files. Your device runs a player app that requests this data and decodes it into a picture, similar to how a video streaming app works.</p>
+    <h2>What's actually happening under the hood</h2>
+    <p>Cable and satellite push a dedicated signal down a wire or through the air to a fixed box. IPTV skips that entirely — it breaks the video into packets and routes them over the same internet connection that handles your email or a video call. A player app on your end requests those packets and reassembles them into a live picture.</p>
 
-    <h2>IPTV vs. traditional TV</h2>
-    <p>The core difference is the delivery method. Traditional TV requires a dedicated line or antenna and, in many cases, a fixed set-top box tied to your address. IPTV only requires an internet connection, which makes it inherently more flexible — the same subscription can often move between devices and locations as long as you have internet access.</p>
+    <h2>Why that distinction actually matters</h2>
+    <p>Cutting out the dedicated signal is what makes IPTV flexible. There's no set-top box wired to a specific address — as long as a device has internet access, it can run the player app and pick up the same subscription, whether that's at home, at a second property, or traveling.</p>
 
-    <h2>What you need to use IPTV</h2>
+    <h2>What you actually need to get started</h2>
     <ul>
-      <li>A stable internet connection</li>
-      <li>A compatible device (Smart TV, streaming box, phone, tablet, or computer)</li>
-      <li>A compatible player app that supports M3U playlists or Xtream Codes-style logins</li>
-      <li>Activation details from your IPTV provider</li>
+      <li>An internet connection with reasonable, stable speed</li>
+      <li>Any device that runs apps — Smart TV, streaming box, phone, or computer</li>
+      <li>A player app built to read M3U playlists or Xtream Codes-style logins</li>
+      <li>Login details from whichever IPTV provider you're using</li>
     </ul>
 
-    <h2>Live channels vs. on-demand content</h2>
-    <p>IPTV services can offer both live channels, which stream on a fixed schedule like traditional TV, and on-demand content, which you can start whenever you like. The exact mix depends on the provider and plan.</p>
+    <h2>Live TV and on-demand aren't the same thing</h2>
+    <p>A live channel runs on a fixed schedule, exactly like broadcast TV always has. On-demand content sits there until you choose to start it. Most IPTV plans offer both — the balance between the two depends entirely on the specific provider.</p>
 
-    <h2>Where 4K fits in</h2>
-    <p>Because IPTV is just a delivery method, the resolution you can stream — including up to 4K — depends on the source content, your plan, and your device's decoding capability, not on IPTV itself. See our guide on <a href="/guides/4k-vs-hd-streaming/">4K vs. HD streaming</a> for more detail.</p>
+    <h2>Does IPTV mean automatic 4K?</h2>
+    <p>Not on its own — resolution tracks the original source material, your plan, and what your device can decode, not the delivery method itself. The <a href="/guides/4k-vs-hd-streaming/">4K vs. HD streaming guide</a> goes deeper into that distinction.</p>
 
-    <h2>Getting started</h2>
-    <p>If you want to try IPTV yourself, our <a href="/trial/">24-hour trial</a> is a low-cost way to test real streaming quality on your own device before committing to a subscription. Our <a href="/setup-guide/">Setup Guide</a> covers activation step by step.</p>
+    <h2>Trying it yourself</h2>
+    <p>The <a href="/trial/">24-hour trial</a> is the cheapest way to see real streaming quality on your own device before paying for a full plan. Once you're ready, the <a href="/setup-guide/">Setup Guide</a> walks through activation for whatever device you're using.</p>
   </div>`,
 })}
 ${section({ bg: 'quiet', html: `${sectionHead({ eyebrow: 'Questions', title: 'Related questions', left: true })}${faqAccordion(faqs)}` })}
-${ctaBanner({ title: 'Ready to try IPTV for yourself?', lead: 'Test real streaming quality with our 24-hour trial, or compare subscription plans.' })}
+${ctaBanner({ title: 'See it running on your own device', lead: 'Start the 24-hour trial, or skip ahead and compare subscription plans.' })}
 `,
 };

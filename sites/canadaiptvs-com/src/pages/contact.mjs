@@ -6,18 +6,32 @@ import { site } from '../data/business.mjs';
 
 export default {
   slug: 'contact',
-  title: 'Contact Us — Canada IPTV Support',
-  description: 'Get in touch with Canada IPTV for setup help, billing questions, trial support, or general inquiries about our Canadian IPTV subscription service.',
+  title: 'Contact Canada IPTV Support',
+  description: 'Reach Canada IPTV support for setup questions, billing, trial help, or anything else about the subscription — every message gets a real reply.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Contact' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Contact' }])}
 ${hero({
   eyebrow: 'Contact',
-  h1: 'A message that actually reaches someone',
-  lead: 'Questions about setup, billing, or the trial? Send us a message and we\'ll follow up by email.',
+  h1: 'Send a message, get an actual reply',
+  lead: 'Stuck on activation, unsure about a charge, or just have a question before subscribing — the form below reaches a real person.',
   primaryCta: { label: 'Jump to the form', href: '#contact-form-section' },
   secondaryCta: { label: 'View Plans', href: '/pricing/' },
   media: iconMedia('<path d="M246 256 h48 a6 6 0 0 1 6 6 v20 a6 6 0 0 1 -6 6 h-30 l-12 10 v-10 h-6 a6 6 0 0 1 -6 -6 v-20 a6 6 0 0 1 6 -6 z" fill="none" stroke="#ffffff" stroke-width="3.5"/>', 'Contact support illustration'),
+})}
+
+${section({
+  bg: 'quiet',
+  html: `
+  ${sectionHead({ eyebrow: 'What tends to land here', title: 'The messages we get most' })}
+  ${featureGrid([
+    { title: 'Trial not cooperating', text: 'Something specific stuck during setup, or the trial signup itself.' },
+    { title: 'Picking or switching a plan', text: 'Not sure which length fits, or need to change one already underway.' },
+    { title: 'Stuck partway through activation', text: 'The Setup Guide got you most of the way, but one step is not landing.' },
+    { title: 'A charge that needs explaining', text: 'Anything about pricing, payment methods, or a specific line item.' },
+    { title: 'Playback acting up', text: 'Buffering, a rejected login, or a channel refusing to load.' },
+    { title: 'None of the above', text: 'Does not fit a category cleanly? Send it in anyway — someone will read it.' },
+  ])}`,
 })}
 
 ${section({
@@ -25,8 +39,8 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
-      ${sectionHead({ eyebrow: 'Send a message', title: 'What to include', left: true })}
-      <p>A reply comes by email, not through this page — so mention your device and what you were trying to do when it comes up. It cuts the back-and-forth down to one message instead of three.</p>
+      ${sectionHead({ eyebrow: 'Before you hit send', title: 'What speeds up a reply', left: true })}
+      <p>Since the answer comes by email rather than live on this page, include your device and exactly what was happening — that single detail usually turns a three-message back-and-forth into one reply that actually fixes it.</p>
     </div>
     ${contactForm({ topics: ['General question', 'Trial support', 'Subscription support', 'Setup help', 'Billing question', 'Something else'] })}
   </div>`,
@@ -35,40 +49,26 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'What we help with', title: 'The kinds of messages that land here' })}
-  ${featureGrid([
-    { title: 'Getting the trial working', text: 'Starting it, or figuring out why it is not behaving on a specific device.' },
-    { title: 'Choosing or changing a plan', text: 'Deciding between lengths, or switching one already in progress.' },
-    { title: 'Getting a device connected', text: 'Walking through activation when the Setup Guide alone was not quite enough.' },
-    { title: 'Anything about a charge', text: 'Pricing, payment, or a billing question that needs a straight answer.' },
-    { title: 'Something is not playing right', text: 'Buffering, a login that will not take, or a channel that will not load.' },
-    { title: 'Anything else', text: 'If it does not fit the categories above, send it anyway.' },
-  ])}`,
-})}
-
-${section({
-  html: `
   <div class="grid grid-2">
     <div>
-      ${sectionHead({ eyebrow: 'Before you write in', title: 'The FAQ might already have it', left: true })}
-      <p>Devices, billing, and the trial are the three topics people ask about most, and they are already covered there in detail.</p>
+      ${sectionHead({ eyebrow: 'Quicker option', title: 'Check the FAQ first', left: true })}
+      <p>Billing, devices, and trial questions are the three topics covered there in the most depth already.</p>
       <a class="btn btn-ghost" href="/faq/">Visit the FAQ →</a>
     </div>
     <div>
-      ${sectionHead({ eyebrow: 'Setting up right now?', title: 'The Setup Guide covers this too', left: true })}
-      <p>Every supported device gets its own steps, plus a troubleshooting checklist for the common snags.</p>
+      ${sectionHead({ eyebrow: 'Mid-setup right now?', title: 'The Setup Guide has device steps', left: true })}
+      <p>Each supported device gets its own walkthrough, plus a checklist for the problems people hit most.</p>
       <a class="btn btn-ghost" href="/setup-guide/">Visit the Setup Guide →</a>
     </div>
   </div>`,
 })}
 
 ${section({
-  bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'What to expect', title: 'How replies actually go out', left: true })}
-  <p>Messages get answered in the order they arrive, by email. A device type and a specific description of what is happening turns a slow back-and-forth into one reply that actually solves it.</p>`,
+  ${sectionHead({ eyebrow: 'Response times', title: 'How messages actually get handled', left: true })}
+  <p>Everything is answered in the order it comes in, over email. Mentioning your device type and a precise description of the issue up front is what keeps a reply from turning into a longer thread than it needs to be.</p>`,
 })}
 
-${ctaBanner({ title: 'Not subscribed yet?', lead: 'Compare our plans or test the service first with the 24-hour trial.' })}
+${ctaBanner({ title: 'Have not subscribed yet?', lead: 'Compare plan lengths, or try the service first for a dollar with the 24-hour trial.' })}
 `,
 };

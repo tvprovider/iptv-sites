@@ -4,14 +4,14 @@ import {
 } from '../../lib/render.mjs';
 
 const faqs = [
-  { q: 'Is IPTV legal?', a: 'IPTV as a technology is simply a method of delivering video over the internet — legality depends on whether the specific content being streamed is properly licensed. Users are responsible for understanding the rules that apply in their own location.' },
-  { q: 'Do I need special hardware for IPTV?', a: 'No. Any device that can run a compatible player app — a Smart TV, streaming box, phone, tablet, or computer with an internet connection — is enough.' },
+  { q: 'Is streaming IPTV legal to use?', a: 'IPTV is just a delivery method — internet data instead of a dish or cable line. Whether any specific stream is legal comes down to whether the content itself is properly licensed, and that responsibility sits with the viewer and the provider, not the technology.' },
+  { q: 'Do I need to buy any special equipment?', a: 'No dedicated hardware is required. If a device can run apps and connect to the internet — a Smart TV, streaming box, phone, tablet, or computer — it can run a compatible IPTV player.' },
 ];
 
 export default {
   slug: 'guides/what-is-iptv',
-  title: 'What Is IPTV? A Plain-Language Explanation | America IPTV',
-  description: 'A clear, direct explanation of what IPTV is, how it delivers American live channels over the internet, and how it differs from cable or satellite.',
+  title: 'What Is IPTV? A Plain-Language Explanation',
+  description: 'IPTV explained simply: how it streams American live channels over the internet instead of cable or satellite, and what you actually need to use it.',
   jsonld: [
     breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides/' }, { label: 'What Is IPTV?' }]),
     articleSchema({ headline: 'What Is IPTV?', description: 'A plain-language explanation of IPTV.', path: '/guides/what-is-iptv/', datePublished: '2026-09-03' }),
@@ -23,35 +23,35 @@ ${section({
   html: `
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
-    <h1>IPTV, explained without the jargon</h1>
+    <h1>IPTV, stripped of the acronym soup</h1>
     <div class="guide-illustration">${iconMedia('<circle cx="270" cy="270" r="20" fill="none" stroke="#ffffff" stroke-width="3"/><polygon points="263,258 263,282 285,270" fill="#ffffff"/>', 'What is IPTV illustration')}</div>
-    ${answerBox('<p><strong>IPTV stands for Internet Protocol Television</strong> — television delivered as internet data instead of through a satellite dish, coaxial cable line, or antenna signal. You watch it through a player app on a Smart TV, streaming box, phone, tablet, or computer, the same way you would open any other streaming app.</p>')}
+    ${answerBox('<p>Strip away the acronym and IPTV just means television that arrives as ordinary internet data, instead of a signal pulled from a satellite dish, a coaxial line, or an over-the-air antenna. You open it the same way you would any other streaming app — through a player app running on a Smart TV, streaming box, phone, tablet, or computer.</p>')}
 
-    <h2>The short version</h2>
-    <p>A cable box receives a dedicated broadcast signal wired or beamed directly to your address. An IPTV player app instead requests channel data over your regular internet connection, the same pipe your Wi-Fi already uses for everything else. There is no separate coaxial line, no dish alignment, and no technician visit involved in receiving the signal itself.</p>
+    <h2>What's actually different under the hood</h2>
+    <p>A satellite or cable box is built to receive one specific signal, wired or beamed straight to your address. An IPTV player instead pulls channel data over whatever internet connection is already running your Wi-Fi. No dish to point, no coax line to run through the wall, no technician scheduling a visit to get the signal itself flowing.</p>
 
-    <h2>Why this matters for American viewers</h2>
-    <p>Cable and satellite providers in the US are built around fixed service areas — what you can get, and at what price, often depends on your ZIP code and which provider serves your building. Because IPTV only needs an internet connection, the same subscription generally works the same way whether you're in an apartment, a rental, or moving across the country.</p>
+    <h2>Why that matters if you move around a lot</h2>
+    <p>Cable and satellite in the US are built around fixed footprints — what's on offer, and what it costs, is largely dictated by your ZIP code and whichever provider happens to serve that address. An internet-only setup sidesteps that entirely: the same subscription keeps behaving the same way whether you're in an apartment downtown, a rental across town, or halfway through a cross-country move.</p>
 
-    <h2>What you actually need</h2>
+    <h2>The short checklist to actually use it</h2>
     <ul>
-      <li>An internet connection with enough sustained bandwidth for streaming</li>
-      <li>A device that can run a player app — Smart TV, Fire TV/Firestick, Android TV, phone, tablet, Windows, or macOS</li>
-      <li>A player app that accepts an M3U playlist URL or an Xtream Codes-style login</li>
-      <li>Activation details from your IPTV provider</li>
+      <li>Internet fast enough to sustain streaming, not just handle it in short bursts</li>
+      <li>A device capable of running apps — Smart TV, Fire TV/Firestick, Android TV box, phone, tablet, Windows, or macOS</li>
+      <li>A player app that reads either an M3U playlist link or an Xtream Codes-style login</li>
+      <li>The activation details your provider sends after signup</li>
     </ul>
 
-    <h2>Live channels vs. on-demand</h2>
-    <p>Most IPTV services, this one included, bundle two different things: live channels that run on a fixed schedule like normal broadcast TV, and an on-demand library you start whenever you want, closer to a movie/series streaming app. Both are typically included in the same subscription rather than sold separately.</p>
+    <h2>Two catalogs in one subscription</h2>
+    <p>Nearly every IPTV service — this one included — folds two separate things into one plan: a live lineup running on a fixed broadcast schedule, and a separate on-demand library you start on your own timeline. Neither is usually sold separately from the other.</p>
 
-    <h2>Where "4K" fits into this</h2>
-    <p>IPTV is a delivery method, not a resolution — 4K availability depends on the original broadcast source, your plan, and your device's decoding power, not on IPTV as a technology. See <a href="/guides/4k-vs-hd-streaming/">4K vs. HD streaming</a> for the specifics.</p>
+    <h2>Does IPTV mean 4K?</h2>
+    <p>Not automatically — IPTV describes the delivery pipe, not the picture quality riding through it. Whether something actually looks 4K depends on the original broadcast master, your plan, and what your device can decode. The <a href="/guides/4k-vs-hd-streaming/">4K vs. HD streaming guide</a> breaks that down further.</p>
 
-    <h2>Trying it yourself</h2>
-    <p>The cheapest way to see whether this actually fits how you watch TV is our <a href="/trial/">24-hour trial</a> — a low-cost way to check real channel availability and streaming quality on your own connection before committing. The <a href="/setup-guide/">Setup Guide</a> covers activation for every supported device.</p>
+    <h2>The cheapest way to find out if it fits you</h2>
+    <p>Reading only settles so much — the <a href="/trial/">24-hour trial</a> is a dollar toward finding out whether channel availability and streaming quality actually hold up on your own connection. Device activation steps are on the <a href="/setup-guide/">Setup Guide</a>.</p>
   </div>`,
 })}
 ${section({ bg: 'quiet', html: `${sectionHead({ eyebrow: 'Questions', title: 'Related questions', left: true })}${faqAccordion(faqs)}` })}
-${ctaBanner({ title: 'Ready to try IPTV for yourself?', lead: 'Test real streaming quality with our 24-hour trial, or compare subscription plans.' })}
+${ctaBanner({ title: 'See it running for yourself', lead: 'The 24-hour trial tests real streaming quality, or jump straight to comparing plans.' })}
 `,
 };

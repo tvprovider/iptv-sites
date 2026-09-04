@@ -12,9 +12,9 @@ export default {
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Contact' }])}
 ${hero({
-  eyebrow: 'Contact',
-  h1: 'Stuck on Apple TV? This is who to tell',
-  lead: 'Questions about setup, billing, or the trial? Send a message and expect a reply by email.',
+  eyebrow: 'Support',
+  h1: 'Tell us your Apple TV model and what is happening',
+  lead: 'That combination alone resolves most tickets on the first reply — the form below takes both.',
   primaryCta: { label: 'Jump to the form', href: '#contact-form-section' },
   secondaryCta: { label: 'View Plans', href: '/pricing/' },
   media: iconMedia('<path d="M246 256 h48 a6 6 0 0 1 6 6 v20 a6 6 0 0 1 -6 6 h-30 l-12 10 v-10 h-6 a6 6 0 0 1 -6 -6 v-20 a6 6 0 0 1 6 -6 z" fill="none" stroke="#ffffff" stroke-width="3.5"/>', 'Contact support illustration'),
@@ -25,8 +25,8 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:flex-start;">
     <div>
-      ${sectionHead({ eyebrow: 'Send a message', title: 'What actually speeds things up', left: true })}
-      <p>Mention your Apple TV generation (HD, or which 4K model) and whether you went the App Store route or sideloaded — that alone usually answers half the follow-up questions before they get asked.</p>
+      ${sectionHead({ eyebrow: 'Reach a real person', title: 'Two details worth including', left: true })}
+      <p>Which Apple TV you're on (HD, or a specific 4K generation) and whether you went through the App Store or sideloaded — those two facts alone cut out most of the usual back-and-forth.</p>
     </div>
     ${contactForm({ topics: ['General question', 'Trial support', 'Subscription support', 'Setup help', 'Billing question', 'Something else'] })}
   </div>`,
@@ -35,14 +35,14 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'What we help with', title: 'What actually comes through this form' })}
+  ${sectionHead({ eyebrow: 'What lands in this inbox', title: 'The tickets we see most' })}
   ${featureGrid([
-    { title: 'App Store app not showing up', text: 'Confirming whether one is currently listed, and walking through sideloading if not.' },
-    { title: 'Trial questions', text: 'Starting it, or figuring out why it is not behaving on your specific Apple TV.' },
-    { title: 'Plan changes', text: 'Picking a length, or switching one already in progress.' },
-    { title: 'Billing questions', text: 'Anything about a charge that needs a straight answer.' },
-    { title: 'Playback problems', text: 'Buffering, a login that will not take, or a channel stuck loading.' },
-    { title: 'Everything else', text: 'If it does not fit a category above, send it in anyway.' },
+    { title: 'Nothing compatible listed in the App Store', text: 'We check current availability and walk through the Xcode sideload path if that\'s where you\'re stuck.' },
+    { title: 'Trial not activating', text: 'Usually a typo in the login field or a delay on the email — quick to check either way.' },
+    { title: 'Switching plan length', text: 'Mid-term or between renewals, either works.' },
+    { title: 'A charge that needs explaining', text: 'We\'ll pull it up and walk through exactly what it was for.' },
+    { title: 'Stuttering, freezing, or a rejected login', text: 'Tell us the symptom and we narrow it down from there.' },
+    { title: 'Anything not listed here', text: 'Send it anyway — this list isn\'t exhaustive.' },
   ])}`,
 })}
 
@@ -50,13 +50,13 @@ ${section({
   html: `
   <div class="grid grid-2">
     <div>
-      ${sectionHead({ eyebrow: 'Before you write in', title: 'The FAQ covers a lot of this', left: true })}
-      <p>Apple TV compatibility, billing, and the trial are the three topics that come up most, already answered in detail there.</p>
+      ${sectionHead({ eyebrow: 'Faster than waiting on a reply', title: 'Check the FAQ first', left: true })}
+      <p>App Store churn, sideloading, billing, and the trial are already answered there in more depth than a single email reply usually covers.</p>
       <a class="btn btn-ghost" href="/faq/">Visit the FAQ →</a>
     </div>
     <div>
-      ${sectionHead({ eyebrow: 'Mid-setup right now?', title: 'The Setup Guide might solve it faster', left: true })}
-      <p>Both the App Store method and sideloading are covered in full, plus a troubleshooting checklist.</p>
+      ${sectionHead({ eyebrow: 'Mid-installation right now?', title: 'The Setup Guide walks both paths', left: true })}
+      <p>App Store and Xcode sideloading, side by side, with a troubleshooting checklist at the end.</p>
       <a class="btn btn-ghost" href="/setup-guide/">Visit the Setup Guide →</a>
     </div>
   </div>`,
@@ -65,10 +65,10 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'What to expect', title: 'How this actually gets answered', left: true })}
-  <p>Messages are handled in order, by email. Your Apple TV generation plus a specific description of what is happening is the difference between a one-line reply and a real back-and-forth.</p>`,
+  ${sectionHead({ eyebrow: 'Response time', title: 'How a reply actually gets shaped', left: true })}
+  <p>Tickets go out in the order they arrive, by email. A vague "it's not working" gets a vague first reply; naming the Apple TV generation and the exact symptom gets a useful one on the first try.</p>`,
 })}
 
-${ctaBanner({ title: 'Not subscribed yet?', lead: 'Compare our plans or test the service first with the 24-hour trial.' })}
+${ctaBanner({ title: 'Haven\'t subscribed yet?', lead: 'Compare plan lengths, or test it on your own Apple TV first for a dollar.' })}
 `,
 };

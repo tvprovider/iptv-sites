@@ -103,6 +103,22 @@ export function faqSchema(items) {
   };
 }
 
+export function howToSchema({ name, description, steps, totalTime }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    ...(totalTime ? { totalTime } : {}),
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.title,
+      text: s.text,
+    })),
+  };
+}
+
 export function productOfferSchema(plans) {
   return plans.map((p) => ({
     '@context': 'https://schema.org',

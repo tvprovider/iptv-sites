@@ -11,15 +11,15 @@ const guides = [
 
 export default {
   slug: 'guides',
-  title: 'IPTV Guides & Resources | 4K Streaming',
-  description: 'Educational guides on IPTV, 4K streaming quality, internet requirements, and how to choose an IPTV subscription.',
+  title: '4K Streaming — IPTV Guides & Resources',
+  description: 'Plain-language guides covering how IPTV works, 4K vs. HD quality, internet requirements, and how to evaluate an IPTV subscription.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Guides' }])}
 ${hero({
   eyebrow: 'Guides',
-  h1: 'IPTV guides & resources',
-  lead: 'Plain-language explanations of IPTV, 4K streaming, and how to evaluate a subscription before you buy.',
+  h1: 'Read up before you subscribe to anything',
+  lead: 'Four short guides covering how IPTV actually works, what 4K really buys you, and what to check before trusting any provider with your money.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
   media: iconMedia('<path d="M270 252 C 254 246 244 248 240 252 L240 286 C244 282 254 280 270 286 C286 280 296 282 300 286 L300 252 C296 248 286 246 270 252 Z" fill="none" stroke="#ffffff" stroke-width="3"/><line x1="270" y1="252" x2="270" y2="286" stroke="#ffffff" stroke-width="3"/>', 'IPTV guides illustration'),

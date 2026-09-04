@@ -16,8 +16,8 @@ const topics = [
     eyebrow: '4K streaming',
     title: '4K streaming quality',
     items: [
-      { q: 'Will everything I watch be in 4K?', a: 'No — 4K availability depends on the original source content. Some channels and programs are only available in HD or lower, regardless of the streaming service.' },
-      { q: 'What internet speed do I need for 4K?', a: 'We recommend at least 25 Mbps of sustained download speed for smooth 4K playback, ideally over a wired connection.' },
+      { q: 'Is 4K available on absolutely everything?', a: 'Only where the original source was actually shot and broadcast in 4K. Older programs or channels that never had a 4K master stay at their native resolution no matter what streams them.' },
+      { q: 'How fast does my connection need to be?', a: 'A sustained 25 Mbps download is the working minimum for stable 4K, and a wired Ethernet connection holds up better than Wi-Fi once 4K is involved.' },
     ],
   },
   {
@@ -43,9 +43,9 @@ const topics = [
     eyebrow: 'Compatibility',
     title: 'Playlist formats & multi-device use',
     items: [
-      { q: 'What playlist formats do you support?', a: 'We support both M3U playlist URLs and Xtream Codes-style logins (username, password, and server URL), so you can use nearly any compatible IPTV player app on any supported device.' },
-      { q: 'Do you support an EPG (program guide)?', a: 'Most compatible player apps load an electronic program guide automatically from your playlist or login details. If yours doesn\'t, check the app\'s settings for a manual EPG URL field — see our Setup Guide for details.' },
-      { q: 'Can I use my subscription on more than one device at once?', a: 'Each plan is intended for use on one device at a time. If you need simultaneous multi-device access, contact us before subscribing to discuss options.' },
+      { q: 'Which login formats work with your service?', a: 'Both an M3U playlist link and an Xtream Codes-style login (username, password, server URL) are supported, which covers nearly any compatible IPTV player app on any device we list.' },
+      { q: 'Does the channel guide (EPG) set itself up?', a: 'In most player apps, yes — the guide builds itself from your playlist automatically. When it does not, look in that app\'s settings for a manual EPG URL field; the Setup Guide walks through it.' },
+      { q: 'Can two people share one subscription across devices?', a: 'Each plan covers a single active device at a time. Reach out before subscribing if simultaneous multi-device access is what you actually need — it is worth discussing up front.' },
     ],
   },
   {
@@ -59,7 +59,7 @@ const topics = [
     eyebrow: 'Internet',
     title: 'Internet requirements',
     items: [
-      { q: 'Does IPTV use a lot of data?', a: 'Yes — streaming video, especially in 4K, uses significantly more data than browsing or standard-definition video. If you have a data cap, keep this in mind.' },
+      { q: 'How much data does streaming actually use?', a: 'More than you might expect, especially in 4K — noticeably heavier than browsing or SD video. Worth factoring in if your home internet plan has a data cap.' },
     ],
   },
   {
@@ -67,7 +67,7 @@ const topics = [
     eyebrow: 'Billing',
     title: 'Billing questions',
     items: [
-      { q: 'Do plans renew automatically?', a: 'Only if you explicitly choose a recurring option at checkout. Otherwise, access ends at the end of your paid term.' },
+      { q: 'Will I get billed again without asking for it?', a: 'Not unless you specifically opted into a recurring charge at checkout. Otherwise your access simply ends when the paid term is up.' },
     ],
   },
   {
@@ -75,7 +75,7 @@ const topics = [
     eyebrow: 'Refunds',
     title: 'Refunds',
     items: [
-      { q: 'How do refunds work?', a: 'See our full Refund Policy for the specific terms that apply to trials and subscription plans.' },
+      { q: 'Where are the actual refund terms?', a: 'The Refund Policy page has the full breakdown for both the trial and every subscription length — worth reading before, not after, a purchase.' },
     ],
   },
   {
@@ -83,7 +83,7 @@ const topics = [
     eyebrow: 'Troubleshooting',
     title: 'Troubleshooting',
     items: [
-      { q: 'What do I do if streaming keeps buffering?', a: 'Check your internet connection first, then see the full troubleshooting checklist on our Setup Guide.' },
+      { q: 'Streaming keeps stalling out — where do I start?', a: 'Start with your internet connection itself, then work through the full troubleshooting checklist on the Setup Guide if that is not the culprit.' },
     ],
   },
   {
@@ -103,8 +103,8 @@ export default {
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'FAQ' }])}
 ${hero({
   eyebrow: 'FAQ',
-  h1: 'Everything people ask before subscribing',
-  lead: 'Straight answers about how the service works, what devices are supported, and what to expect.',
+  h1: 'The questions we hear most before someone signs up',
+  lead: 'Real answers on how everything works, which devices are covered, and what to expect after you order.',
   media: iconMedia('<text x="270" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="600">?</text>', 'FAQ illustration'),
 })}
 ${topics
@@ -116,6 +116,6 @@ ${topics
     })
   )
   .join('\n')}
-${ctaBanner({ title: 'Still have questions?', lead: 'Our support team is ready to help with setup, billing, or trial questions.', primaryCta: { label: 'Contact Support', href: '/contact/' }, secondaryCta: { label: 'View Plans', href: '/pricing/' } })}
+${ctaBanner({ title: 'Didn\'t see your question here?', lead: 'Reach out directly — setup, billing, and trial questions all go to a real person.', primaryCta: { label: 'Contact Support', href: '/contact/' }, secondaryCta: { label: 'View Plans', href: '/pricing/' } })}
 `,
 };

@@ -8,96 +8,96 @@ const topics = [
   {
     id: 'iptv-basics',
     eyebrow: 'IPTV basics',
-    title: 'What is IPTV, exactly?',
+    title: 'The fundamentals',
     items: [coreFaqs[0], coreFaqs[1]],
   },
   {
     id: '4k-streaming',
     eyebrow: '4K streaming',
-    title: '4K streaming quality',
+    title: 'On picture quality',
     items: [
-      { q: 'Will everything I watch be in 4K?', a: 'No — 4K availability depends on the original source content. Some channels and programs are only available in HD or lower, regardless of the streaming service.' },
-      { q: 'What internet speed do I need for 4K?', a: 'We recommend at least 25 Mbps of sustained download speed for smooth 4K playback, ideally over a wired connection.' },
+      { q: 'Does 4K apply across the whole lineup?', a: 'Only where the source itself was produced in 4K. A program shot and broadcast in HD stays HD no matter which streaming service delivers it.' },
+      { q: 'What kind of connection actually holds up for 4K?', a: 'Look for a sustained 25 Mbps or more, and lean on Ethernet over Wi-Fi if your setup allows it — that combination is what keeps 4K stable.' },
     ],
   },
   {
     id: 'subscriptions',
     eyebrow: 'Subscriptions',
-    title: 'Subscription plans',
+    title: 'Plan questions',
     items: [coreFaqs[5]],
   },
   {
     id: 'trial',
     eyebrow: 'Trial',
-    title: '24-hour trial',
+    title: 'Before you subscribe',
     items: [coreFaqs[4]],
   },
   {
     id: 'devices',
     eyebrow: 'Devices',
-    title: 'Device compatibility',
+    title: 'What it runs on',
     items: [coreFaqs[2]],
   },
   {
     id: 'formats',
     eyebrow: 'Compatibility',
-    title: 'Playlist formats & multi-device use',
+    title: 'Logins, guides, and multiple devices',
     items: [
-      { q: 'What playlist formats do you support?', a: 'We support both M3U playlist URLs and Xtream Codes-style logins (username, password, and server URL), so you can use nearly any compatible IPTV player app on any supported device.' },
-      { q: 'Do you support an EPG (program guide)?', a: 'Most compatible player apps load an electronic program guide automatically from your playlist or login details. If yours doesn\'t, check the app\'s settings for a manual EPG URL field — see our Setup Guide for details.' },
-      { q: 'Can I use my subscription on more than one device at once?', a: 'Each plan is intended for use on one device at a time. If you need simultaneous multi-device access, contact us before subscribing to discuss options.' },
+      { q: 'M3U or Xtream Codes — do I need to pick one in advance?', a: 'No, both work. Whichever your chosen player app expects is the one it will accept — a playlist link for M3U, or a username/password/server trio for Xtream Codes.' },
+      { q: 'Will the channel guide show up on its own?', a: 'Most compatible apps assemble it automatically from your login details. When one does not, a manual "EPG URL" field in its settings is the fallback — covered further in the Setup Guide.' },
+      { q: 'Two devices, one login — possible?', a: 'Each subscription covers one device actively streaming at a time. Reach out before you subscribe if simultaneous multi-device access is something you specifically need.' },
     ],
   },
   {
     id: 'setup',
     eyebrow: 'Setup',
-    title: 'Setup & activation',
+    title: 'Getting connected',
     items: [coreFaqs[3]],
   },
   {
     id: 'internet-requirements',
     eyebrow: 'Internet',
-    title: 'Internet requirements',
+    title: 'Bandwidth and data use',
     items: [
-      { q: 'Does IPTV use a lot of data?', a: 'Yes — streaming video, especially in 4K, uses significantly more data than browsing or standard-definition video. If you have a data cap, keep this in mind.' },
+      { q: 'Is this heavy on a data cap?', a: 'Yes, noticeably — video streaming eats far more data than browsing, and 4K multiplies that further. Worth checking your data allowance first if you are on a metered connection.' },
     ],
   },
   {
     id: 'billing',
     eyebrow: 'Billing',
-    title: 'Billing questions',
+    title: 'How charges work',
     items: [
-      { q: 'Do plans renew automatically?', a: 'Only if you explicitly choose a recurring option at checkout. Otherwise, access ends at the end of your paid term.' },
+      { q: 'Does a plan quietly renew itself?', a: 'Only if a recurring option was specifically selected at checkout. Otherwise your access simply ends when the paid term is up.' },
     ],
   },
   {
     id: 'refunds',
     eyebrow: 'Refunds',
-    title: 'Refunds',
+    title: 'If you need a refund',
     items: [
-      { q: 'How do refunds work?', a: 'See our full Refund Policy for the specific terms that apply to trials and subscription plans.' },
+      { q: 'Where are the refund terms spelled out?', a: 'The Refund Policy page covers exactly what applies to both the trial and each subscription length.' },
     ],
   },
   {
     id: 'troubleshooting',
     eyebrow: 'Troubleshooting',
-    title: 'Troubleshooting',
+    title: 'When something is not working',
     items: [
-      { q: 'What do I do if streaming keeps buffering?', a: 'Check your internet connection first, then see the full troubleshooting checklist on our Setup Guide.' },
+      { q: 'Streaming keeps buffering — where do I start?', a: 'Check the connection itself first, then run through the full troubleshooting checklist on the Setup Guide.' },
     ],
   },
   {
     id: 'support',
     eyebrow: 'Support',
-    title: 'Contacting support',
+    title: 'Reaching a real person',
     items: [coreFaqs[6]],
   },
 ];
 
 export default {
   slug: 'faq',
-  title: 'Frequently Asked Questions — Canada IPTV',
-  description: 'Answers to common questions about Canada IPTV: how it works, supported devices, setup, the 24-hour trial, subscription plans, and support.',
+  title: 'Canada IPTV — Frequently Asked Questions',
+  description: 'Canada IPTV frequently asked questions: how the service works, device support, setup, the 24-hour trial, subscription plans, billing, and refunds.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'FAQ' }]), faqSchema(coreFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'FAQ' }])}

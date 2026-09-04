@@ -3,10 +3,10 @@ import {
 } from '../../lib/render.mjs';
 
 const guides = [
-  { title: 'What Is IPTV?', text: 'A plain-language introduction to how IPTV works and how it differs from cable or satellite.', href: '/guides/what-is-iptv/' },
-  { title: '4K vs. HD Streaming', text: 'The real differences in resolution and quality, and what actually affects what you see.', href: '/guides/4k-vs-hd-streaming/' },
-  { title: 'Internet Requirements for 4K Streaming', text: 'The internet speed and connection quality you need for smooth 4K playback.', href: '/guides/internet-requirements-for-4k-streaming/' },
-  { title: 'How to Choose an IPTV Subscription', text: 'What to check before subscribing to any IPTV service, ours or otherwise.', href: '/guides/how-to-choose-an-iptv-subscription/' },
+  { title: 'What Is IPTV?', text: 'Why Apple TV needs a player app at all instead of a built-in channel, in plain terms.', href: '/guides/what-is-iptv/' },
+  { title: '4K vs. HD Streaming', text: 'What actually determines whether Apple TV 4K shows a real 4K picture.', href: '/guides/4k-vs-hd-streaming/' },
+  { title: 'Internet Requirements for 4K Streaming', text: 'The sustained speed Apple TV 4K needs for playback that doesn\'t stutter.', href: '/guides/internet-requirements-for-4k-streaming/' },
+  { title: 'How to Choose an IPTV Subscription', text: 'What separates a provider worth trusting on Apple TV from a risky one.', href: '/guides/how-to-choose-an-iptv-subscription/' },
 ];
 
 export default {

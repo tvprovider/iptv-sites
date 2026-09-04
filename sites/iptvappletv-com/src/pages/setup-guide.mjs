@@ -1,8 +1,16 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema, deviceGrid, stepsList, answerBox, comparisonTable, iconMedia,
+  breadcrumbSchema, faqSchema, howToSchema, deviceGrid, stepsList, answerBox, comparisonTable, iconMedia,
 } from '../lib/render.mjs';
 import { devices } from '../data/business.mjs';
+
+const appleTvAppStoreSteps = [
+  { title: 'Open the App Store on your Apple TV', text: 'From the Apple TV home screen, using the Siri Remote or an old Apple TV Remote.' },
+  { title: 'Search for a compatible IPTV player', text: 'Look for one that explicitly supports M3U playlists or Xtream Codes-style logins.' },
+  { title: 'Install and open it', text: 'Standard tvOS install — no special permissions needed.' },
+  { title: 'Enter your activation details', text: 'Find the "add playlist" or "login" screen and enter your M3U URL or username/password/server.' },
+  { title: 'Save and confirm playback', text: 'The channel list loads automatically once saved — open a channel to confirm video and audio work.' },
+];
 
 const setupFaqs = [
   { q: 'My Apple TV shows no compatible IPTV apps in the App Store — now what?', a: 'That happens periodically as Apple reviews and removes generic player apps in waves. Sideloading through Xcode is the reliable fallback — it does not depend on what is currently listed.' },
@@ -25,7 +33,11 @@ export default {
   slug: 'setup-guide',
   title: 'IPTV Apple TV Setup Guide — App Store & Sideload Methods',
   description: 'How to set up IPTV on Apple TV: the App Store method, the sideload method when no app is listed, plus setup for every other supported device.',
-  jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]), faqSchema(setupFaqs)],
+  jsonld: [
+    breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]),
+    faqSchema(setupFaqs),
+    howToSchema({ name: 'How to set up IPTV on Apple TV via the App Store', description: 'Install a compatible player app from the Apple TV App Store and enter your activation details to start watching.', steps: appleTvAppStoreSteps }),
+  ],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }])}
 ${hero({
@@ -47,13 +59,7 @@ ${deviceSection({
   id: 'apple-tv-appstore',
   eyebrow: 'Apple TV — Method 1',
   title: 'If a compatible app is in the App Store',
-  steps: [
-    { title: 'Open the App Store on your Apple TV', text: 'From the Apple TV home screen, using the Siri Remote or an old Apple TV Remote.' },
-    { title: 'Search for a compatible IPTV player', text: 'Look for one that explicitly supports M3U playlists or Xtream Codes-style logins.' },
-    { title: 'Install and open it', text: 'Standard tvOS install — no special permissions needed.' },
-    { title: 'Enter your activation details', text: 'Find the "add playlist" or "login" screen and enter your M3U URL or username/password/server.' },
-    { title: 'Save and confirm playback', text: 'The channel list loads automatically once saved — open a channel to confirm video and audio work.' },
-  ],
+  steps: appleTvAppStoreSteps,
   note: 'App Store availability shifts as Apple reviews listed apps. If nothing suitable is showing up right now, the sideload method below works regardless.',
 })}
 

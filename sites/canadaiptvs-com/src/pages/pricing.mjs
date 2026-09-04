@@ -5,50 +5,50 @@ import {
 import { plans, trial, devices, catalog } from '../data/business.mjs';
 
 const pricingFaqs = [
-  { q: 'How many channels and VOD titles are included?', a: `Every plan includes the same catalog: ${catalog.liveChannels} live channels, including premium channels, and ${catalog.vods} VOD titles covering the latest films and series.` },
-  { q: 'Can I switch plans later?', a: 'Yes. You can move to a longer or shorter plan when your current term ends. Contact support if you would like help timing the switch.' },
-  { q: 'Do prices ever change without notice?', a: 'The prices listed on this page are our current rates. If pricing changes, it will apply to new orders and renewals going forward, not retroactively to an active paid term.' },
-  { q: 'Is the trial applied toward a subscription?', a: 'The 24-hour trial is a standalone, low-cost way to test the service and is billed separately from any subscription plan you choose afterward.' },
-  { q: 'What happens when my plan ends?', a: 'Your access ends at the end of your paid term unless you renew. We do not auto-enroll you into a new term without your action.' },
+  { q: 'Is the channel lineup smaller on the shorter plans?', a: `Not even slightly — ${catalog.liveChannels} live channels and ${catalog.vods} on-demand titles come standard on every plan length. Term length only changes what you pay, never what you can watch.` },
+  { q: 'What if I want a different plan length partway through?', a: 'That is fine once your current term finishes. Get in touch beforehand and we will line up the switch for whenever your renewal date lands.' },
+  { q: 'Will my price jump mid-subscription?', a: 'The figures on this page hold for the length of your current term. A future rate change only touches new signups and renewals, never a term you already paid for.' },
+  { q: 'Does the dollar trial roll into a real subscription?', a: 'No — they are billed independently. The trial exists purely so you can check the service works for you before spending on a full term.' },
+  { q: 'What happens on the day my term expires?', a: 'Access simply stops unless you renew it yourself. There is no automatic re-billing waiting to catch you off guard.' },
 ];
 
 export default {
   slug: 'pricing',
   title: 'Canada IPTV Pricing — Plans & 24-Hour Trial',
-  description: 'Compare Canada IPTV subscription plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99 USD, plus a $1.00 24-hour trial.',
+  description: 'Canada IPTV plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99 USD. Start with a $1.00 24-hour trial before committing.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs), ...productOfferSchema(plans)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing' }])}
 ${hero({
-  eyebrow: 'Plans',
-  h1: 'Every price listed here is exactly what you pay',
-  lead: 'Four plan lengths, each with a single listed price in US dollars. No equipment rental, no regional package upsells at checkout — just a Canada IPTV subscription built to replace your cable or satellite bill.',
+  eyebrow: 'What it costs',
+  h1: 'One number per plan, nothing hidden underneath it',
+  lead: 'Four term lengths, each with a flat US-dollar price and the same full lineup behind every one of them — built to replace a cable or satellite bill without a single surprise line item.',
   primaryCta: { label: 'Choose a Plan', href: '#plans' },
   secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
   media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
   dark: true,
-  trustItems: ['No annual contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Clear refund policy'],
+  trustItems: ['No 12-month lock-in', 'M3U playlists and Xtream Codes both work', 'Compatible across every device we cover', 'Refund terms published, not buried'],
 })}
 
 ${section({
   id: 'plans',
   html: `
-  ${sectionHead({ eyebrow: 'Subscription plans', title: 'Choose your plan' })}
+  ${sectionHead({ eyebrow: 'Subscription plans', title: 'Pick a length' })}
   ${pricingGrid(plans)}`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Cord-cutting', title: 'What a cable bill actually costs vs. this', left: true })}
+  ${sectionHead({ eyebrow: 'Versus a cable bill', title: 'What a Bell, Rogers, or Telus package usually adds on', left: true })}
   ${comparisonTable(
-    ['', 'Cable or satellite', 'Canada IPTV'],
+    ['', 'Traditional Canadian cable/satellite', 'Canada IPTV'],
     [
-      ['Contract', 'Often a 12–24 month lock-in', 'No annual contract required'],
-      ['Setup', 'Technician install, rented hardware', 'Self-setup in minutes on your own device'],
-      ['Devices', 'Tied to a fixed set-top box', 'Works across Smart TV, mobile, and computer'],
-      ['Trial period', 'Rarely offered without a sales call', `${trial.label} for $${trial.price.toFixed(2)}`],
-      ['Pricing clarity', 'Bundled fees, equipment charges', 'One flat price per plan, listed above'],
+      ['Contract length', 'Frequently locked in for 1-2 years', 'Nothing beyond 12 months, and no auto-renew trap'],
+      ['Getting connected', 'A booked technician visit, rented receiver', 'Self-install in minutes, on hardware you already own'],
+      ['Where it plays', 'Wherever the rented box happens to be', 'Smart TV, phone, tablet, or computer — your pick'],
+      ['Trying before buying', 'Almost never an option', `${trial.label} for just $${trial.price.toFixed(2)}`],
+      ['The bill itself', 'Regional fees and equipment rental stacked on', 'The single number shown per plan, full stop'],
     ]
   )}`,
 })}
@@ -56,7 +56,7 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Compare', title: 'Plan comparison', left: true })}
+  ${sectionHead({ eyebrow: 'Side by side', title: 'All four terms at a glance', left: true })}
   ${comparisonTable(
     ['Plan', 'Total price', 'Effective monthly cost', 'Best for'],
     plans.map((p) => [p.label, `$${p.price.toFixed(2)}`, p.perMonth ? `$${p.perMonth.toFixed(2)}/mo` : `$${p.price.toFixed(2)}/mo`, p.blurb])
@@ -65,28 +65,28 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Included with every plan', title: "Nothing held back for a higher tier", left: true })}
+  ${sectionHead({ eyebrow: 'True across every plan', title: 'What a shorter term does not take away from you', left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>The whole catalog, every plan</h3><p>${catalog.liveChannels} live channels and ${catalog.vods} VOD titles come with the 1-month plan just as much as the 12-month one — length only changes price and commitment, never content.</p></div>
-    <div class="card"><h3>4K where it is available</h3><p>Resolution follows the source and your own setup, not which plan length you picked.</p></div>
-    <div class="card"><h3>Every device, one login</h3><p>Move between a Smart TV, a phone, and a laptop without juggling separate subscriptions.</p></div>
+    <div class="card"><h3>The catalog stays whole</h3><p>${catalog.liveChannels} live channels and ${catalog.vods} on-demand titles — identical whether you picked 1 month or 12.</p></div>
+    <div class="card"><h3>4K when the pieces line up</h3><p>Resolution depends on your device and the source material, never on which term you're paying for.</p></div>
+    <div class="card"><h3>One login, every device</h3><p>Switch between the living room TV and a laptop without a second account.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Decision guide', title: 'If you are not sure which length to pick', left: true })}
+  ${sectionHead({ eyebrow: 'Not sure which term', title: 'A simple way to decide', left: true })}
   <div class="grid grid-2">
-    <p>New here? Run the 24-hour trial first — it settles whether your device and connection actually handle the service well before you spend more than a dollar finding out.</p>
-    <p>Already sold on it? The 6- and 12-month plans are where the real savings live: 12 months works out to roughly $6.67 a month against $14.99 on the monthly plan, more than a 55 percent drop.</p>
+    <p>First time trying this? The $1 trial answers the compatibility question in a day, before you've committed anything larger. The 1-month plan is the natural next step from there.</p>
+    <p>Already know you're sticking around for hockey season and beyond? That's exactly where the 6- and 12-month terms pay off — 12 months works out near $6.67 a month, well under the $14.99 monthly rate.</p>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Value over time', title: 'What commitment actually buys you', left: true })}
-  <p>Paying month to month keeps you free to stop whenever, at the highest per-month cost. Locking in longer changes that math meaningfully: roughly $11.66/month on the 3-month plan, $9.17/month at 6 months, and $6.67/month at 12 months. The savings scale with how confident you already are that you'll stick with it.</p>`,
+  ${sectionHead({ eyebrow: 'The math on longer terms', title: 'What locking in actually saves', left: true })}
+  <p>Paying monthly keeps things flexible at the highest per-month rate. Stretch the commitment out and the number drops fast: about $11.66/month across 3 months, $9.17/month across 6, and $6.67/month across a full year — worth it once you're confident this is staying on past the first few weeks.</p>`,
 })}
 
 ${section({
@@ -94,18 +94,18 @@ ${section({
   html: `
   <div class="grid grid-2" style="align-items:center;">
     <div>
-      ${sectionHead({ eyebrow: 'Test first', title: trial.label, left: true })}
-      <p>$${trial.price.toFixed(2)} buys ${trial.duration} of the real thing, not a stripped-down preview.</p>
+      ${sectionHead({ eyebrow: 'Test drive it', title: trial.label, left: true })}
+      <p>$${trial.price.toFixed(2)} gets you the actual service for ${trial.duration}, not a limited preview version of it.</p>
       <a class="btn btn-primary" href="/trial/">Start the trial</a>
     </div>
-    <div class="card"><h3>What one day actually proves</h3><p>Whether your internet and your device play nicely with the service — the two variables no amount of reading reviews can answer for you.</p></div>
+    <div class="card"><h3>The one thing a trial settles</h3><p>Whether your specific connection and device get along with this — something no amount of reading up front can tell you.</p></div>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'After you order', title: 'What happens right after you pay', left: true })}
-  <p>Activation details land by email, generally within a few hours. Drop them into a compatible player app and you're watching — no separate install fee, no callback scheduled, no waiting on a technician. Device-specific steps live in the Setup Guide.</p>
+  ${sectionHead({ eyebrow: 'Right after paying', title: 'What lands in your inbox', left: true })}
+  <p>Activation details arrive by email, typically inside a few hours. Enter them into a compatible player app and that's the entire process — no scheduled technician, no separate install charge. The Setup Guide walks through each device individually if you want exact steps.</p>
   <p><a class="btn btn-ghost" href="/setup-guide/">View the Setup Guide →</a></p>`,
 })}
 
@@ -118,15 +118,15 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Payments', title: 'How billing actually works', left: true })}
-  <p>Every price on this page is in US dollars and is the complete amount charged — no setup fee tacked on afterward. Nothing renews automatically unless you specifically choose a recurring option at checkout, so a plan ending is always your decision, not an auto-charge you have to catch.</p>`,
+  ${sectionHead({ eyebrow: 'On billing', title: 'How the charge actually works', left: true })}
+  <p>Every figure above is in US dollars and represents the full charge for that term — nothing extra tacked on afterward. Renewal only happens if you specifically select a recurring option at checkout, so ending a plan is always a decision you make, not something that sneaks past you.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'If something goes wrong', title: 'Refunds, spelled out before you need them', left: true })}
-  <p>The full conditions live on the <a href="/refund-policy/">Refund Policy</a> page — worth a read before you subscribe, not after something has already gone sideways.</p>`,
+  ${sectionHead({ eyebrow: 'If it does not work out', title: 'Refund terms, up front', left: true })}
+  <p>Read the full conditions on the <a href="/refund-policy/">Refund Policy</a> page before subscribing — better to know where you stand before paying than after.</p>`,
 })}
 
 ${section({
@@ -135,6 +135,6 @@ ${section({
   ${faqAccordion(pricingFaqs)}`,
 })}
 
-${ctaBanner({ title: 'Ready to watch Canadian TV in 4K?', lead: 'Pick the plan that fits, or test the service first with the 24-hour trial.', primaryCta: { label: 'Choose a Plan', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
+${ctaBanner({ title: 'Ready for Canadian TV without the cable contract?', lead: 'Choose a plan below, or test it first with the 24-hour trial.', primaryCta: { label: 'Choose a Plan', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
 `,
 };

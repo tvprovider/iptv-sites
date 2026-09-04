@@ -3,23 +3,23 @@ import {
 } from '../../lib/render.mjs';
 
 const guides = [
-  { title: 'What Is IPTV?', text: 'A plain-language introduction to how IPTV works and how it differs from cable or satellite.', href: '/guides/what-is-iptv/' },
-  { title: '4K vs. HD Streaming', text: 'The real differences in resolution and quality, and what actually affects what you see.', href: '/guides/4k-vs-hd-streaming/' },
-  { title: 'Internet Requirements for 4K Streaming', text: 'The internet speed and connection quality you need for smooth 4K playback.', href: '/guides/internet-requirements-for-4k-streaming/' },
-  { title: 'How to Choose an IPTV Subscription', text: 'What to check before subscribing to any IPTV service, ours or otherwise.', href: '/guides/how-to-choose-an-iptv-subscription/' },
+  { title: 'What Is IPTV?', text: 'How streaming TV over the internet actually differs from cable or satellite, in plain terms.', href: '/guides/what-is-iptv/' },
+  { title: '4K vs. HD Streaming', text: 'What genuinely separates the two resolutions, and the four things that decide what you see.', href: '/guides/4k-vs-hd-streaming/' },
+  { title: 'Internet Requirements for 4K Streaming', text: 'The real sustained speed 4K needs, not just a marketing minimum.', href: '/guides/internet-requirements-for-4k-streaming/' },
+  { title: 'How to Choose an IPTV Subscription', text: 'The checklist worth running before trusting any provider, America IPTV included.', href: '/guides/how-to-choose-an-iptv-subscription/' },
 ];
 
 export default {
   slug: 'guides',
-  title: 'IPTV Guides & Resources | America IPTV',
-  description: 'Educational guides on IPTV, 4K streaming quality, internet requirements, and how to choose an IPTV subscription.',
+  title: 'America IPTV — Guides & Resources',
+  description: 'How IPTV works, what 4K actually needs, and how to evaluate a subscription before paying for one — four plain-language guides.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Guides' }])}
 ${hero({
   eyebrow: 'Guides',
-  h1: 'Learn how IPTV actually works',
-  lead: 'Plain-language explanations of IPTV, 4K streaming, and how to evaluate a subscription before you buy.',
+  h1: 'The background info worth having first',
+  lead: 'Four guides on how streaming actually works, what resolution genuinely depends on, and what separates a trustworthy provider from a risky one.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
   media: iconMedia('<path d="M270 252 C 254 246 244 248 240 252 L240 286 C244 282 254 280 270 286 C286 280 296 282 300 286 L300 252 C296 248 286 246 270 252 Z" fill="none" stroke="#ffffff" stroke-width="3"/><line x1="270" y1="252" x2="270" y2="286" stroke="#ffffff" stroke-width="3"/>', 'IPTV guides illustration'),

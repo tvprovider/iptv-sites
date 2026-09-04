@@ -4,17 +4,17 @@ import {
 } from '../../lib/render.mjs';
 
 const faqs = [
-  { q: 'Can I tell the difference between 4K and HD on any screen?', a: 'The difference is most visible on larger screens (55 inches and up) viewed from a normal distance. On smaller screens, the difference is less noticeable.' },
-  { q: 'Does 4K always look better than HD?', a: 'Only if the original source content was actually filmed and encoded in 4K. Upscaled HD content will not match true native 4K quality.' },
+  { q: 'On a 40-inch bedroom TV, does 4K even register?', a: 'Barely. The gap between HD and 4K becomes obvious mainly on larger screens viewed from a typical couch distance — shrink the screen and the human eye stops reliably telling them apart.' },
+  { q: 'If something is labeled 4K, is it guaranteed to look that sharp?', a: 'Only if it was actually captured and mastered at native 4K to begin with. Content upscaled from a lower-resolution source gets relabeled but never gains real detail it never had.' },
 ];
 
 export default {
   slug: 'guides/4k-vs-hd-streaming',
-  title: 'Is 4K IPTV Actually Worth It? HD vs. 4K Explained | America IPTV',
-  description: 'A practical look at what 4K resolution actually buys you over HD when streaming IPTV, and what determines the quality you actually see.',
+  title: 'Is 4K IPTV Worth It? HD vs. 4K Explained',
+  description: 'What 4K resolution genuinely adds over HD when streaming, the four factors that decide it, and realistic bandwidth numbers to plan around.',
   jsonld: [
     breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides/' }, { label: '4K vs HD Streaming' }]),
-    articleSchema({ headline: '4K vs. HD Streaming', description: 'A practical look at what 4K resolution actually buys you over HD.', path: '/guides/4k-vs-hd-streaming/', datePublished: '2026-09-03' }),
+    articleSchema({ headline: '4K vs. HD Streaming', description: 'What 4K resolution genuinely adds over HD when streaming.', path: '/guides/4k-vs-hd-streaming/', datePublished: '2026-09-03' }),
     faqSchema(faqs),
   ],
   body: `
@@ -23,39 +23,39 @@ ${section({
   html: `
   <div class="prose">
     <span class="eyebrow">Educational guide</span>
-    <h1>Is 4K actually worth it, or just a number on a box?</h1>
+    <h1>Chasing 4K: worth the fuss, or just a spec-sheet number?</h1>
     <div class="guide-illustration">${iconMedia('<path d="M250 250 h12 M250 250 v12 M290 250 h-12 M290 250 v12 M250 290 h12 M250 290 v-12 M290 290 h-12 M290 290 v-12" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>', '4K vs HD resolution illustration')}</div>
-    ${answerBox('<p>Short answer: 4K resolution packs about four times the pixel detail of standard 1080p HD, but you only see that benefit on a large screen, at a normal viewing distance, when the content was genuinely produced in native 4K in the first place. On a phone or a small TV, most people cannot reliably tell the two apart.</p>')}
+    ${answerBox('<p>4K squeezes in roughly four times the pixels of standard 1080p HD, but that extra detail only registers under specific conditions: a big enough screen, a sensible viewing distance, and — the part people forget — footage that was genuinely captured in native 4K rather than stretched to look like it. Miss any one of those and the gap between the two shrinks fast.</p>')}
 
-    <h2>The numbers, side by side</h2>
+    <h2>Resolution head to head</h2>
     ${comparisonTable(
       ['Format', 'Approximate resolution', 'Best viewed on'],
       [
-        ['HD (1080p)', '1920 x 1080 pixels', 'Any screen size'],
-        ['4K (Ultra HD)', '3840 x 2160 pixels', '55 inch screens and larger, at a normal viewing distance'],
+        ['HD (1080p)', '1920 x 1080 pixels', 'Fine on any screen size'],
+        ['4K (Ultra HD)', '3840 x 2160 pixels', 'A 55-inch-plus display at a normal couch distance'],
       ]
     )}
 
-    <h2>Four things decide what you actually see</h2>
-    <p>Resolution on a spec sheet is only one piece. In practice, four things stack together:</p>
+    <h2>What quietly decides what shows up on your screen</h2>
+    <p>A resolution number on paper is only the starting point. Four separate things have to line up before it actually shows up in what you see:</p>
     <ul>
-      <li><strong>The source itself:</strong> plenty of channels and programs are HD, upscaled, or simply not shot in native 4K at all — no streaming service can add detail that was never captured.</li>
-      <li><strong>Your internet connection:</strong> 4K needs meaningfully more sustained bandwidth than HD, consistently, not just at peak speed.</li>
-      <li><strong>Your device:</strong> older hardware may not decode 4K smoothly, or at all.</li>
-      <li><strong>Your display:</strong> a 4K stream sent to a 1080p screen gets scaled back down, erasing the extra detail.</li>
+      <li><strong>What the source was actually shot in:</strong> a large share of programming was produced in HD and stays that way regardless of how it's delivered — no service invents detail that was never recorded.</li>
+      <li><strong>How your connection holds up over time:</strong> 4K needs bandwidth held steady, not just a fast burst at the start of a stream.</li>
+      <li><strong>What your hardware can decode:</strong> aging boxes and TVs sometimes cap out at HD regardless of what's being sent to them.</li>
+      <li><strong>The screen doing the displaying:</strong> feed a 4K stream to a 1080p panel and it gets compressed back down, quietly erasing the advantage.</li>
     </ul>
 
-    <h2>Bandwidth, in plain numbers</h2>
-    <p>As a working guideline: HD generally holds up around 5 to 10 Mbps of sustained bandwidth, while smooth 4K generally wants 25 Mbps or more. Actual numbers shift with content and compression, so treat this as a floor, not a guarantee.</p>
+    <h2>How much bandwidth this really takes</h2>
+    <p>As a rough baseline, HD streams comfortably somewhere around 5-10 Mbps sustained. 4K wants meaningfully more — 25 Mbps or better, held steady rather than just hit briefly. Compression efficiency and content type nudge these figures around, so treat them as a floor rather than an exact science.</p>
 
-    <h2>Why we say "up to 4K" instead of promising it outright</h2>
-    <p>Resolution depends on the four factors above working together, not on any one provider alone. If your connection or device cannot sustain 4K on a given title, the stream typically still plays — just at a lower resolution rather than failing outright.</p>
+    <h2>Why "up to 4K" beats promising 4K outright</h2>
+    <p>All four factors above have to cooperate simultaneously — no single piece of the chain can force it on its own. When your setup can't sustain it for a given title, the stream generally keeps playing anyway, just dropped to a lower resolution instead of stopping outright.</p>
 
-    <h2>Getting the most out of it</h2>
-    <p>Use a wired connection where you can, pick a device released within the last few years, and confirm your internet plan actually delivers 25 Mbps or more sustained, not just as an advertised maximum. The <a href="/setup-guide/">Setup Guide</a> has device-specific tips.</p>
+    <h2>Squeezing out the best picture you can</h2>
+    <p>Ethernet over Wi-Fi when it's an option, a device from the last handful of years rather than something aging, and an internet plan that actually sustains 25 Mbps rather than only advertising it as a ceiling. The <a href="/setup-guide/">Setup Guide</a> has more device-specific pointers.</p>
   </div>`,
 })}
 ${section({ bg: 'quiet', html: `${sectionHead({ eyebrow: 'Questions', title: 'Related questions', left: true })}${faqAccordion(faqs)}` })}
-${ctaBanner({ title: 'See it for yourself', lead: 'Test streaming quality on your own device and connection with our 24-hour trial.' })}
+${ctaBanner({ title: 'Judge it on your own screen', lead: 'The 24-hour trial runs on your actual device and connection, not a demo reel.' })}
 `,
 };

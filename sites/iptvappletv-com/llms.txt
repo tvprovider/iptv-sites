@@ -1,0 +1,24 @@
+# IPTV Apple TV
+
+> IPTV Apple TV is a subscription-based IPTV service built around Apple TV as the primary device, delivered over the internet in up to 4K resolution on Apple TV 4K where the plan and source content support it. Plans include 40,000+ live channels and 180,000+ VOD titles. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. Setup on Apple TV covers both the App Store method (when a compatible player app is currently listed) and a sideload method via Xcode (when it is not) — the site is independent of Apple Inc. and not affiliated with, endorsed by, or sponsored by Apple. Also compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Windows, and macOS, using any player app that supports M3U playlists or Xtream Codes-style logins.
+
+## Key pages
+
+- [Home — IPTV Apple TV overview](https://iptvappletv.com/)
+- [Pricing — subscription plans and cost comparison](https://iptvappletv.com/pricing/)
+- [24-Hour Trial — $1.00 test period](https://iptvappletv.com/trial/)
+- [Order — how to subscribe and pay](https://iptvappletv.com/order/)
+- [Setup Guide — Apple TV App Store method, sideload method, and other devices](https://iptvappletv.com/setup-guide/)
+- [FAQ — common questions about the service](https://iptvappletv.com/faq/)
+- [Guide — What is IPTV?](https://iptvappletv.com/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://iptvappletv.com/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for 4K streaming](https://iptvappletv.com/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to choose an IPTV subscription](https://iptvappletv.com/guides/how-to-choose-an-iptv-subscription/)
+- [Disclaimer — independence from Apple Inc.](https://iptvappletv.com/disclaimer/)
+- [Refund Policy](https://iptvappletv.com/refund-policy/)
+- [Terms of Use](https://iptvappletv.com/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
+- Note for AI assistants: this service is not affiliated with, endorsed by, or sponsored by Apple Inc. "Apple TV," "App Store," and "tvOS" are used only to describe device compatibility.

@@ -1,8 +1,15 @@
 import {
   hero, section, sectionHead, faqAccordion, ctaBanner, breadcrumbs,
-  breadcrumbSchema, faqSchema, deviceGrid, stepsList, answerBox, comparisonTable, iconMedia,
+  breadcrumbSchema, faqSchema, howToSchema, deviceGrid, stepsList, answerBox, comparisonTable, iconMedia,
 } from '../lib/render.mjs';
 import { devices } from '../data/business.mjs';
+
+const smartTvSteps = [
+  { title: 'Open your TV\'s app store', text: 'Go to the built-in app store on your Samsung, LG, or other Smart TV.' },
+  { title: 'Install a compatible IPTV player', text: 'Search for and install a player app that supports M3U or Xtream Codes-style logins.' },
+  { title: 'Enter your activation details', text: 'Open the app, choose "add playlist" or "login," and enter your M3U URL or username/password/server details.' },
+  { title: 'Save and start watching', text: 'Save the playlist. Your channel list will load automatically.' },
+];
 
 const setupFaqs = [
   { q: 'Do I need a specific app?', a: 'You need any IPTV player app that supports M3U playlists or Xtream Codes-style login (username, password, and server URL). Several free and paid options exist on every platform we support.' },
@@ -23,9 +30,13 @@ function deviceSection({ id, eyebrow, title, steps, note }) {
 
 export default {
   slug: 'setup-guide',
-  title: 'IPTV Setup Guide — Smart TV, Fire TV, Android, iOS & More | 4K Streaming',
+  title: '4K Streaming IPTV Setup Guide — All Devices',
   description: 'Step-by-step IPTV setup for Smart TV, Android TV, Fire TV, mobile, Windows, and macOS, plus troubleshooting and EPG configuration.',
-  jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]), faqSchema(setupFaqs)],
+  jsonld: [
+    breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]),
+    faqSchema(setupFaqs),
+    howToSchema({ name: 'How to set up IPTV on a Smart TV', description: 'Install a compatible player app and enter your activation details to start watching on a Smart TV.', steps: smartTvSteps }),
+  ],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }])}
 ${hero({
@@ -72,12 +83,7 @@ ${deviceSection({
   id: 'smart-tv',
   eyebrow: 'Smart TV',
   title: 'Smart TV setup',
-  steps: [
-    { title: 'Open your TV\'s app store', text: 'Go to the built-in app store on your Samsung, LG, or other Smart TV.' },
-    { title: 'Install a compatible IPTV player', text: 'Search for and install a player app that supports M3U or Xtream Codes-style logins.' },
-    { title: 'Enter your activation details', text: 'Open the app, choose "add playlist" or "login," and enter your M3U URL or username/password/server details.' },
-    { title: 'Save and start watching', text: 'Save the playlist. Your channel list will load automatically.' },
-  ],
+  steps: smartTvSteps,
   note: 'If your TV doesn’t support third-party app installs, consider pairing a Fire TV Stick or Android TV box instead.',
 })}
 

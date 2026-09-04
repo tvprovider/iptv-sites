@@ -5,29 +5,29 @@ import {
 import { plans, trial, devices, catalog } from '../data/business.mjs';
 
 const pricingFaqs = [
-  { q: 'How many channels and VOD titles are included?', a: `Every plan includes the same catalog: ${catalog.liveChannels} live channels, including premium channels, and ${catalog.vods} VOD titles covering the latest films and series.` },
-  { q: 'Can I switch plans later?', a: 'Yes. You can move to a longer or shorter plan when your current term ends. Contact support if you would like help timing the switch.' },
-  { q: 'Do prices ever change without notice?', a: 'The prices listed on this page are our current rates. If pricing changes, it will apply to new orders and renewals going forward, not retroactively to an active paid term.' },
-  { q: 'Is the trial applied toward a subscription?', a: 'The 24-hour trial is a standalone, low-cost way to test the service and is billed separately from any subscription plan you choose afterward.' },
-  { q: 'What happens when my plan ends?', a: 'Your access ends at the end of your paid term unless you renew. We do not auto-enroll you into a new term without your action.' },
+  { q: 'Does the channel count or VOD library shrink on the cheaper plans?', a: `No — every plan carries the identical catalog: ${catalog.liveChannels} live channels and ${catalog.vods} VOD titles. Term length changes the price, not what you can watch.` },
+  { q: 'Am I locked into the plan length I pick today?', a: 'Not permanently. Once your current term wraps up, switching to a longer or shorter plan is straightforward — reach out to support if you want a hand timing it.' },
+  { q: 'Could the listed prices change on me mid-term?', a: 'The rates shown here are current as of today. Any future adjustment applies only to new orders and renewals — an active paid term is never touched retroactively.' },
+  { q: 'Does paying for the trial count toward a subscription afterward?', a: 'No, the two are billed separately. The 24-hour trial is just a cheap way to kick the tires before deciding on a plan.' },
+  { q: 'What happens the day my subscription runs out?', a: 'Access simply ends unless you renew — nothing auto-charges or auto-enrolls you into a fresh term without you taking action.' },
 ];
 
 export default {
   slug: 'pricing',
-  title: 'Pricing — 4K Streaming IPTV Plans & 24-Hour Trial | 4K Streaming',
-  description: 'Compare 4K Streaming IPTV subscription plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99, plus a $1.00 24-hour trial.',
+  title: '4K Streaming IPTV Pricing — Plans & 24-Hour Trial',
+  description: '4K Streaming IPTV plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99, or test everything first with a $1.00 24-hour trial.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs), ...productOfferSchema(plans)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing' }])}
 ${hero({
   eyebrow: 'IPTV subscription plans',
-  h1: 'The best IPTV subscription pricing — simple, transparent, no surprises',
-  lead: 'Four plan lengths, one clear price each. No hidden renewal fees, no surprise upsells at checkout — just a straightforward 4K Streaming IPTV subscription built to replace cable or satellite.',
+  h1: 'Four plan lengths, one honest price on each',
+  lead: 'Pick a term, see exactly what it costs, done. No renewal traps buried in fine print, no surprise device-count upsell once you\'re already checking out.',
   primaryCta: { label: 'Subscribe Now', href: '#plans' },
   secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
   media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
   dark: true,
-  trustItems: ['No long-term contract', 'M3U & Xtream Codes supported', 'Works on all major devices', 'Clear refund policy'],
+  trustItems: ['Nothing past 12 months', 'Both M3U and Xtream Codes logins', 'Every plan works on every device we list', 'Refund terms posted in full'],
 })}
 
 ${section({
@@ -40,15 +40,15 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Cord-cutting', title: 'Why an IPTV subscription beats traditional cable', left: true })}
+  ${sectionHead({ eyebrow: 'Cord-cutting', title: 'Cable\'s fine print vs. what you actually get here', left: true })}
   ${comparisonTable(
     ['', 'Traditional cable/satellite', '4K Streaming IPTV'],
     [
-      ['Contract', 'Often 12–24 month lock-in', 'No long-term contract required'],
-      ['Setup', 'Technician install, hardware rental', 'Self-setup in minutes on your own device'],
-      ['Devices', 'Tied to a fixed set-top box', 'Works across Smart TV, mobile, and computer'],
-      ['Trial period', 'Rarely offered', `${trial.label} for $${trial.price.toFixed(2)}`],
-      ['Pricing clarity', 'Bundled fees, equipment charges', 'One flat price per plan, listed above'],
+      ['Contract', 'A 12–24 month lock-in is typical', 'Nothing longer than 12 months, ever'],
+      ['Getting started', 'Wait for a technician, rent a box', 'Ten minutes on a device you already own'],
+      ['Where it plays', 'One fixed set-top box', 'Smart TV, phone, or computer — your call'],
+      ['Testing it first', 'Basically never offered', `${trial.label} for just $${trial.price.toFixed(2)}`],
+      ["What you're billed", 'Line-item fees stacked on top', 'The single number listed per plan above'],
     ]
   )}`,
 })}
@@ -56,7 +56,7 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Compare', title: 'Plan comparison', left: true })}
+  ${sectionHead({ eyebrow: 'Compare', title: 'All four plans, side by side', left: true })}
   ${comparisonTable(
     ['Plan', 'Total price', 'Effective monthly cost', 'Best for'],
     plans.map((p) => [p.label, `$${p.price.toFixed(2)}`, p.perMonth ? `$${p.perMonth.toFixed(2)}/mo` : `$${p.price.toFixed(2)}/mo`, p.blurb])
@@ -65,28 +65,28 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Included with every plan', title: "What's included", left: true })}
+  ${sectionHead({ eyebrow: 'Every plan, no exceptions', title: 'What paying less per month does NOT cost you', left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>Full channel &amp; VOD access</h3><p>Every plan includes the same ${catalog.liveChannels} live channels and ${catalog.vods} VOD titles — longer plans only change the price and commitment length, not the content available.</p></div>
-    <div class="card"><h3>Up to 4K resolution</h3><p>Stream in up to 4K where your device and the source content support it.</p></div>
-    <div class="card"><h3>Multi-device compatibility</h3><p>Use your subscription across any of our supported device types.</p></div>
+    <div class="card"><h3>The full catalog, always</h3><p>${catalog.liveChannels} live channels and ${catalog.vods} VOD titles ship with the 1-month plan exactly as they do with the 12-month one.</p></div>
+    <div class="card"><h3>4K where it's supported</h3><p>Resolution tops out based on your device and the source, not which term you picked.</p></div>
+    <div class="card"><h3>Every device we cover</h3><p>One subscription, usable across whichever supported device you're on that day.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Decision guide', title: 'Choosing the right plan', left: true })}
+  ${sectionHead({ eyebrow: 'Decision guide', title: "If you're not sure which term to pick", left: true })}
   <div class="grid grid-2">
-    <p>If you are new to the service, start with the 24-hour trial to confirm compatibility with your device and internet connection. From there, the 1-month plan is a low-commitment way to try a full billing cycle.</p>
-    <p>If you already know you want to stick around, the 6- or 12-month plans lower your effective monthly cost meaningfully — the 12-month plan works out to roughly $6.67 per month compared to $14.99 on the monthly plan.</p>
+    <p>First time here? Run the $1 trial before anything else — it settles the compatibility question in a day instead of a month. The 1-month plan is the next step up once you know it works.</p>
+    <p>Already sold on sticking around? That's where the 6- and 12-month plans earn their keep — 12 months lands around $6.67 a month, well under the $14.99 monthly rate.</p>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Value over time', title: 'Monthly vs. longer-term value', left: true })}
-  <p>Paying monthly gives you maximum flexibility to stop at any time, but it costs more per month than committing to a longer term. The 3-month plan brings the effective cost down to about $11.66/month, the 6-month plan to about $9.17/month, and the 12-month plan to about $6.67/month — a meaningful saving if you already know you'll use the service consistently.</p>`,
+  ${sectionHead({ eyebrow: 'Value over time', title: 'What committing longer actually saves you', left: true })}
+  <p>Monthly billing keeps every door open — cancel whenever, pay the highest rate for that freedom. Committing further out changes the math: roughly $11.66/month on the 3-month term, $9.17/month on 6 months, and $6.67/month on the full year. Worth it once you're confident you'll actually keep watching.</p>`,
 })}
 
 ${section({
@@ -95,17 +95,17 @@ ${section({
   <div class="grid grid-2" style="align-items:center;">
     <div>
       ${sectionHead({ eyebrow: 'Test first', title: trial.label, left: true })}
-      <p>Not ready to commit? Test streaming quality and device compatibility for ${trial.duration} for $${trial.price.toFixed(2)}.</p>
+      <p>Skip the guesswork — $${trial.price.toFixed(2)} buys ${trial.duration} to check quality and device compatibility before you spend on a full term.</p>
       <a class="btn btn-primary" href="/trial/">Start the trial</a>
     </div>
-    <div class="card"><h3>Why start with a trial</h3><p>It confirms your internet connection and device work well with the service before you commit to a full billing cycle.</p></div>
+    <div class="card"><h3>Why bother with a trial at all</h3><p>One day tells you whether your connection and device actually get along with this before real money is on the line.</p></div>
   </div>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'After you order', title: 'Activation process', left: true })}
-  <p>After completing your order, you'll receive activation details by email. Enter these into a compatible player app on your device, and you're ready to start watching. Full device-specific steps are in our Setup Guide.</p>
+  ${sectionHead({ eyebrow: 'After you order', title: 'What happens right after checkout', left: true })}
+  <p>An email lands with your activation details shortly after ordering. Load them into a compatible player app on whatever device you're using, and that's the whole process — the Setup Guide covers each device individually if you want the exact steps.</p>
   <p><a class="btn btn-ghost" href="/setup-guide/">View the Setup Guide →</a></p>`,
 })}
 
@@ -118,15 +118,15 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Payments', title: 'Billing & payment information', left: true })}
-  <p>Prices on this page are shown in US dollars and reflect the full amount charged for each plan — there are no separate setup fees. Renewal is not automatic unless you explicitly choose a recurring option at checkout; you control if and when you pay again.</p>`,
+  ${sectionHead({ eyebrow: 'Payments', title: "How you're actually charged", left: true })}
+  <p>Every price above is in US dollars and is the complete charge for that plan — no bolt-on setup fee shows up later. Nothing renews on its own unless a recurring option was specifically chosen at checkout, so the decision to pay again always stays yours.</p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'If something goes wrong', title: 'Refund information', left: true })}
-  <p>We want you to feel confident subscribing. Read our full <a href="/refund-policy/">Refund Policy</a> for the specific terms and conditions that apply to trials and subscription plans.</p>`,
+  ${sectionHead({ eyebrow: 'If something goes wrong', title: 'Where refunds stand', left: true })}
+  <p>Subscribing shouldn't feel like a gamble. The <a href="/refund-policy/">Refund Policy</a> page spells out exactly what applies to both the trial and each subscription length.</p>`,
 })}
 
 ${section({
@@ -135,6 +135,6 @@ ${section({
   ${faqAccordion(pricingFaqs)}`,
 })}
 
-${ctaBanner({ title: 'Ready to get started?', lead: 'Pick the plan that fits, or test the service first with the 24-hour trial.', primaryCta: { label: 'Subscribe Now', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
+${ctaBanner({ title: 'Pick a plan and get watching today', lead: "Or ease in with the 24-hour trial if you'd rather test it first.", primaryCta: { label: 'Subscribe Now', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
 `,
 };

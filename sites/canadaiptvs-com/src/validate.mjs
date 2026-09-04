@@ -41,6 +41,11 @@ for (const f of files) {
   const desc = (html.match(/<meta name="description" content="(.*?)">/) || [])[1];
   if (!title) { console.log(f, 'MISSING TITLE'); errors++; }
   if (!desc) { console.log(f, 'MISSING DESCRIPTION'); errors++; }
+  const isNoindexPage = f.endsWith('404.html');
+  if (!isNoindexPage) {
+    if (title && title.length > 60) { console.log(f, `TITLE TOO LONG (${title.length} chars):`, title); errors++; }
+    if (desc && (desc.length < 70 || desc.length > 160)) { console.log(f, `DESCRIPTION LENGTH ${desc.length} chars (want 70-160):`, desc); errors++; }
+  }
   if (title) { if (titles.has(title)) console.log('DUPLICATE TITLE', title, 'in', f, 'and', titles.get(title)); titles.set(title, f); }
   if (desc) { if (descs.has(desc)) console.log('DUPLICATE DESCRIPTION in', f, 'and', descs.get(desc)); descs.set(desc, f); }
 
