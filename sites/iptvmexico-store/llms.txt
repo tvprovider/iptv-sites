@@ -1,0 +1,26 @@
+# IPTV Mexico
+
+> IPTV Mexico is a subscription IPTV service built specifically around Mexican television — Liga MX league matches, Selección Mexicana national-team coverage, Mexican novelas, and Mexican regional news and entertainment channels — carried alongside the same full English-language and international catalog every plan includes, not in place of it. A meaningful share of the real audience is Mexican households and fans living in the United States who want Liga MX and Mexican TV without a Mexican cable subscription; nothing about ordering, activation, or watching requires a Mexican address. Plans include 40,000+ live channels and 180,000+ VOD titles, identical across every plan length — a longer term lowers the price, it never unlocks extra content. Subscriptions run 1, 3, 6, or 12 months ($14.99 / $34.99 / $54.99 / $79.99 USD), with a $1.00 24-hour trial available before committing, running the identical live catalog a paying subscriber gets. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS.
+
+## Key pages
+
+- [Home — Liga MX, Selección Mexicana & novelas overview](https://iptvmexico.store/)
+- [Pricing — four plans, one flat price each](https://iptvmexico.store/pricing/)
+- [24-Hour Trial — $1.00 test period on the real lineup](https://iptvmexico.store/trial/)
+- [Order — how to subscribe and pay](https://iptvmexico.store/order/)
+- [Setup Guide — device-by-device activation checklist](https://iptvmexico.store/setup-guide/)
+- [FAQ — Liga MX coverage, watching from outside Mexico, plans, and setup](https://iptvmexico.store/faq/)
+- [About Us — why this site is built specifically around Mexico](https://iptvmexico.store/about-us/)
+- [Contact — support for setup, billing, and trial questions](https://iptvmexico.store/contact/)
+- [Guides — background reading index](https://iptvmexico.store/guides/)
+- [Guide — What Is IPTV Mexico? What's actually included](https://iptvmexico.store/guides/what-is-iptv/)
+- [Guide — Watching Liga MX & Mexican TV from outside Mexico](https://iptvmexico.store/guides/how-to-choose-an-iptv-subscription/)
+- [Guide — 4K vs HD streaming quality](https://iptvmexico.store/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvmexico.store/guides/internet-requirements-for-4k-streaming/)
+- [Privacy Policy](https://iptvmexico.store/privacy-policy/)
+- [Refund Policy](https://iptvmexico.store/refund-policy/)
+- [Terms of Use](https://iptvmexico.store/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
