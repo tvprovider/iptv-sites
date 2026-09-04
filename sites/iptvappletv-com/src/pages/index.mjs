@@ -6,12 +6,12 @@ import { plans, trial, devices, coreFaqs, site, catalog } from '../data/business
 
 export default {
   slug: '',
-  title: 'Apple TV IPTV — Live TV & VOD Streaming for Apple TV',
+  title: 'IPTV Apple TV — Live TV & VOD Streaming for Apple TV',
   description: 'IPTV built around Apple TV: live channels and on-demand titles in up to 4K, with a real setup guide for App Store and sideloaded player apps.',
   jsonld: [faqSchema(coreFaqs)],
   body: `
 ${hero({
-  eyebrow: 'Apple TV IPTV',
+  eyebrow: 'IPTV Apple TV',
   h1: 'IPTV that actually runs well on Apple TV',
   lead: 'Live channels and on-demand titles in up to 4K, set up through a compatible player app on your Apple TV — no jailbreaking, no unofficial firmware, just a normal App Store install or a straightforward sideload.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
@@ -62,11 +62,11 @@ ${marquee(['4K HDR', 'Live Sports', 'Movies & Series', '24/7 News', 'Kids & Fami
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'The basics', title: 'What is Apple TV IPTV?', lead: null, left: true })}
+  ${sectionHead({ eyebrow: 'The basics', title: 'What is IPTV Apple TV?', lead: null, left: true })}
   <div class="grid grid-2" style="align-items:center;">
     <div class="basics-media">${iconMedia('<path d="M250 254 a10 10 0 0 1 20 -4 a8 8 0 0 1 14 6 h4 a7 7 0 0 1 0 14 h-38 a7 7 0 0 1 0 -14 h0 z" fill="none" stroke="#ffffff" stroke-width="3"/><line x1="270" y1="270" x2="270" y2="286" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/><polyline points="262,280 270,288 278,280" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>', 'How IPTV runs on Apple TV illustration')}</div>
     <div>
-      ${answerBox(`<p><strong>Apple TV IPTV</strong> is a streaming subscription built with Apple TV as the primary device in mind — live channels and on-demand titles delivered over your internet connection, set up through a compatible player app, in up to 4K where your Apple TV model and the source content support it.</p>`)}
+      ${answerBox(`<p><strong>IPTV Apple TV</strong> is a streaming subscription built with Apple TV as the primary device in mind — live channels and on-demand titles delivered over your internet connection, set up through a compatible player app, in up to 4K where your Apple TV model and the source content support it.</p>`)}
       <ul class="check-list">
         <li>No jailbreak, no unofficial tvOS firmware</li>
         <li>Works on Apple TV HD and every Apple TV 4K generation</li>
@@ -124,7 +124,7 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Plans', title: 'Subscribe to Apple TV IPTV' })}
+  ${sectionHead({ eyebrow: 'Plans', title: 'Subscribe to IPTV Apple TV' })}
   ${pricingGrid(plans)}
   <p class="text-center" style="margin-top:20px;"><a href="/pricing/">Compare full plan details on the Pricing page →</a></p>`,
 })}

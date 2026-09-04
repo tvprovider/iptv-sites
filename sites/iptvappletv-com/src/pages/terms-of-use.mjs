@@ -5,8 +5,8 @@ const updated = 'September 2, 2026';
 
 export default {
   slug: 'terms-of-use',
-  title: 'Terms of Use | Apple TV IPTV',
-  description: 'Read the terms governing your use of the Apple TV IPTV subscription service, including accounts, acceptable use, billing, and liability.',
+  title: 'Terms of Use | IPTV Apple TV',
+  description: 'Read the terms governing your use of the IPTV Apple TV subscription service, including accounts, acceptable use, billing, and liability.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Terms of Use' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Terms of Use' }])}

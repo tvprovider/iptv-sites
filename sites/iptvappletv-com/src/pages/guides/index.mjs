@@ -11,7 +11,7 @@ const guides = [
 
 export default {
   slug: 'guides',
-  title: 'IPTV Guides & Resources | Apple TV IPTV',
+  title: 'IPTV Guides & Resources | IPTV Apple TV',
   description: 'Educational guides on IPTV, 4K streaming on Apple TV, internet requirements, and how to choose an IPTV subscription.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Guides' }])],
   body: `

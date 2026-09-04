@@ -6,7 +6,7 @@
 // here only to describe device compatibility.
 
 export const site = {
-  brand: 'Apple TV IPTV',
+  brand: 'IPTV Apple TV',
   domain: 'iptvappletv.com',
   url: 'https://iptvappletv.com',
   tagline: 'IPTV built to run properly on Apple TV',
@@ -155,8 +155,8 @@ export const coreFaqs = [
     a: 'Yes — both the Apple TV HD and every Apple TV 4K generation have enough processing power to decode compatible streams smoothly, including up to 4K where the source content and your connection support it.',
   },
   {
-    q: 'What is Apple TV IPTV?',
-    a: 'Apple TV IPTV is a streaming subscription built with Apple TV as the primary target device — live channels and on-demand content delivered over your internet connection, set up through a compatible player app on your Apple TV, in up to 4K where your plan, device, and the source allow it.',
+    q: 'What is IPTV Apple TV?',
+    a: 'IPTV Apple TV is a streaming subscription built with Apple TV as the primary target device — live channels and on-demand content delivered over your internet connection, set up through a compatible player app on your Apple TV, in up to 4K where your plan, device, and the source allow it.',
   },
   {
     q: 'Do I need to jailbreak my Apple TV?',

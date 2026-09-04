@@ -5,8 +5,8 @@ const updated = 'September 2, 2026';
 
 export default {
   slug: 'disclaimer',
-  title: 'Disclaimer | Apple TV IPTV',
-  description: 'Important disclaimers regarding the use of the Apple TV IPTV service, our independence from Apple Inc., content responsibility, and third-party affiliations.',
+  title: 'Disclaimer | IPTV Apple TV',
+  description: 'Important disclaimers regarding the use of the IPTV Apple TV service, our independence from Apple Inc., content responsibility, and third-party affiliations.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Disclaimer' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Disclaimer' }])}

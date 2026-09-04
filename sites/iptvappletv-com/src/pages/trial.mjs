@@ -13,7 +13,7 @@ const trialFaqs = [
 
 export default {
   slug: 'trial',
-  title: 'Apple TV IPTV 24-Hour Trial — $1.00',
+  title: 'IPTV Apple TV 24-Hour Trial — $1.00',
   description: 'Try IPTV on your Apple TV for 24 hours for just $1.00. Test real streaming quality and confirm your Apple TV generation handles it before subscribing.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Free Trial' }]), faqSchema(trialFaqs)],
   body: `

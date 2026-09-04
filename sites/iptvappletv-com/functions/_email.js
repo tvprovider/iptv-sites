@@ -20,7 +20,7 @@ export function emailLayout({ preheader = '', heading, bodyHtml, ctaLabel, ctaHr
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apple TV IPTV</title>
+<title>IPTV Apple TV</title>
 </head>
 <body style="margin:0; padding:0; background:${BG}; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">${preheader}</div>
@@ -29,7 +29,7 @@ export function emailLayout({ preheader = '', heading, bodyHtml, ctaLabel, ctaHr
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px; background:#ffffff; border-radius:12px; overflow:hidden; border:1px solid ${BORDER};">
         <tr>
           <td style="background:${BRAND_RED}; padding:22px 32px;">
-            <span style="color:#ffffff; font-size:19px; font-weight:600; letter-spacing:-0.01em; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">Apple TV IPTV</span>
+            <span style="color:#ffffff; font-size:19px; font-weight:600; letter-spacing:-0.01em; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">IPTV Apple TV</span>
           </td>
         </tr>
         <tr>
@@ -46,7 +46,7 @@ export function emailLayout({ preheader = '', heading, bodyHtml, ctaLabel, ctaHr
         <tr>
           <td style="padding:24px 32px 32px; border-top:1px solid ${BORDER};">
             <p style="margin:0; font-size:12.5px; color:${TEXT_SOFT}; line-height:1.6;">
-              Apple TV IPTV &middot; <a href="https://iptvappletv.com" style="color:${TEXT_SOFT};">iptvappletv.com</a><br>
+              IPTV Apple TV &middot; <a href="https://iptvappletv.com" style="color:${TEXT_SOFT};">iptvappletv.com</a><br>
               You're receiving this because you submitted a request on our website.
             </p>
           </td>

@@ -5,8 +5,8 @@ const updated = 'September 2, 2026';
 
 export default {
   slug: 'refund-policy',
-  title: 'Refund Policy | Apple TV IPTV',
-  description: 'Read the Apple TV IPTV refund policy covering the 24-hour trial and 1, 3, 6, and 12-month subscription plans.',
+  title: 'Refund Policy | IPTV Apple TV',
+  description: 'Read the IPTV Apple TV refund policy covering the 24-hour trial and 1, 3, 6, and 12-month subscription plans.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Refund Policy' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Refund Policy' }])}

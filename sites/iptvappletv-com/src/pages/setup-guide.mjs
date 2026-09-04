@@ -23,7 +23,7 @@ function deviceSection({ id, eyebrow, title, steps, note }) {
 
 export default {
   slug: 'setup-guide',
-  title: 'Apple TV IPTV Setup Guide — App Store & Sideload Methods',
+  title: 'IPTV Apple TV Setup Guide — App Store & Sideload Methods',
   description: 'How to set up IPTV on Apple TV: the App Store method, the sideload method when no app is listed, plus setup for every other supported device.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Setup Guide' }]), faqSchema(setupFaqs)],
   body: `

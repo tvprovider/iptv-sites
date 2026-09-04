@@ -14,8 +14,8 @@ const trustMedia = `
 
 export default {
   slug: 'about-us',
-  title: 'About Us — Apple TV IPTV',
-  description: 'Learn about Apple TV IPTV, an independent streaming subscription built with Apple TV as the primary device, with transparent pricing and real setup support.',
+  title: 'About Us — IPTV Apple TV',
+  description: 'Learn about IPTV Apple TV, an independent streaming subscription built with Apple TV as the primary device, with transparent pricing and real setup support.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'About Us' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'About Us' }])}

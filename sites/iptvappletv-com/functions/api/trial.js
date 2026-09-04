@@ -83,7 +83,7 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Apple TV IPTV <trials@iptvappletv.com>',
+      from: 'IPTV Apple TV <trials@iptvappletv.com>',
       to: LEAD_DESTINATION,
       reply_to: email,
       subject: '24-hour trial request',
@@ -116,10 +116,10 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Apple TV IPTV <trials@iptvappletv.com>',
+      from: 'IPTV Apple TV <trials@iptvappletv.com>',
       to: email,
       reply_to: LEAD_DESTINATION,
-      subject: 'Your 24-hour trial request — Apple TV IPTV',
+      subject: 'Your 24-hour trial request — IPTV Apple TV',
       html: customerHtml,
       text: htmlToText(customerHtml),
     }),

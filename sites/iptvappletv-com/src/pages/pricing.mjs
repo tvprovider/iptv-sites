@@ -14,8 +14,8 @@ const pricingFaqs = [
 
 export default {
   slug: 'pricing',
-  title: 'Apple TV IPTV Pricing — Plans & 24-Hour Trial',
-  description: 'Compare Apple TV IPTV subscription plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99 USD, plus a $1.00 24-hour trial.',
+  title: 'IPTV Apple TV Pricing — Plans & 24-Hour Trial',
+  description: 'Compare IPTV Apple TV subscription plans: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99 USD, plus a $1.00 24-hour trial.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs), ...productOfferSchema(plans)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing' }])}
@@ -42,7 +42,7 @@ ${section({
   html: `
   ${sectionHead({ eyebrow: 'Cord-cutting', title: 'What this replaces, cost-wise', left: true })}
   ${comparisonTable(
-    ['', 'Cable or satellite', 'Apple TV IPTV'],
+    ['', 'Cable or satellite', 'IPTV Apple TV'],
     [
       ['Contract', 'Often a 12–24 month lock-in', 'No annual contract required'],
       ['Setup', 'Technician install, rented hardware', 'App Store install or a one-time sideload'],

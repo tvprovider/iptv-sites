@@ -13,8 +13,8 @@ const orderFaqs = [
 
 export default {
   slug: 'order',
-  title: 'Order Apple TV IPTV — Subscribe Now',
-  description: 'Order your Apple TV IPTV subscription. Choose a plan, submit your details, and we\'ll email you a secure payment link to complete your order.',
+  title: 'Order IPTV Apple TV — Subscribe Now',
+  description: 'Order your IPTV Apple TV subscription. Choose a plan, submit your details, and we\'ll email you a secure payment link to complete your order.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }]), faqSchema(orderFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing', href: '/pricing/' }, { label: 'Order' }])}

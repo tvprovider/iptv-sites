@@ -24,7 +24,7 @@ const topics = [
   {
     id: 'iptv-basics',
     eyebrow: 'IPTV basics',
-    title: 'What Apple TV IPTV actually is',
+    title: 'What IPTV Apple TV actually is',
     items: [coreFaqs[2]],
   },
   {
@@ -111,8 +111,8 @@ const topics = [
 
 export default {
   slug: 'faq',
-  title: 'Frequently Asked Questions — Apple TV IPTV',
-  description: 'Answers to common Apple TV IPTV questions: App Store availability, sideloading, 4K resolution, setup, the 24-hour trial, subscription plans, and support.',
+  title: 'Frequently Asked Questions — IPTV Apple TV',
+  description: 'Answers to common IPTV Apple TV questions: App Store availability, sideloading, 4K resolution, setup, the 24-hour trial, subscription plans, and support.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'FAQ' }]), faqSchema(coreFaqs)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'FAQ' }])}

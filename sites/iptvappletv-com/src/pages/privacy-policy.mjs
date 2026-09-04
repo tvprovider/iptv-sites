@@ -5,8 +5,8 @@ const updated = 'September 2, 2026';
 
 export default {
   slug: 'privacy-policy',
-  title: 'Privacy Policy | Apple TV IPTV',
-  description: 'Read the Apple TV IPTV privacy policy to understand what information we collect, why we collect it, and how it is used and protected.',
+  title: 'Privacy Policy | IPTV Apple TV',
+  description: 'Read the IPTV Apple TV privacy policy to understand what information we collect, why we collect it, and how it is used and protected.',
   noindex: false,
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }])],
   body: `

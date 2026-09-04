@@ -127,7 +127,7 @@ export function productOfferSchema(plans) {
 function logoMark({ height = 32, onDark = false } = {}) {
   const width = Math.round(height * (188 / 32));
   const textFill = onDark ? '#ffffff' : '#14100f';
-  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="Apple TV IPTV — IPTV subscription for Apple TV logo"><rect width="32" height="32" rx="7" fill="#0a1615"/><rect x="6" y="7" width="20" height="15" rx="3" fill="#0d9488"/><rect x="8.2" y="9.2" width="15.6" height="10" rx="1.8" fill="#0a1615"/><path d="M13.5 11 L13.5 17.4 L19 14.2 Z" fill="#ffffff"/><rect x="14" y="22" width="4" height="3" fill="#0d9488"/><rect x="10" y="25" width="12" height="2" rx="1" fill="#0d9488"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="${textFill}">Apple TV IPTV</text></svg>`;
+  return `<svg width="${width}" height="${height}" viewBox="0 0 188 32" role="img" aria-label="IPTV Apple TV — IPTV subscription for Apple TV logo"><rect width="32" height="32" rx="7" fill="#0a1615"/><rect x="6" y="7" width="20" height="15" rx="3" fill="#0d9488"/><rect x="8.2" y="9.2" width="15.6" height="10" rx="1.8" fill="#0a1615"/><path d="M13.5 11 L13.5 17.4 L19 14.2 Z" fill="#ffffff"/><rect x="14" y="22" width="4" height="3" fill="#0d9488"/><rect x="10" y="25" width="12" height="2" rx="1" fill="#0d9488"/><text x="42" y="23" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="${textFill}">IPTV Apple TV</text></svg>`;
 }
 
 function header(currentPath) {

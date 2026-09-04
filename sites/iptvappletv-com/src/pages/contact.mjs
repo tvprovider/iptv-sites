@@ -6,8 +6,8 @@ import { site } from '../data/business.mjs';
 
 export default {
   slug: 'contact',
-  title: 'Contact Us — Apple TV IPTV Support',
-  description: 'Get in touch with Apple TV IPTV for setup help, billing questions, trial support, or general inquiries about our Apple TV IPTV subscription service.',
+  title: 'Contact Us — IPTV Apple TV Support',
+  description: 'Get in touch with IPTV Apple TV for setup help, billing questions, trial support, or general inquiries about our IPTV Apple TV subscription service.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Contact' }])],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Contact' }])}
