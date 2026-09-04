@@ -1,0 +1,22 @@
+# IPTV Hot
+
+> IPTV Hot is a subscription-based IPTV service built around content freshness: trending live sports, new releases, and popular titles that update continually rather than sitting in a catalog built once and left alone. Plans include 40,000+ live channels and 180,000+ VOD titles, all identical across every plan length — a longer term lowers the price, it never unlocks extra content. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS, using any player app that supports M3U playlists or Xtream Codes-style logins.
+
+## Key pages
+
+- [Home — IPTV Hot overview](https://iptvhot.org/)
+- [Pricing — subscription plans and cost comparison](https://iptvhot.org/pricing/)
+- [24-Hour Trial — $1.00 test period](https://iptvhot.org/trial/)
+- [Order — how to subscribe and pay](https://iptvhot.org/order/)
+- [Setup Guide — device-by-device activation instructions](https://iptvhot.org/setup-guide/)
+- [FAQ — common questions about the service](https://iptvhot.org/faq/)
+- [Guide — What is IPTV, and what a channel count actually means](https://iptvhot.org/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://iptvhot.org/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvhot.org/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to vet an IPTV provider's catalog claims](https://iptvhot.org/guides/how-to-choose-an-iptv-subscription/)
+- [Refund Policy](https://iptvhot.org/refund-policy/)
+- [Terms of Use](https://iptvhot.org/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
