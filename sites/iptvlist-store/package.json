@@ -1,0 +1,13 @@
+{
+  "name": "iptvlist-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site source for iptvlist.store — zero-dependency build.",
+  "scripts": {
+    "build": "node src/build.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.86.0"
+  }
+}
