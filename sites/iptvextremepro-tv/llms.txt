@@ -1,0 +1,22 @@
+# IPTV Xtream Pro
+
+> IPTV Xtream Pro is a subscription-based IPTV service built around the Xtream Codes login format (username, password, server URL) as the primary activation method, with an M3U playlist link available as an alternative. It runs on redundant server infrastructure with monitored uptime rather than a single access point, delivering 40,000+ live channels and 180,000+ VOD titles in up to 4K resolution where the plan, device, and source content support it. Subscriptions run 1, 3, 6, or 12 months, with a $1.00 24-hour trial available before committing. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS.
+
+## Key pages
+
+- [Home — IPTV Xtream Pro overview](https://iptvextremepro.tv/)
+- [Pricing — subscription plans and cost comparison](https://iptvextremepro.tv/pricing/)
+- [24-Hour Trial — $1.00 test period](https://iptvextremepro.tv/trial/)
+- [Order — how to subscribe and pay](https://iptvextremepro.tv/order/)
+- [Setup Guide — Xtream Codes login entry, field by field](https://iptvextremepro.tv/setup-guide/)
+- [FAQ — common questions about the service](https://iptvextremepro.tv/faq/)
+- [Guide — What is IPTV? M3U vs. Xtream Codes explained](https://iptvextremepro.tv/guides/what-is-iptv/)
+- [Guide — 4K vs HD streaming quality](https://iptvextremepro.tv/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvextremepro.tv/guides/internet-requirements-for-4k-streaming/)
+- [Guide — how to choose an IPTV subscription](https://iptvextremepro.tv/guides/how-to-choose-an-iptv-subscription/)
+- [Refund Policy](https://iptvextremepro.tv/refund-policy/)
+- [Terms of Use](https://iptvextremepro.tv/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
