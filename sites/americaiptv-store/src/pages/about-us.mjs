@@ -31,7 +31,7 @@ ${hero({
 ${section({
   html: `
   ${sectionHead({ eyebrow: 'Who we are', title: 'The short version of what this is', left: true })}
-  <p>A streaming subscription, plain and simple — live channels and on-demand titles delivered over your internet connection, weighted toward American networks, news, and sports, in up to 4K where your plan, device, and the source content allow it. We put the most effort into the parts we actually control directly: pricing, documentation, and how fast a real question gets answered.</p>`,
+  <p>A streaming subscription, plain and simple — live channels and on-demand titles delivered over your internet connection, weighted toward American networks, news, and sports. Resolution tops out at 4K when the plan, the device, and the source all cooperate. We put the most effort into the parts we actually control directly: pricing, documentation, and how fast a real question gets answered.</p>`,
 })}
 
 ${section({

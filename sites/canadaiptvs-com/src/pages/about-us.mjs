@@ -31,7 +31,7 @@ ${hero({
 ${section({
   html: `
   ${sectionHead({ eyebrow: 'Who we are', title: 'What Canada IPTV actually is', left: true })}
-  <p>A streaming subscription, not a cable replacement gimmick — live channels and on-demand content arrive over your internet connection, with a lineup weighted toward Canadian news, sports, and entertainment, in up to 4K where your plan, device, and the source content allow it. The parts of this we can actually control — pricing, documentation, support — are the parts we try hardest to get right.</p>`,
+  <p>A streaming subscription, not a cable replacement gimmick — live channels and on-demand content arrive over your internet connection, with a lineup weighted toward Canadian news, sports, and entertainment. How close to 4K you actually get depends on the plan, the device, and the source lining up together. The parts of this we can actually control — pricing, documentation, support — are the parts we try hardest to get right.</p>`,
 })}
 
 ${section({

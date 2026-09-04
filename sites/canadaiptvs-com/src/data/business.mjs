@@ -97,37 +97,37 @@ export const devices = [
   {
     id: 'smart-tv',
     name: 'Smart TV',
-    summary: 'Samsung, LG, and other Smart TVs that support a compatible IPTV player app or M3U playlist import.',
+    summary: 'A Samsung or LG Smart TV handles this through a compatible player app, without pairing an external box.',
   },
   {
     id: 'android-tv',
     name: 'Android TV',
-    summary: 'Any Android TV or Google TV device with access to a compatible player app from the Play Store.',
+    summary: 'Google TV and Android TV devices load a compatible player straight off the Play Store in under a minute.',
   },
   {
     id: 'fire-tv',
     name: 'Fire TV & Firestick',
-    summary: 'Amazon Fire TV and Fire TV Stick, using a sideloaded or Appstore-available compatible player.',
+    summary: 'Amazon’s Fire TV Stick works too, whether the player comes from the Appstore or gets sideloaded from a trusted source.',
   },
   {
     id: 'android',
     name: 'Android Phone & Tablet',
-    summary: 'Any Android smartphone or tablet, using a compatible IPTV player app.',
+    summary: 'Any Android phone or tablet manages this exactly like any other streaming app, once a compatible player is on it.',
   },
   {
     id: 'ios',
     name: 'iPhone & iPad',
-    summary: 'iOS and iPadOS devices, using a compatible player app from the App Store.',
+    summary: 'One compatible player from the App Store covers both iPhone and iPad.',
   },
   {
     id: 'windows',
     name: 'Windows',
-    summary: 'Any Windows 10/11 PC or laptop, using a desktop-compatible player application.',
+    summary: 'A Windows 10 or 11 machine runs this through a standard desktop player app.',
   },
   {
     id: 'macos',
     name: 'macOS',
-    summary: 'Any Mac running a recent version of macOS, using a desktop-compatible player application.',
+    summary: 'macOS needs nothing beyond a compatible desktop player to get streaming.',
   },
 ];
 
@@ -136,7 +136,7 @@ export const devices = [
 export const coreFaqs = [
   {
     q: 'What is Canada IPTV?',
-    a: 'Canada IPTV is a subscription streaming service built around Canadian live TV, news, and sports, delivered over the internet instead of cable or satellite. You get a compatible player app on the device of your choice, with live channels and on-demand titles in up to 4K where your plan, device, and source content allow it.',
+    a: 'Canada IPTV sends Canadian live TV, news, and sports over your internet connection instead of through a satellite dish or cable box. Install a compatible player app on whichever device you already own, and you can stream up to 4K when your plan, that device, and the original content all line up to support it.',
   },
   {
     q: 'Does it include Canadian sports coverage, like hockey?',
@@ -144,11 +144,11 @@ export const coreFaqs = [
   },
   {
     q: 'What devices does it work on?',
-    a: 'Smart TVs, Android TV and Google TV, Amazon Fire TV and Firestick, Android phones and tablets, iPhone and iPad, Windows, and macOS — using a compatible IPTV player app on each platform. The Setup Guide walks through each device.',
+    a: 'Smart TV, Android TV, Google TV, Fire TV and Firestick, Android and iOS mobile, Windows, and Mac are all covered, provided a compatible player app is installed first. The Setup Guide has the specifics per device.',
   },
   {
     q: 'How do I get started?',
-    a: 'Choose a plan or start the 24-hour trial, receive your activation details, install a compatible player app, and enter your credentials or playlist URL. Most people are watching within a few minutes of receiving their details.',
+    a: 'Start with either a plan or the trial — activation details follow by email either way. Drop those into a compatible player app on your device and you are set, usually within the hour.',
   },
   {
     q: 'What does the 24-hour trial include?',

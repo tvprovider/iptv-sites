@@ -97,37 +97,37 @@ export const devices = [
   {
     id: 'smart-tv',
     name: 'Smart TV',
-    summary: 'Samsung, LG, and other Smart TVs that support a compatible IPTV player app or M3U playlist import.',
+    summary: 'Works on Samsung and LG Smart TVs through a compatible player app, no external box needed if your TV already runs one.',
   },
   {
     id: 'android-tv',
     name: 'Android TV',
-    summary: 'Any Android TV or Google TV device with access to a compatible player app from the Play Store.',
+    summary: 'Google TV and Android TV boxes pull a compatible player straight from the Play Store — a few taps and it is running.',
   },
   {
     id: 'fire-tv',
     name: 'Fire TV & Firestick',
-    summary: 'Amazon Fire TV and Fire TV Stick — the most common streaming box in American living rooms — using a sideloaded or Appstore-available compatible player.',
+    summary: 'The stick sitting behind most American TVs already — grab a compatible player from the Appstore or sideload one you trust.',
   },
   {
     id: 'android',
     name: 'Android Phone & Tablet',
-    summary: 'Any Android smartphone or tablet, using a compatible IPTV player app.',
+    summary: 'Any Android handset or tablet runs this the same way it runs any other streaming app, once a compatible player is installed.',
   },
   {
     id: 'ios',
     name: 'iPhone & iPad',
-    summary: 'iOS and iPadOS devices, using a compatible player app from the App Store.',
+    summary: 'A compatible player from the App Store is all an iPhone or iPad needs to get going.',
   },
   {
     id: 'windows',
     name: 'Windows',
-    summary: 'Any Windows 10/11 PC or laptop, using a desktop-compatible player application.',
+    summary: 'Desktop player apps built for Windows 10 and 11 handle this fine on a PC or laptop.',
   },
   {
     id: 'macos',
     name: 'macOS',
-    summary: 'Any Mac running a recent version of macOS, using a desktop-compatible player application.',
+    summary: 'A desktop-compatible player app is the only extra piece a current-ish Mac needs.',
   },
 ];
 
@@ -136,7 +136,7 @@ export const devices = [
 export const coreFaqs = [
   {
     q: 'What is America IPTV?',
-    a: 'America IPTV is a subscription streaming service built around American live TV and on-demand content, delivered over the internet instead of cable or satellite. You get a compatible player app on the device of your choice, with live channels and on-demand titles in up to 4K where your plan, device, and source content allow it.',
+    a: 'America IPTV is a streaming subscription centered on American live TV and on-demand titles, sent over the internet rather than through cable or satellite hardware. Pick a compatible player app for whatever device you already have, and resolution scales up to 4K depending on your plan, that device, and what the original content actually supports.',
   },
   {
     q: 'Does America IPTV cover local US channels and sports?',
@@ -144,11 +144,11 @@ export const coreFaqs = [
   },
   {
     q: 'What devices does it work on?',
-    a: 'Smart TVs, Android TV and Google TV, Amazon Fire TV and Firestick (the most common streaming box in US households), Android phones and tablets, iPhone and iPad, Windows, and macOS — using a compatible IPTV player app on each platform. The Setup Guide walks through each device.',
+    a: 'Any Smart TV, Android TV or Google TV box, Amazon Fire TV or Firestick, Android phone or tablet, iPhone, iPad, Windows PC, or Mac — each one just needs a compatible player app installed. Device-by-device instructions are on the Setup Guide.',
   },
   {
     q: 'How do I get started?',
-    a: 'Choose a plan or start the 24-hour trial, receive your activation details, install a compatible player app, and enter your credentials or playlist URL. Most people are watching within a few minutes of receiving their details.',
+    a: 'Pick a plan, or the 24-hour trial if you would rather test first. Activation details land in your inbox shortly after, and a compatible player app is all you need to load them into and start watching.',
   },
   {
     q: 'What does the 24-hour trial include?',

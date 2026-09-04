@@ -13,7 +13,7 @@ export default {
 ${hero({
   eyebrow: 'Canada IPTV',
   h1: 'Canadian TV, on your terms',
-  lead: 'Canada IPTV is a streaming subscription built around Canadian live TV, news, and sports, delivered over the internet in up to 4K. No satellite dish, no technician visit, no multi-year contract with a provider you never chose.',
+  lead: 'Canada IPTV puts live TV, news, and sports on your existing internet connection, in up to 4K, so there is nothing to install, no technician to schedule, and no multi-year contract locking you to a provider you never actually chose.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Try It for $1', href: '/trial/' },
   dark: true,
@@ -57,7 +57,7 @@ ${section({
   </div>`,
 })}
 
-${marquee(['Live Sports', 'Canadian News', 'Movies & Series', '24/7 News', 'Kids & Family', 'Entertainment', 'International Channels', 'Documentaries'])}
+${marquee(['Entertainment', 'Canadian News', 'Live Sports', 'International Channels', 'Movies & Series', 'Documentaries', 'Kids & Family', '24/7 News'])}
 
 ${section({
   html: `
@@ -211,8 +211,8 @@ ${section({
 })}
 
 ${ctaBanner({
-  title: 'Ready to watch Canadian TV in 4K?',
-  lead: 'Compare plans or test the service first with a low-cost 24-hour trial.',
+  title: 'The channels are waiting — are you?',
+  lead: 'Pick a plan, or put a dollar down on the trial and decide after.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}

@@ -13,7 +13,7 @@ export default {
 ${hero({
   eyebrow: 'America IPTV',
   h1: 'American live TV, without the cable bill',
-  lead: 'America IPTV is a streaming subscription built around the channels US households actually watch — live TV, 24/7 news, and sports — delivered over the internet in up to 4K. No satellite dish, no technician visit, no multi-year contract.',
+  lead: 'Skip the dish, the box, and the multi-year contract. America IPTV sends the channels US households actually watch — live TV, 24/7 news, and sports — straight over your existing internet connection, in up to 4K.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Try It for $1', href: '/trial/' },
   dark: true,
@@ -57,7 +57,7 @@ ${section({
   </div>`,
 })}
 
-${marquee(['Live Sports', 'Local News', 'Movies & Series', '24/7 News', 'Kids & Family', 'Entertainment', 'International Channels', 'Documentaries'])}
+${marquee(['Local News', 'Live Sports', 'Entertainment', 'Movies & Series', 'International Channels', 'Kids & Family', 'Documentaries', '24/7 News'])}
 
 ${section({
   html: `
@@ -211,8 +211,8 @@ ${section({
 })}
 
 ${ctaBanner({
-  title: 'Ready to watch American TV in 4K?',
-  lead: 'Compare plans or test the service first with a low-cost 24-hour trial.',
+  title: 'Cable can wait — see this first',
+  lead: 'Look over the plans, or spend a dollar testing it before deciding anything.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}
