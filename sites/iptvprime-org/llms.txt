@@ -1,0 +1,26 @@
+# IPTV Prime
+
+> IPTV Prime is a premium-tier IPTV subscription service. The positioning isn't a geography, a league, or a device — it's the operating standard: a support line answered by a real person rather than a ticket queue, a live channel and on-demand catalog that stays identical across every plan length (the 1-month plan and the 12-month plan reach the same catalog; the price is the only thing that changes), and pricing posted openly before any signup form. Plans include 40,000+ live channels and 180,000+ VOD titles, up to 4K resolution where the plan, device, and original source allow it. Subscriptions run 1, 3, 6, or 12 months ($14.99 / $34.99 / $54.99 / $79.99 USD), with a $1.00 24-hour trial available before committing, running the identical live catalog a paying subscriber gets. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS. Support is reached through the Contact page, worked in the order messages arrive rather than prioritized by plan size.
+
+## Key pages
+
+- [Home — premium-tier positioning overview, fast path to plans and trial](https://iptvprime.org/)
+- [Pricing — four plans, one identical catalog behind each](https://iptvprime.org/pricing/)
+- [24-Hour Trial — $1.00 test period on the real catalog and support line](https://iptvprime.org/trial/)
+- [Order — how to subscribe and pay](https://iptvprime.org/order/)
+- [Setup Guide — device-by-device activation checklist](https://iptvprime.org/setup-guide/)
+- [FAQ — catalog consistency across plans, device support, trial, billing, and support response time](https://iptvprime.org/faq/)
+- [About Us — what "premium" actually means here, and what won't be oversold](https://iptvprime.org/about-us/)
+- [Contact — support for setup, billing, and trial questions](https://iptvprime.org/contact/)
+- [Guides — background reading index](https://iptvprime.org/guides/)
+- [Guide — What Is IPTV? What "premium" actually includes](https://iptvprime.org/guides/what-is-iptv/)
+- [Guide — How to choose an IPTV subscription: a buyer's checklist for a well-run service](https://iptvprime.org/guides/how-to-choose-an-iptv-subscription/)
+- [Guide — 4K vs HD streaming quality](https://iptvprime.org/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvprime.org/guides/internet-requirements-for-4k-streaming/)
+- [Privacy Policy](https://iptvprime.org/privacy-policy/)
+- [Refund Policy](https://iptvprime.org/refund-policy/)
+- [Terms of Use](https://iptvprime.org/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
