@@ -5,29 +5,29 @@ import {
 import { plans, trial, devices, catalog } from '../data/business.mjs';
 
 const pricingFaqs = [
-  { q: 'Does paying more per month get a bigger catalog?', a: `Never — the four plans differ only in total price and term length. Every one reaches ${catalog.liveChannels} channels and ${catalog.vods} VOD titles.` },
-  { q: 'Can a plan be swapped for a different length partway through?', a: 'Once the current term finishes, yes. Need it sooner — ahead of a renewal date, say? Message support and it gets sorted directly.' },
-  { q: 'Could the prices below change after I\'ve already paid?', a: 'A rate you\'ve already locked in stays yours. Any future pricing change only applies to orders placed after that change.' },
-  { q: 'Does the trial dollar get subtracted from a plan price later?', a: 'No — it\'s billed on its own. Its whole purpose is letting the catalog and the support line get checked before a longer plan is chosen.' },
-  { q: 'What happens the day a plan expires?', a: 'Access ends, full stop, unless a renewal was set up beforehand. Nothing continues charging on its own.' },
+  { q: 'Do the cheaper plans get fewer channels?', a: `No. Every plan — 1 month or 12 — reaches the same ${catalog.liveChannels} live channels and ${catalog.vods} on-demand titles. Term length changes the price, not the catalog.` },
+  { q: 'Can I switch to a different plan length later?', a: 'Yes, once your current term ends. Need to switch sooner — before a renewal date? Message support and it gets handled directly.' },
+  { q: 'Will my price change after I\'ve paid?', a: 'No — a rate you\'ve locked in stays yours for that term. Future pricing changes only apply to new orders placed after the change.' },
+  { q: 'Does the trial dollar count toward a subscription?', a: 'No, it\'s billed separately. The trial exists purely to let you check the channels and picture quality before committing to a longer plan.' },
+  { q: 'What happens when a plan runs out?', a: 'Access ends automatically unless you\'ve set up a renewal. Nothing charges you again without your action.' },
 ];
 
 export default {
   slug: 'pricing',
   title: 'IPTV Prime Pricing — Plans From $14.99',
-  description: 'IPTV Prime pricing: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99. The identical catalog on every plan, plus a $1 trial.',
+  description: 'IPTV Prime pricing: 1 Month $14.99, 3 Months $34.99, 6 Months $54.99, 12 Months $79.99. Same full channel and VOD catalog on every plan, plus a $1 trial.',
   jsonld: [breadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Pricing' }]), faqSchema(pricingFaqs), ...productOfferSchema(plans)],
   body: `
 ${breadcrumbs([{ label: 'Home', href: '/' }, { label: 'Pricing' }])}
 ${hero({
   eyebrow: 'Pricing',
-  h1: 'Pick a number. The catalog underneath it never changes.',
-  lead: 'Four totals, one catalog. The length you choose sets what lands on the invoice — support, devices, channels, and titles stay identical no matter which box gets checked below.',
+  h1: `${catalog.liveChannels} channels. ${catalog.vods} titles. Every plan, no exceptions.`,
+  lead: `Four plan lengths, one price each, no hidden fees. Whichever you pick reaches the exact same live channels, sports, and on-demand library — a shorter term never means a smaller catalog.`,
   primaryCta: { label: 'Choose a Plan', href: '#plans' },
   secondaryCta: { label: 'Try it for $1 first', href: '/trial/' },
   media: iconMedia('<text x="270" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="600">$</text>', 'Transparent pricing illustration'),
   dark: true,
-  trustItems: ['No cost beyond the listed term', 'One catalog, all four lengths', 'Support included, every plan', 'Refund terms posted up front'],
+  trustItems: [`${catalog.liveChannels} channels on every plan`, 'No hidden fees', 'Cancel anytime, no auto-renewal', `$${trial.price.toFixed(2)} trial available`],
 })}
 
 ${section({
@@ -40,48 +40,47 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'best iptv subscription', title: 'Every length, side by side', left: true })}
+  ${sectionHead({ eyebrow: 'Compare', title: 'All four plans, side by side', left: true })}
   ${comparisonTable(
     ['Plan', 'Total price', 'Effective monthly cost', 'Best for'],
     plans.map((p) => [p.label, `$${p.price.toFixed(2)}`, p.perMonth ? `$${p.perMonth.toFixed(2)}/mo` : `$${p.price.toFixed(2)}/mo`, p.blurb])
-  )}
-  <p style="margin-top:16px;">Read across any row and the invoice is the only thing that changes. What\'s reachable through the login is set by none of it.</p>`,
+  )}`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'iptv prime channels', title: 'Picking the short plan isn\'t picking the small plan', left: true })}
+  ${sectionHead({ eyebrow: 'Included with every plan', title: 'The short plan isn\'t the small plan', left: true })}
   <div class="grid grid-3">
-    <div class="card"><h3>${catalog.liveChannels} channels, every length</h3><p>Nothing gets trimmed for a shorter commitment — the channel count on the 1-month plan matches the 12-month plan exactly.</p></div>
-    <div class="card"><h3>${catalog.vods} titles from day one</h3><p>The on-demand library isn\'t staged in behind a longer subscription — it\'s all there immediately.</p></div>
-    <div class="card"><h3>Support that doesn\'t check your term length</h3><p>A message from a one-month customer gets the same attention as one from a twelve-month customer.</p></div>
+    <div class="card"><h3>${catalog.liveChannels} live channels</h3><p>Sports, news, entertainment, and international channels — the full lineup, from the 1-month plan to the 12-month plan.</p></div>
+    <div class="card"><h3>${catalog.vods} movies & series</h3><p>The entire on-demand library, available from day one, not staged in behind a longer commitment.</p></div>
+    <div class="card"><h3>Up to 4K resolution</h3><p>Resolution follows your device and the source content — not which plan length you picked.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'The trade-off, plainly', title: 'What committing further ahead is actually buying', left: true })}
-  <p>Nothing about the catalog improves by paying for a longer stretch up front — what improves is the rate. A month costs $${plans[0].price.toFixed(2)} with zero commitment past it; three months averages down to about $${plans[1].perMonth.toFixed(2)} a month; six brings that to roughly $${plans[2].perMonth.toFixed(2)}; a full year lands near $${plans[3].perMonth.toFixed(2)} a month. That\'s the entire trade being offered — a lower rate in exchange for committing sooner, nothing else.</p>`,
+  ${sectionHead({ eyebrow: 'Save more, longer term', title: 'Lower your monthly cost by committing longer', left: true })}
+  <p>1 month runs $${plans[0].price.toFixed(2)} with zero commitment beyond it. 3 months brings the effective rate to about $${plans[1].perMonth.toFixed(2)}/month. 6 months drops it further to roughly $${plans[2].perMonth.toFixed(2)}/month. A full year lands near $${plans[3].perMonth.toFixed(2)}/month — the lowest rate on offer. The catalog never changes; only the price per month does.</p>`,
 })}
 
 ${section({
   html: `
   <div class="grid grid-2" style="align-items:center;">
     <div>
-      ${sectionHead({ eyebrow: 'Undecided?', title: trial.label, left: true })}
-      <p>$${trial.price.toFixed(2)} runs the same catalog a subscriber gets, for ${trial.duration}. Long enough to send support something real and judge the reply before spending on a full term.</p>
+      ${sectionHead({ eyebrow: 'Not sure yet?', title: trial.label, left: true })}
+      <p>$${trial.price.toFixed(2)} for ${trial.duration} on the exact same channels and titles a subscriber gets — long enough to check picture quality and channel availability before paying for a full term.</p>
       <a class="btn btn-primary" href="/trial/">Start the trial</a>
     </div>
-    <div class="card"><h3>Where the trial stops helping</h3><p>It confirms the catalog and the support line. It can\'t confirm your own connection holds up under a sustained 4K stream — that\'s worth testing separately.</p></div>
+    <div class="card"><h3>What the trial can and can\'t tell you</h3><p>It confirms the catalog and how support responds. It can\'t confirm your own internet connection holds up under sustained 4K — that's worth checking on your end too.</p></div>
   </div>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Right after paying', title: 'What the wait actually looks like', left: true })}
-  <p>Activation typically lands within a few hours. After that, it\'s picking a player app for your device — the Setup Guide walks through each one by name.</p>
+  ${sectionHead({ eyebrow: 'After you order', title: 'What happens right after payment', left: true })}
+  <p>Activation details usually arrive within a few hours. From there, it's picking a compatible player app for your device — the Setup Guide covers each one step by step.</p>
   <p><a class="btn btn-ghost" href="/setup-guide/">Read the Setup Guide →</a></p>`,
 })}
 
@@ -94,14 +93,14 @@ ${section({
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'On billing', title: 'No surprise line items', left: true })}
-  <p>The number attached to a plan above is the number charged — in US dollars, nothing tacked on. And renewal isn\'t automatic by default: a term ends on its own unless a recurring option was deliberately switched on at checkout.</p>`,
+  ${sectionHead({ eyebrow: 'Billing', title: 'No surprise charges', left: true })}
+  <p>The price listed for each plan is the complete price, in US dollars — nothing added at checkout. Renewal isn't automatic by default: a term simply ends unless you specifically set up a recurring option.</p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'If it isn\'t right for you', title: 'Refund conditions live on their own page', left: true })}
-  <p>Every scenario is covered on the <a href="/refund-policy/">Refund Policy</a> — worked out ahead of time rather than negotiated after the fact.</p>`,
+  ${sectionHead({ eyebrow: 'If it\'s not right for you', title: 'Refund terms, spelled out in advance', left: true })}
+  <p>Full conditions are on the <a href="/refund-policy/">Refund Policy</a> page — worth reading before you subscribe, not after something's gone wrong.</p>`,
 })}
 
 ${section({
@@ -111,6 +110,6 @@ ${section({
   ${faqAccordion(pricingFaqs)}`,
 })}
 
-${ctaBanner({ title: 'Ready to lock a length in?', lead: 'Pick one below, or spend a dollar confirming it first with the trial.', primaryCta: { label: 'Choose a Plan', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
+${ctaBanner({ title: 'Ready to pick a plan?', lead: 'Choose a length below, or test the catalog first with the $1 trial.', primaryCta: { label: 'Choose a Plan', href: '#plans' }, secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' } })}
 `,
 };

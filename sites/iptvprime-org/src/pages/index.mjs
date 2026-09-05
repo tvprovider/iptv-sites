@@ -7,76 +7,79 @@ import { plans, trial, devices, coreFaqs, catalog } from '../data/business.mjs';
 export default {
   slug: '',
   title: 'IPTV Prime — Premium IPTV Service From $14.99',
-  description: 'IPTV Prime: 40,000+ live channels, 180,000+ VOD titles, real human support, and the identical catalog on every plan. Plans from $14.99, $1 trial.',
+  description: 'IPTV Prime: 40,000+ live channels, 180,000+ VOD titles, live sports, up to 4K, on every device. Plans from $14.99/month, plus a $1 trial.',
   jsonld: [faqSchema(coreFaqs)],
   body: `
 ${hero({
   eyebrow: 'IPTV Prime',
-  h1: 'Premium isn’t a bigger number on the page. It’s what stays the same no matter which plan you pick.',
-  lead: `${catalog.liveChannels} live channels and ${catalog.vods} VOD titles, the same fast reply from a real person when something goes wrong, and no version of the catalog that gets quietly thinner because you chose the cheaper plan. See the price, run the trial, decide for yourself.`,
+  h1: `${catalog.liveChannels} live channels. ${catalog.vods} movies & series. One login.`,
+  lead: `Live sports, news, and entertainment from around the world, plus a full on-demand library, streamed straight to your TV, phone, or computer in up to 4K. No satellite dish, no technician visit, no 24-month contract — just a login that works the same on day one and day one thousand.`,
   primaryCta: { label: 'View Plans', href: '/pricing/' },
-  secondaryCta: { label: 'Start $1 Trial', href: '/trial/' },
+  secondaryCta: { label: 'Try It for $1', href: '/trial/' },
   dark: true,
-  trustItems: ['Real replies, not a support queue', `${catalog.liveChannels} channels on every plan`, `${catalog.vods} VOD titles, no exceptions`, 'A genuine $1 trial before you pay full price'],
+  trustItems: [`${catalog.liveChannels} live channels`, `${catalog.vods} movies & series`, 'Up to 4K resolution', 'Works on any device'],
 })}
 
-${marquee(['Premium IPTV Service', 'Top Rated IPTV Service', 'Best IPTV Subscription', 'IPTV Prime Channels', '40,000+ Live Channels', '180,000+ VOD Titles', 'Premium IPTV Streaming', 'Real Human Support'])}
+${marquee(['Live Sports', 'News', 'Movies', 'TV Series', 'Kids', 'Documentaries', 'International Channels', '4K Ultra HD'])}
 
 ${section({
   id: 'plans',
   html: `
-  ${sectionHead({ eyebrow: 'Skip to the number', title: 'Four plan lengths. One catalog, unchanged across every one of them.' })}
+  ${sectionHead({ eyebrow: 'Pricing', title: 'Pick a plan and start watching today' })}
   ${pricingGrid(plans)}
-  <p class="text-center" style="margin-top:20px;"><a href="/pricing/">Full pricing breakdown →</a> &nbsp;·&nbsp; <a href="/trial/">Or test it for $1 first →</a></p>`,
+  <p class="text-center" style="margin-top:20px;"><a href="/pricing/">Compare every plan in detail →</a> &nbsp;·&nbsp; <a href="/trial/">Or test it first for $1 →</a></p>`,
 })}
 
 ${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'What "premium" is actually pointing at', title: 'Not a marketing word — three specific operating choices', left: true })}
+  ${sectionHead({ eyebrow: 'Why cut the cord', title: 'Everything cable charges extra for, already included', left: true })}
+  ${comparisonTable(
+    ['', 'Cable / satellite', 'IPTV Prime'],
+    [
+      ['Setup', 'Technician visit, rented box, install fee', 'A player app and a login — running in minutes'],
+      ['Contract', 'Often locked in for 12-24 months', 'Nothing longer than 12 months, ever'],
+      ['Channel count', 'A fixed regional bundle', `${catalog.liveChannels} live channels`],
+      ['On-demand library', 'Limited, often a paid add-on', `${catalog.vods} movies and series, included`],
+      ['Try before you commit', 'Rarely offered', `${trial.label} for just $${trial.price.toFixed(2)}`],
+      ['Devices', 'One box, one room', 'Every screen you own, same login'],
+    ]
+  )}`,
+})}
+
+${section({
+  html: `
+  ${sectionHead({ eyebrow: 'What\'s in the catalog', title: 'Sports, movies, news, and everything in between', left: true })}
   <div class="grid grid-2" style="align-items:center;">
-    <div class="basics-media">${iconMedia('<path d="M252 268 l12 12 l24 -24" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>', 'Illustration representing consistent service quality across plans')}</div>
+    <div class="basics-media">${iconMedia('<path d="M270 246 a24 24 0 1 0 0 48 a24 24 0 1 0 0 -48 z" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M270 246 v48 M246 270 h48 M253 253 l34 34 M253 287 l34 -34" stroke="#ffffff" stroke-width="2.5"/>', 'Global channel coverage illustration')}</div>
     <div>
-      <p>Plenty of IPTV listings reach for "the best," "the top rated," "premium" — words that cost nothing to print and describe nothing specific. Strip that language away from this site and three concrete things are actually being claimed: a message to support gets read and answered by a person, not routed through a queue; the $14.99 plan and the $79.99 plan both open the identical channel and VOD catalog; and the price on the Pricing page is the price that gets charged, with nothing added afterward.</p>
+      <p>Live sports leagues, 24/7 news channels, blockbuster movies, full TV series, kids\' programming, and international channels spanning dozens of countries and languages — all inside the same subscription, on every plan length. Nothing here is a paid add-on or a separate package.</p>
       <ul class="check-list">
-        <li>Support messages worked by a person, in the order they arrive</li>
-        <li>Every plan length reaches the same ${catalog.liveChannels}-channel, ${catalog.vods}-title catalog</li>
-        <li>Pricing posted in the open — see it laid out on <a href="/pricing/">Pricing</a></li>
+        <li>Live sports coverage across major leagues and events</li>
+        <li>${catalog.liveChannels} channels covering news, entertainment, and international programming</li>
+        <li>${catalog.vods} on-demand movies and series, updated continually</li>
+        <li>Up to 4K resolution where your device and the source content support it</li>
       </ul>
     </div>
   </div>`,
 })}
 
 ${section({
-  html: `
-  ${sectionHead({ eyebrow: 'best iptv subscription', title: 'What a vague "premium" listing tends to leave unsaid', left: true })}
-  ${comparisonTable(
-    ['', 'A typical IPTV reseller', 'IPTV Prime'],
-    [
-      ['Support', 'A ticket queue, cleared in whatever order it happens to empty', 'A person reads the message and replies — see the Contact page'],
-      ['Catalog by plan length', 'Sometimes trimmed or reshuffled on the cheaper tier', `Identical ${catalog.liveChannels} channels and ${catalog.vods} VOD titles on all four plans`],
-      ['Pricing', 'A number that only appears after a signup form', 'All four prices sit openly on the Pricing page, no form needed'],
-      ['Proving the claims', 'Take the listing at its word', `A $${trial.price.toFixed(2)}, ${trial.duration} trial on the exact catalog a subscriber gets`],
-    ]
-  )}`,
-})}
-
-${section({
   bg: 'quiet',
   html: `
-  ${sectionHead({ eyebrow: 'Compatibility', title: 'Supported devices', left: true })}
+  ${sectionHead({ eyebrow: 'Compatibility', title: 'Watch on whatever you already own', left: true })}
   ${deviceGrid(devices)}
-  <p style="margin-top:24px;"><a href="/setup-guide/">Full device-by-device Setup Guide →</a></p>`,
+  <p style="margin-top:24px;"><a href="/setup-guide/">Full setup steps for every device →</a></p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Getting started', title: 'How this actually goes, from first click to first channel' })}
+  ${sectionHead({ eyebrow: 'Getting started', title: 'From signup to your first channel' })}
   ${stepsList([
-    { title: 'Pick a plan, or test it for a dollar first', text: 'All four lengths open the identical catalog — the trial just lets you confirm that before paying for months at once.' },
-    { title: 'Give it an email address', text: 'That’s the only thing either the order form or the trial form actually requires.' },
-    { title: 'Watch for the activation email', text: 'Typically a matter of hours, not days, once payment or the trial request goes through.' },
-    { title: 'Drop the login into a player app', text: 'Whichever device you\'ll actually be watching on, the matching walkthrough sits on the Setup Guide.' },
+    { title: 'Choose a plan, or start the $1 trial', text: 'Every length reaches the full channel and VOD catalog — the trial just lets you confirm that on your own connection first.' },
+    { title: 'Enter your email', text: 'That\'s the only detail either form actually needs to move forward.' },
+    { title: 'Check your inbox for activation details', text: 'Usually within a few hours of payment or trial signup clearing.' },
+    { title: 'Load the login into a compatible player app', text: 'Device-specific instructions are on the Setup Guide — most people are watching within minutes.' },
   ])}`,
 })}
 
@@ -86,13 +89,13 @@ ${section({
   <div class="grid grid-2" style="align-items:center;">
     <div class="basics-media">${iconMedia('<circle cx="270" cy="270" r="22" fill="none" stroke="#ffffff" stroke-width="4"/><path d="M270 256 L270 270 L282 278" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>', '24-hour trial illustration')}</div>
     <div>
-      ${sectionHead({ eyebrow: 'Cheaper than guessing wrong', title: trial.label, left: true })}
-      <p>For $${trial.price.toFixed(2)}, ${trial.duration} of full access — no scaled-down preview. Enough time to message support with something real and clock how quickly a genuine answer lands, well before any longer commitment is on the table.</p>
+      ${sectionHead({ eyebrow: 'Try before you subscribe', title: trial.label, left: true })}
+      <p>$${trial.price.toFixed(2)} unlocks the full catalog for ${trial.duration} — the same channels and titles a paying subscriber gets, not a limited preview. See the picture quality and channel lineup on your own screen before committing to a longer term.</p>
       <a class="btn btn-primary btn-lg" href="/trial/">Start 24-Hour Trial</a>
       <ul class="check-list">
-        <li>Every channel and title a subscriber gets, nothing held back</li>
-        <li>Up to 4K where the source and your setup both support it</li>
-        <li>One device, running for the full window</li>
+        <li>The complete live and on-demand catalog, nothing held back</li>
+        <li>Up to 4K resolution where supported</li>
+        <li>One device, active for the full 24 hours</li>
       </ul>
     </div>
   </div>`,
@@ -100,12 +103,12 @@ ${section({
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'A rough sketch', title: 'The kind of subscriber this tends to fit' })}
+  ${sectionHead({ eyebrow: 'What you\'re actually getting', title: 'The details that matter, upfront' })}
   ${featureGrid([
-    { title: 'A previous provider treated the cheap plan as an afterthought', text: 'Here, the plan length only changes the invoice — the catalog behind the login never shrinks to match it.' },
-    { title: 'You want an answer, not another superlative', text: 'Every claim on this site ties to something specific — a channel count, a response habit, a posted price — rather than a word like "best" left to carry the weight on its own.' },
-    { title: 'You’re comparing more than one provider side by side', text: 'A $1 trial is a cheap way to test the support line and the catalog against whatever else is on your shortlist.' },
-    { title: 'Something eventually needs fixing, and you want it fixed fast', text: 'Messages go to a real inbox and get worked in order — no phone tree, no chatbot loop.' },
+    { title: 'One catalog, every plan', text: 'A one-month subscriber and a twelve-month subscriber watch the identical channel and VOD lineup.' },
+    { title: 'Real support, not a bot loop', text: 'Messages go to a person who reads them and replies — no automated ticket queue.' },
+    { title: 'Prices posted in the open', text: 'All four plan lengths are listed on the Pricing page, no signup wall in front of the numbers.' },
+    { title: 'A trial that proves it', text: `$${trial.price.toFixed(2)} gets you ${trial.duration} on the real service, not a stripped-down demo.` },
   ], 4)}`,
 })}
 
@@ -114,20 +117,20 @@ ${section({
   html: `
   ${sectionHead({ eyebrow: 'Questions', title: 'Frequently asked questions', left: true })}
   ${faqAccordion(coreFaqs.slice(0, 4))}
-  <p style="margin-top:20px;"><a href="/faq/">Read the rest of the FAQ →</a></p>`,
+  <p style="margin-top:20px;"><a href="/faq/">Read the full FAQ →</a></p>`,
 })}
 
 ${section({
   html: `
-  ${sectionHead({ eyebrow: 'Keep digging', title: 'A few more pages to check before committing' })}
+  ${sectionHead({ eyebrow: 'Keep reading', title: 'A few more pages worth a look' })}
   <div class="grid grid-3">
     ${[
-      { title: 'Every plan\'s total, no email required', text: 'The four numbers sit right on the page — nothing behind a signup wall.', href: '/pricing/' },
-      { title: 'Test the support line for a dollar', text: 'A real question during the trial tells you more than any page of copy could.', href: '/trial/' },
-      { title: 'Named steps for every supported device', text: 'From smart TVs to phones to streaming boxes, each one gets its own section.', href: '/setup-guide/' },
-      { title: 'A checklist for spotting a well-run provider', text: 'Support responsiveness, catalog consistency, honest pricing — laid out plainly.', href: '/guides/how-to-choose-an-iptv-subscription/' },
-      { title: 'Refund conditions, written down first', text: 'Nothing you\'d only discover by asking support after something goes wrong.', href: '/refund-policy/' },
-      { title: 'What information actually gets stored', text: 'Covered directly on the Privacy Policy, without the usual legal fog.', href: '/privacy-policy/' },
+      { title: 'Full pricing breakdown', text: 'Every plan length and what it actually costs per month.', href: '/pricing/' },
+      { title: 'Start the $1 trial', text: 'The fastest way to judge the catalog for yourself.', href: '/trial/' },
+      { title: 'Setup Guide', text: 'Step-by-step instructions for every supported device.', href: '/setup-guide/' },
+      { title: 'How to choose an IPTV subscription', text: 'A real checklist for spotting a well-run provider.', href: '/guides/how-to-choose-an-iptv-subscription/' },
+      { title: 'Refund Policy', text: 'The exact terms, published before you need them.', href: '/refund-policy/' },
+      { title: 'Privacy Policy', text: 'What gets collected and why, stated plainly.', href: '/privacy-policy/' },
     ]
       .map(
         (t) => `
@@ -141,8 +144,8 @@ ${section({
 })}
 
 ${ctaBanner({
-  title: 'See whether "premium" holds up on your own screen',
-  lead: 'Compare the four plans directly, or put a dollar toward the trial and judge the catalog and the support line yourself.',
+  title: 'Ready to start watching?',
+  lead: 'Compare the four plans, or put a dollar toward the 24-hour trial and see the catalog for yourself.',
   primaryCta: { label: 'View Plans', href: '/pricing/' },
   secondaryCta: { label: 'Start 24-Hour Trial', href: '/trial/' },
 })}
