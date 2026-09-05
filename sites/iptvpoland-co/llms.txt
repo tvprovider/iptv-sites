@@ -1,0 +1,26 @@
+# IPTV Poland
+
+> IPTV Poland is a subscription IPTV service built specifically around Polish television — Ekstraklasa live football matches, Polish news, entertainment, and regional channels — carried alongside the same full English-language and international catalog every plan includes, not in place of it. A meaningful share of the real audience is Polish households and fans living abroad (UK, US, Germany, Ireland, Netherlands, and elsewhere) who want Polish TV and Ekstraklasa without a Polish cable subscription; nothing about ordering, activation, or watching requires a Polish address, and no VPN is needed since channels stream directly to the login. Plans include 40,000+ live channels and 180,000+ VOD titles, identical across every plan length — a longer term lowers the price, it never unlocks extra content. Subscriptions run 1, 3, 6, or 12 months ($14.99 / $34.99 / $54.99 / $79.99 USD), with a $1.00 24-hour trial available before committing, running the identical live catalog a paying subscriber gets. Compatible with Smart TVs, Android TV, Fire TV, Android and iOS devices, Apple TV, Windows, and macOS.
+
+## Key pages
+
+- [Home — Ekstraklasa & Polish TV overview, fast path to plans and trial](https://iptvpoland.co/)
+- [Pricing — four plans, one flat price each](https://iptvpoland.co/pricing/)
+- [24-Hour Trial — $1.00 test period on the real lineup](https://iptvpoland.co/trial/)
+- [Order — how to subscribe and pay](https://iptvpoland.co/order/)
+- [Setup Guide — device-by-device activation checklist](https://iptvpoland.co/setup-guide/)
+- [FAQ — Ekstraklasa coverage, watching from outside Poland, plans, and setup](https://iptvpoland.co/faq/)
+- [About Us — why this site is built specifically around Poland](https://iptvpoland.co/about-us/)
+- [Contact — support for setup, billing, and trial questions](https://iptvpoland.co/contact/)
+- [Guides — background reading index](https://iptvpoland.co/guides/)
+- [Guide — What Is IPTV Poland? What's actually included](https://iptvpoland.co/guides/what-is-iptv/)
+- [Guide — Watching Ekstraklasa & Polish TV from outside Poland](https://iptvpoland.co/guides/how-to-choose-an-iptv-subscription/)
+- [Guide — 4K vs HD streaming quality](https://iptvpoland.co/guides/4k-vs-hd-streaming/)
+- [Guide — internet requirements for streaming](https://iptvpoland.co/guides/internet-requirements-for-4k-streaming/)
+- [Privacy Policy](https://iptvpoland.co/privacy-policy/)
+- [Refund Policy](https://iptvpoland.co/refund-policy/)
+- [Terms of Use](https://iptvpoland.co/terms-of-use/)
+
+## Optional
+
+- Crawlers welcome: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Cohere-AI
